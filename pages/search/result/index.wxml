@@ -1,0 +1,35 @@
+<!--pages/searchresult/index.wxml-->
+<view class="searchresult-view">
+  <view class="search-com">
+    <text class="icon iconfont iconiconxiantiaoshouji8"></text>
+    <input placeholder='请输入芯片型号' placeholder-class="placeholderClass" bindtap="toSearch"></input>
+  </view>
+  <view class="switch-tab-com row">
+    <view bindtap="switchTab" class="{{tabIndex == 1&&'active'}}" data-index="1">
+      <text>商品</text>
+      <text class="active-bg"></text>
+    </view>
+    <view bindtap="switchTab" class="{{tabIndex == 2&&'active'}}" data-index="2">
+      <text>询价</text>
+      <text class="active-bg"></text>
+    </view>
+  </view>
+  <view class="searchresult-content">
+    <view wx:if="{{priceList&&priceList.length==0}}" class="nodata">
+      <cover-image src="/res/images/imgs/nodata.png" class="img"></cover-image>
+      <view class="h3 bold">未搜索到相关信息</view>
+      <view class="p">您还可以发布询价。</view>
+      <view class="nodata_fb btn-com btn-com-b" bindtap="toXj">
+        <text>快速发布询价</text>
+      </view>
+    </view>
+    <priceItem price-list="{{priceList}}" wx:if="{{priceList&&priceList.length!==0}}" price-type="{{type}}" xb="1"></priceItem>
+  </view>
+  <view class="fast_fb btn-com btn-com-b" wx:if="{{priceList&&priceList.length!==0}}" bindtap="toXj">
+    <text>快速发布询价</text>
+  </view>
+  <view class="concat_custom" wx:if="{{priceList&&priceList.length==0}}">
+    <text class="icon iconfont iconiconxiantiaoshouji11"></text>
+    <text>联系客服帮您找</text>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+/* pages/searchresult/index.wxss */
+
+.searchresult-view {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 234rpx;
+  box-sizing: border-box;
+}
+.fast_fb {
+  position: absolute;
+  bottom: 68rpx;
+  left:0;
+  right:0;
+}
+
+.nodata .p {
+  margin-top: 14rpx;
+}
+
+.nodata_fb {
+  margin-top:40rpx;
+}
+
+.concat_custom {
+  position: absolute;
+  bottom: 68rpx;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color:#61A0F2;
+  font-size: 28rpx;
+}
+.concat_custom .icon{
+  font-size: 40rpx;
+  margin-right:16rpx;
+  vertical-align: sub;
+
+}

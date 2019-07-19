@@ -1,0 +1,8 @@
+/* pages/list/qd/index.wxss */
+.nodata .p {
+ 
+  margin-top: 14rpx;
+}
+.nodata .fb_btn {
+ margin-top:40rpx
+}

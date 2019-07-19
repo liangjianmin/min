@@ -1,0 +1,62 @@
+/* pages/list/bj/index.wxss */
+
+.bj-view {
+  min-height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 234rpx;
+}
+
+.bj-title {
+  background-color: #0d84d1;
+  color: #fff;
+  font-size: 26rpx;
+  padding: 24rpx 24rpx 60rpx;
+}
+
+.bj-title .icon {
+  font-size: 40rpx;
+}
+
+.company {
+  flex: 1;
+}
+
+.company .xun {
+  flex: 0 0 87rpx;
+  height: 36rpx;
+  text-align: center;
+  line-height: 36rpx;
+  border-radius: 2rpx;
+  margin-right: 24rpx;
+}
+
+.company .name {
+  font-size: 32rpx;
+  flex: 1;
+}
+
+.xb-com-content {
+  top: -20rpx;
+}
+
+.bj-t .mybj {
+  color: #515559;
+  font-size: 28rpx;
+}
+
+.sdbj {
+  font-size: 24rpx;
+  color: #8a9299;
+}
+
+.sdbj .num {
+  color: #61a0f2;
+}
+
+.bj-btn {
+  position: absolute;
+  bottom: 68rpx;
+  left: 0;
+  right: 0;
+}

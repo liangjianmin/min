@@ -1,0 +1,37 @@
+<!--pages/tab/good/good.wxml-->
+<view class="good-view">
+  <view class="search-com">
+    <text class="icon iconfont iconiconxiantiaoshouji8"></text>
+    <input placeholder='请输入芯片型号' placeholder-class="placeholderClass" bindtap="toSearch"></input>
+  </view>
+  <view class="good-total row bothSide verCenter px-hr-bottom">
+    <view class="good-num">
+      <text>已发布商品: </text>
+      <text class="num bold">4</text>
+    </view>
+    <text class="time">
+    <text>最近更新:</text>
+    <text>2019-05-14 10:40</text>
+    </text>
+  </view>
+  <view class="good-content">
+    <view wx:if="{{priceList&&priceList.length==0}}" class="nodata">
+      <cover-image src="/res/images/imgs/nodata.png" class="img"></cover-image>
+      <view class="h3 bold">未搜索到相关信息</view>
+      <view class="p">您还可以发布询价。</view>
+      <view class="btn-com btn-com-b add-good-btn">
+        <text class="icon iconfont iconiconxiantiaoshouji15"></text>
+      <text>新增商品</text>
+      </view>
+    </view>
+    <priceItem price-list="{{priceList}}" wx:if="{{priceList&&priceList.length!==0}}" price-type="5" bindemitevent="emitevent"></priceItem>
+  </view>
+
+  <view class="good-btn-div" wx:if="{{priceList&&priceList.length!==0}}">
+    <view class="btn-com btn-com-b add-good-btn" bindtap="fbGood">
+      <text class="icon iconfont iconiconxiantiaoshouji15"></text>
+      <text>新增商品</text>
+    </view>
+  </view>
+
+</view>

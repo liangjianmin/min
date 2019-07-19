@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "priceItem": "/components/priceItem/priceItem"
+  },
+  "navigationBarBackgroundColor": "#0D84D1",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#0d84d1",
+  "navigationBarTitleText": ""
+}

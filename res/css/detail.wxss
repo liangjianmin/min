@@ -1,0 +1,72 @@
+.t-desc {
+  background-color: #0d84d1;
+  color: #fff;
+  font-size: 26rpx;
+  padding: 24rpx 24rpx 62rpx;
+}
+
+.company {
+  flex: 1;
+}
+
+.company .bao {
+  flex: 0 0 87rpx;
+  height: 36rpx;
+  text-align: center;
+  line-height: 36rpx;
+  border-radius: 2rpx;
+  margin-right: 24rpx;
+}
+
+.company .name {
+  font-size: 32rpx;
+  flex: 1;
+}
+
+.top .icon {
+  font-size: 40rpx;
+}
+
+.bottom {
+  flex-wrap: wrap;
+}
+
+.bottom .yes {
+  margin: 24rpx 24rpx 0 0;
+}
+
+.yes .icon {
+  color: #61a0f2;
+  font-size: 30rpx;
+  margin-right: 12rpx;
+}
+
+.xb-com-content {
+  top: -22rpx;
+}
+
+.xb-com-content .desc {
+  border: none;
+}
+
+.xb-com-content .desc .left .bjsj .t-com {
+  flex: 0 0 130rpx;
+}
+.bjsj .c-com, .bz .c-com {
+  color: #8a9299;
+}
+.desc-xj-detail view{
+  padding-top:16rpx;
+}
+.zxgt {
+  position: absolute;
+  bottom: 94rpx;
+  left: 0;
+  right: 0;
+}
+
+.zxgt .icon {
+  margin-right: 7rpx;
+  font-size: 40rpx;
+  vertical-align: middle;
+}

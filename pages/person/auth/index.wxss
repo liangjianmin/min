@@ -1,0 +1,59 @@
+/* pages/login/index.wxss */
+
+.person {
+  padding: 108rpx 0 0 0;
+}
+
+.person .logo .img {
+  width: 225rpx;
+  height: 201rpx;
+}
+
+.person .t1 {
+  margin-top: 50rpx;
+  margin-bottom: 10rpx;
+  font-size: 46rpx;
+  color: #3f3a3a;
+  font-weight: 600;
+}
+
+.person .t2 {
+  font-size: 26rpx;
+  color: #9f9fa0;
+}
+
+.person .btn-com {
+  display: block;
+}
+
+.person .auth {
+  width: 100%;
+}
+
+.person .auth .btn-com-b {
+  margin-top: 80rpx;
+}
+
+.person .auth .btn-com-c {
+  border: 2rpx solid rgba(216, 223, 230, 1);
+  font-size: 32rpx;
+  color: #adb6bf;
+  background: none;
+  margin-top: 40rpx;
+}
+
+.text-wrap {
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  padding-top: 260rpx;
+}
+
+.btn-text {
+  color: #8a9299;
+  font-size: 25rpx;
+}
+
+.text-wrap .mr {
+  margin-right: 60rpx;
+}

@@ -1,0 +1,24 @@
+<view class='person'>
+  <view class='head column verCenter'>
+    <view class="head-logo column">
+      <view class='logo'>
+        <cover-image src="/res/images/imgs/iclogo.png" class="img"></cover-image>
+      </view>
+      <text class="t1">IC业务助手</text>
+      <text class='t2'>让询报价更轻松、便捷</text>
+    </view>
+
+    <!-- 授权 -->
+    <view class="auth"> 
+      <view>
+        <button class="btn-com btn-com-b">一键授权(微信用户资料)</button>
+        <view class="btn-com btn-com-c">暂不注册，先看看</view>
+      </view>
+      <view class="text-wrap row">
+      <view class="btn-text mr">验证码登录</view>
+      <view class="btn-text">密码登录</view>
+      </view>
+    </view>
+
+  </view>
+</view>

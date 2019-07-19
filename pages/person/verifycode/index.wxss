@@ -1,0 +1,99 @@
+.verify-code {
+  margin: 0 55rpx;
+  padding-top: 32rpx;
+}
+
+.verify-code  .tit {
+  margin-bottom: 50rpx;
+}
+
+.verify-code .t1 {
+  font-size: 48rpx;
+  color: #2e3033;
+  font-weight: 600;
+  line-height: 67rpx;
+}
+
+.verify-code .inp-wrap {
+  height: 98rpx;
+  border-bottom: 1px solid #d8dfe6;
+  padding-left: 10rpx;
+}
+
+.verify-code .inp-wrap  .icon {
+  color: #adb6bf;
+}
+
+.verify-code .inp-wrap  .inp {
+  padding-left: 35rpx;
+}
+
+.verify-code .form-item-right input {
+  padding-left: 35rpx;
+  width: 340rpx;
+}
+
+.tel-type {
+  border-left: 1px solid #d8dfe6;
+}
+
+.tel-type .tel-value {
+  font-size: 32rpx;
+  color: #515559;
+  padding: 7rpx 11rpx 7rpx 16rpx;
+}
+
+.tel-type.icon {
+  color: #d8dfe6;
+  font-size: 26rpx;
+}
+
+.placeholder-class {
+  color: #adb6bf;
+}
+
+.verify-code .inp-wrap .btn {
+  font-size: 32rpx;
+  color: #61a0f2;
+  background: none;
+  font-weight: 400;
+  border: 0 !important;
+}
+
+.verify-code .inp-wrap .btn::after {
+  border: 0 !important;
+}
+
+.btn_login {
+  height: 98rpx;
+  line-height: 98rpx;
+  background: rgba(13, 132, 209, 1);
+  box-shadow: 0px 6rpx 10rpx 0rpx rgba(97, 160, 242, 0.3);
+  border-radius: 8rpx;
+  color: #fff;
+  font-size: 32rpx;
+  margin-top: 40rpx;
+}
+
+.footer-btn {
+  padding-top: 40rpx;
+}
+
+.footer-btn text {
+  font-size: 28rpx;
+  color: #8a9299;
+}
+
+.error{
+  margin-top: 24rpx; 
+}
+
+.error .iconfont {
+  color: #EA1717;
+}
+
+.error .txt {
+  font-size: 24rpx;
+  color: #EA1717;
+  margin-left: 15rpx;
+}

@@ -1,0 +1,76 @@
+<!--pages/form/bj/index.wxml-->
+<view class="form-view">
+  <view class="tip row bothSide verCenter">
+    <view class="tip-left">
+      <text class="icon iconfont iconiconxiantiaoshouji12 tip-icon"></text>
+      <text class="tip-c">请回复真实价格，否则将会影响您的排名</text>
+    </view>
+    <text class="icon iconfont iconiconxiantiaoshouji13 close-icon"></text>
+  </view>
+  <view class="form-item row verCenter">
+    <text class="form-item-title">*型号</text>
+    <view class="form-item-right">
+      <input placeholder="请输入产品型号（必填）" placeholder-class="placeholderClass"></input>
+    </view>
+  </view>
+  <view class="form-item row verCenter px-hr-top">
+    <text class="form-item-title">*品牌</text>
+    <view class="form-item-right">
+      <input placeholder="请输入品牌（必填）" placeholder-class="placeholderClass"></input>
+    </view>
+  </view>
+  <view class="form-item row verCenter  px-hr-top">
+    <text class="form-item-title"> 封装</text>
+    <view class="form-item-right">
+      <input placeholder="请输入封装" placeholder-class="placeholderClass"></input>
+    </view>
+  </view>
+  <view class="form-item row verCenter  px-hr-top">
+    <text class="form-item-title">*数量</text>
+    <view class="form-item-right">
+      <input placeholder="请输入数量（必填）" placeholder-class="placeholderClass"></input>
+    </view>
+  </view>
+  <view class="form-item row verCenter  px-hr-top bj-item">
+    <text class="form-item-title">*报价</text>
+    <view class="form-item-right row verCenter bothSide">
+      <input placeholder="请输入单价" placeholder-class="placeholderClass"></input>
+      <view class="price-type" bindtap="switchPrice">
+        <text class="price-value">RMB</text>
+        <text class="icon iconfont iconbianzu1"></text>
+      </view>
+
+    </view>
+    <view class="price-ul {{isShowSwitch?'show':''}}">
+      <view class="price-li active">RMB</view>
+      <view class="price-li px-hr-top">USD</view>
+    </view>
+  </view>
+  <view class="form-item row verCenter  px-hr-top qx-item">
+    <text class="form-item-title">*货期</text>
+    <view class="form-item-right">
+      <radio-group>
+        <label>
+          <radio value="1" checked/>现货
+        </label>
+        <label>
+          <radio value="2" checked/>期货
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <view class="form-item row verCenter  px-hr-top">
+    <text class="form-item-title">*时间</text>
+    <view class="form-item-right">
+      <input placeholder="请输入货期时间（天）" placeholder-class="placeholderClass"></input>
+    </view>
+  </view>
+  <view class="form-hr"></view>
+  <view class="form-item row px-hr-bottom">
+    <text class="form-item-title">备注</text>
+    <view class="form-item-right">
+      <textarea placeholder="请输入备注" placeholder-class="placeholderClass" maxlength="-1" />
+    </view>
+  </view>
+  <view class="btn-com btn-com-b hf-btn">回复报价</view>
+</view>

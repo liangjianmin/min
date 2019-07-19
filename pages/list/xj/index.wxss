@@ -1,0 +1,26 @@
+/* pages/list/xj/index.wxss */
+.xj-view {
+  padding-top: 29rpx;
+}
+.xj-title {
+  height: 48rpx;
+  background-color: #0d84d1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.bj-data .num {
+  color: #515559;
+  font-size: 28rpx;
+}
+
+.bj-data .jgpx {
+  color: #8a9299;
+  font-size: 24rpx;
+}
+
+.jgpx .icon {
+  font-size: 30rpx;
+  margin-right: 8rpx;
+}

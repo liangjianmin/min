@@ -1,0 +1,99 @@
+/* components/priceItem/priceItem.wxss */
+
+.price-item {
+  padding-left: 24rpx;
+}
+
+.item-header {
+  padding: 29rpx 23rpx 21rpx 0;
+}
+
+.item-header .row {
+  overflow: hidden;
+}
+
+
+.item-header .mark {
+  border-radius: 2px;
+  font-size: 24rpx;
+  color: #fff;
+  padding: 2rpx 10rpx;
+  margin-right: 24rpx;
+}
+.price-item  .name, .price-item  .price,  .price-item  .num-bj,
+.price-item  .no-bj {
+  font-weight: 600;
+}
+.price-item  .num-bj,
+.price-item  .no-bj{
+  font-size: 28rpx;
+}
+.price-item  .num-bj{
+  color:#EAA217;
+}
+.price-item  .no-bj{
+  color:#61A0F2;
+}
+
+
+.price-item .name, .price-item .company {
+  color: #515559;
+  margin-right: 24rpx;
+}
+
+.price-item .name {
+  font-size: 32rpx;
+}
+.price-item .good-name{
+    margin-right:0;
+    flex:1;
+}
+.item-header .good-icon{
+  font-size: 50rpx;
+  color:#ADB6BF;
+  flex:0 0 50rpx;
+  margin:0 16rpx;
+}
+.price-item .company {
+  font-size: 26rpx;
+}
+
+.price-item  .price {
+  font-size: 28rpx;
+  color: #ea1717;
+}
+
+.item-middle {
+  padding: 15rpx 23rpx 15rpx 0;
+}
+
+.item-middle.item-middle2 {
+  padding-bottom: 24rpx;
+}
+
+.price-item .brand, .price-item .num {
+  font-size: 26rpx;
+  color: #515559;
+}
+
+.price-item .num {
+  margin-left: 62rpx;
+}
+
+.price-item .brand text, .price-item .num text {
+  color: #8a9299;
+}
+
+.item-footer {
+  padding: 0 23rpx 24rpx 0;
+}
+
+.item-footer .address {
+  color: #8a9299;
+  font-size: 26rpx;
+}
+
+.price-item  .time {
+  color: #adb6bf;
+  font-size: 22rpx;
+}

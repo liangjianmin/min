@@ -1,0 +1,58 @@
+<!--pages/detail/xj/index.wxml-->
+<view class="detail-view">
+  <view class="t-desc">
+    <view class="top row bothSide verCenter">
+      <view class="company  row verCenter">
+        <text class="bao">报价</text>
+        <text class="name bold">深圳市德卡科技股份有限公司深圳</text>
+      </view>
+      <text class="icon iconfont iconiconxiantiaoshouji6"></text>
+    </view>
+    <view class="bottom row">
+      <view class="yes">
+        <text class="icon iconfont iconiconxiantiaoshouji11"></text>
+        <text>公司认证</text>
+      </view>
+      <view class="yes">
+        <text class="icon iconfont iconiconxiantiaoshouji11"></text>
+        <text>贸易商</text>
+      </view>
+    </view>
+  </view>
+  <view class="xb-com-content">
+    <view class="title row bothSide verCenter nowrap px-hr-bottom">
+      <text class="name bold ellipsis">STM32F407ZGT6STM32</text>
+      <text class="price bold">￥100.0120</text>
+    </view>
+    <view class="desc desc-xj-detail">
+      <view class="brand row">
+        <text class="t-com">品牌：</text>
+        <text class="c-com">Texas Instruments</text>
+      </view>
+      <view class="fz row">
+        <text class="t-com">封装：</text>
+        <text class="c-com">LQFP-64</text>
+      </view>
+      <view class="num row">
+        <text class="t-com">数量：</text>
+        <text class="c-com bold">100,000 PCS</text>
+      </view>
+      <view class="hq row">
+        <text class="t-com">货期：</text>
+        <text class="c-com">现货</text>
+      </view>
+      <view class="bz row">
+        <text class="t-com">备注：</text>
+        <text class="c-com">有货的请尽快回复，比较急着要货</text>
+      </view>
+      <view class="bjsj row">
+        <text class="t-com">报价时间：</text>
+        <text class="c-com">2019-05-10 10:15</text>
+      </view>
+    </view>
+  </view>
+  <view class="zxgt btn-com btn-com-y">
+    <text class="icon iconfont iconiconxiantiaoshouji11"></text>
+    <text class="gt-t">在线沟通</text>
+  </view>
+</view>

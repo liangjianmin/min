@@ -1,0 +1,37 @@
+/* pages/search/index/index.wxss */
+ 
+.title {
+  font-weight: 600;
+  font-size: 28rpx;
+  color: #515559;
+}
+
+
+
+.rm_search, .ls_search {
+  padding: 0 24rpx;
+}
+
+.rm_search {
+  margin-top: 32rpx;
+}
+
+.ls_search {
+  margin-top: 48rpx;
+}
+
+.ls_search .icon {
+  font-size: 40rpx;
+  color: #8a9299;
+}
+
+.rm_ls_content {
+  padding: 24rpx 21rpx 0;
+  flex-wrap: wrap;
+}
+
+.rm_ls_content .search-item {
+  font-size: 26rpx;
+  color: #8a9299;
+  margin: 0 32rpx 24rpx 0;
+}

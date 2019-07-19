@@ -1,0 +1,39 @@
+<view class="verify-code">
+
+  <view class="column tit">
+    <text class="t1">Hi，上午好</text>
+    <text class="t1">欢迎使用IC业务助手！</text>
+  </view>
+
+  <view class="inp-wrap row verCenter">
+    <text class="icon iconfont iconiconxiantiaoshouji21"></text>
+    <view class="form-item-right row verCenter bothSide">
+      <input placeholder="请输入手机号" placeholder-class="placeholderClass"></input>
+      <view class="tel-type" bindtap="switchPrice">
+        <text class="tel-value">中国 + 86</text>
+        <text class="icon iconfont iconbianzu1"></text>
+      </view>
+    </view>
+  </view>
+
+  <view class="inp-wrap row verCenter">
+    <text class="icon iconfont iconiconxiantiaoshouji"></text>
+    <view class="form-item-right row verCenter bothSide">
+      <input placeholder="请输入验证码" placeholder-class="placeholderClass"></input>
+      <button class="btn">发送验证码</button>
+    </view>
+  </view>
+ 
+ <view class="error">
+    <text class="icon iconfont iconiconxiantiaoshouji1"></text>
+    <text class="txt">验证码错误，请重新输入</text>
+ </view>
+
+  <button class="btn_login">登录</button>
+
+  <view class="footer-btn row bothSide">
+      <text>密码登录</text>
+      <text>注册账户</text>
+  </view>
+
+</view>

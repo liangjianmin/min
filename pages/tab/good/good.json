@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "priceItem": "/components/priceItem/priceItem"
+  },
+  "navigationBarTitleText": "商品管理"
+}

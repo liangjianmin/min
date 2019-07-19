@@ -1,0 +1,34 @@
+<!--pages/search/index/index.wxml-->
+<view class="search-view">
+  <view class="search-com">
+    <text class="icon iconfont iconiconxiantiaoshouji8"></text>
+    <input placeholder='请输入芯片型号' placeholder-class="placeholderClass" auto-focus bindconfirm="confirmTap"></input>
+  </view>
+  <view class="rm_search">
+    <text class="title beforeLine">热门搜索</text>
+    <view class="rm_ls_content row">
+      <view class="search-item">LM358</view>
+      <view class="search-item">TJA1027</view>
+      <view class="search-item">贴片电阻330k</view>
+      <view class="search-item">PFB0824GHE</view>
+      <view class="search-item">T6738-4K</view>
+      <view class="search-item">ECW-FA2J155J</view>
+    </view>
+  </view>
+  <view class="ls_search">
+    <view class="title_view row bothSide verCenter">
+      <text class="title beforeLine">搜索历史</text>
+      <text class="icon iconfont iconiconxiantiaoshouji7"></text>
+    </view>
+    <view class="rm_ls_content row">
+      <view class="search-item">LM358</view>
+      <view class="search-item">TJA1027</view>
+      <view class="search-item">贴片电阻330k</view>
+      <view class="search-item">PFB0824GHE</view>
+      <view class="search-item">T6738-4K</view>
+      <view class="search-item">ECW-FA2J155J</view>
+    </view>
+
+  </view>
+
+</view>

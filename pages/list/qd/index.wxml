@@ -1,0 +1,28 @@
+<!--pages/list/qd/index.wxml-->
+<view class="qd-view">
+  <view class="switch-tab-com row">
+    <view bindtap="switchTab" class="{{tabIndex == 1&&'active'}}" data-index="1">
+      <text>最新询价</text>
+      <text class="active-bg"></text>
+    </view>
+    <view bindtap="switchTab" class="{{tabIndex == 2&&'active'}}" data-index="2">
+      <text>今日</text>
+      <text class="active-bg"></text>
+    </view>
+      <view bindtap="switchTab" class="{{tabIndex == 3&&'active'}}" data-index="3">
+      <text>0回复询价</text>
+      <text class="active-bg"></text>
+    </view>
+  </view>
+  <view class="qd-content">
+    <view wx:if="{{priceList&&priceList.length==0}}" class="nodata">
+      <cover-image src="/res/images/imgs/noxb.png" class="img"></cover-image>
+      <view class="h3 bold">暂无询报价信息</view>
+      <view class="p">您还可以发布询价。</view>
+      <view class="fb_btn btn-com btn-com-b" bindtap="toXj">
+        <text>快速发布询价</text>
+      </view>
+    </view>
+    <priceItem price-list="{{priceList}}" wx:if="{{priceList&&priceList.length!==0}}" price-type="3" xb="1" bindemitevent="emitevent"></priceItem>
+  </view>
+</view>

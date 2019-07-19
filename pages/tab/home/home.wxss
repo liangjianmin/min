@@ -1,0 +1,132 @@
+/* pages/tab/home/home.wxss */
+
+.home-view {
+  padding-top: 146rpx;
+}
+
+.home-view .search-section {
+  background-color: #0d84d1;
+  padding: 29rpx 24rpx 55rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.search-section .icon {
+  position: absolute;
+  font-size: 40rpx;
+  color:#686E73;
+  top: 52rpx;
+  left: 49rpx;
+}
+
+.search-section input {
+  background: #fff;
+  height: 88rpx;
+  border-radius: 8rpx;
+  box-shadow: 0px 8px 20px 0px rgba(39, 67, 85, 0.5);
+  padding: 0 18rpx 0 83rpx;
+  box-sizing: border-box;
+}
+
+.search-section .placeholderClass {
+  color: #515559;
+  font-size: 32rpx;
+}
+
+.home-content {
+  background: #fff;
+  border-radius:20rpx 20rpx 0px 0px;
+  position: relative;
+}
+
+.home-function {
+  padding: 32rpx 50rpx;
+}
+
+.function-item .img {
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.function-item .text {
+  font-size: 26rpx;
+  color: #8a9299;
+  margin-top: 11rpx;
+}
+
+.advs {
+  margin-top: 9rpx;
+  padding-left: 24rpx;
+  border-bottom: 10rpx solid #f5f9fc;
+}
+
+.advs-content-parent {
+  margin-right: 24rpx;
+  padding: 29rpx 0 30rpx;
+}
+
+.advs-content {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.adv {
+  margin-bottom: 25rpx;
+  margin-right: 29rpx;
+}
+
+.adv:last-child {
+  margin: 0;
+}
+
+.adv-mark {
+  font-size: 24rpx;
+  color: #61a0f2;
+  background: #f0f6fa;
+  border-radius: 2rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  padding: 0 19rpx;
+}
+
+.adv-num {
+  font-size: 28rpx;
+  color: #515559;
+  margin-left: 24rpx;
+}
+
+.adv-time {
+  font-size: 24rpx;
+  color: #8a9299;
+  margin-left: 27rpx;
+}
+
+.more-item {
+  flex: 0 1 40rpx;
+}
+.more-item .icon{
+  color:#ADB6BF;
+  font-size: 40rpx;
+
+}
+
+.price-title {
+  height: 88rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #515559;
+  padding-left: 25rpx;
+}
+
+.price-title-content {
+  height: 100%;
+  padding-right: 25rpx;
+}
+.my-price .icon {
+  color:#ADB6BF;
+  font-size: 40rpx;
+}
+

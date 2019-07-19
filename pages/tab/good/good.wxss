@@ -1,0 +1,43 @@
+/* pages/tab/good/good.wxss */
+
+.good-view {
+  min-height: 100%;
+  padding-bottom: 118rpx;
+  box-sizing: border-box;
+}
+.good-total {
+  padding: 37rpx 24rpx 24rpx 0;
+  margin-left: 24rpx;
+  font-size: 22rpx;
+  color: #adb6bf;
+}
+
+.good-total .good-num {
+  font-size: 24rpx;
+}
+
+.good-total .good-num .num {
+  color: #515559;
+}
+.good-btn-div{
+  position: fixed;
+  left:0;
+  bottom:0;
+  right:0;
+  background-color: #fff;
+  height:118rpx;
+}
+.add-good-btn {
+  margin-top:10rpx;
+}
+
+.add-good-btn .icon {
+  margin-right: 8rpx;
+  font-size: 32rpx;
+}
+.nodata .p{
+  margin-top:14rpx;
+}
+.nodata .add-good-btn{
+  margin-top:40rpx;
+}

@@ -1,0 +1,54 @@
+<!--pages/list/xj/index.wxml-->
+<view class="xj-view">
+  <view class="xj-title"></view>
+  <view class="xb-com-content">
+    <view class="title row bothSide verCenter nowrap px-hr-bottom">
+      <text class="name bold ellipsis">STM32F407ZGT6STM32F407ZGT6STM32F407ZGT6</text>
+      <text class="time ">05-10 10:15</text>
+    </view>
+    <view class="desc row">
+      <view class="left">
+        <view class="brand row">
+          <text class="t-com">品牌：</text>
+          <text class="c-com">Texas Instruments</text>
+        </view>
+        <view class="fz row">
+          <text class="t-com">封装：</text>
+          <text class="c-com">LQFP-64</text>
+        </view>
+        <view class="hq row">
+          <text class="t-com">货期：</text>
+          <text class="c-com">现货</text>
+        </view>
+        <view class="num row">
+          <text class="t-com">数量：</text>
+          <text class="c-com bold">100,000 PCS</text>
+        </view>
+        <view class="price row">
+          <text class="t-com">接受价：</text>
+          <text class="c-com">无</text>
+        </view>
+        <view class="bz row">
+          <text class="t-com">备注：</text>
+          <text class="c-com">有货的请尽快回复，比较急着要货</text>
+        </view>
+      </view>
+      <cover-image class="right" src="/res/images/imgs/iclogo.png"></cover-image>
+    </view>
+  </view>
+  <view class="bj-data">
+    <view class="xb-com-t row bothSide verCenter  px-hr-bottom ">
+      <text class="num bold beforeLine">收到的报价 <text>2</text></text>
+      <view class="jgpx">
+        <text class="icon iconfont iconiconxiantiaoshouji10"></text>
+        <text>价格排序</text>
+      </view>
+    </view>
+    <view class="bj-list">
+      <view wx:if="{{priceList&&priceList.length==0}}" class="nodata">
+        暂无数据
+      </view>
+      <priceItem price-list="{{priceList}}" wx:if="{{priceList&&priceList.length!==0}}" price-type="3" xb="2" bindemitevent="emitevent"></priceItem>
+    </view>
+  </view>
+</view>

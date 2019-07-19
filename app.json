@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/person/verifycode/index",
+    "pages/tab/home/home",
+    "pages/form/good/index",
+    "pages/tab/good/good",
+    "pages/tab/price/price",
+    "pages/form/bj/index",
+    "pages/list/bj/index",
+    "pages/list/xj/index",
+    "pages/tab/message/message",
+    "pages/tab/me/me",
+    "pages/search/index/index",
+    "pages/search/result/index",
+    "pages/form/xj/index",
+    "pages/detail/good/index",
+    "pages/detail/xj/index",
+    "pages/list/qd/index",
+    "pages/person/auth/index",
+    "pages/person/login/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#8A9299",
+    "selectedColor": "#0D84D1",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/tab/home/home",
+        "text": "首页",
+        "iconPath": "/res/images/icons/home-icon.png",
+        "selectedIconPath": "/res/images/icons/home-icon-act.png"
+      },
+      {
+        "pagePath": "pages/tab/price/price",
+        "text": "询报价",
+        "iconPath": "/res/images/icons/price-icon.png",
+        "selectedIconPath": "/res/images/icons/price-icon-act.png"
+      },
+      {
+        "pagePath": "pages/tab/message/message",
+        "text": "消息",
+        "iconPath": "/res/images/icons/msg-icon.png",
+        "selectedIconPath": "/res/images/icons/msg-icon-act.png"
+      },
+      {
+        "pagePath": "pages/tab/good/good",
+        "text": "商品",
+        "iconPath": "/res/images/icons/good-icon.png",
+        "selectedIconPath": "/res/images/icons/good-icon-act.png"
+      },
+      {
+        "pagePath": "pages/tab/me/me",
+        "text": "我的",
+        "iconPath": "/res/images/icons/me-icon.png",
+        "selectedIconPath": "/res/images/icons/me-icon-act.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
