@@ -1,0 +1,100 @@
+.person {
+  margin: 0 55rpx;
+  padding-top: 32rpx;
+}
+.person .tit {
+  margin-bottom: 50rpx;
+}
+.person .tit .t1 {
+  font-size: 48rpx;
+  color: #2e3033;
+  font-weight: 600;
+  line-height: 67rpx;
+}
+.person .inp-wrap {
+  height: 98rpx;
+  border-bottom: 1px solid #d8dfe6;
+  padding-left: 10rpx;
+}
+.person .inp-wrap input {
+  padding-left: 35rpx;
+  width: 340rpx;
+}
+.person .inp-wrap .icon {
+  color: #adb6bf;
+}
+.person .inp-wrap .pwd-ico {
+  padding-left: 160rpx;
+}
+.person .inp-wrap .vcode {
+  font-size: 32rpx;
+  color: #61a0f2;
+  background: none;
+  font-weight: 400;
+  border: 0 !important;
+}
+.person .inp-wrap .vcode::after {
+  border: 0 !important;
+}
+.person .inp-wrap .areacode {
+  border-left: 1px solid #d8dfe6;
+}
+.person .inp-wrap .areacode .tel-value {
+  font-size: 32rpx;
+  color: #515559;
+  padding: 7rpx 11rpx 7rpx 16rpx;
+}
+.person .inp-wrap .areacode .icon {
+  color: #d8dfe6;
+  font-size: 26rpx;
+}
+.person .register-button {
+  height: 98rpx;
+  line-height: 98rpx;
+  background: #0d84d1 !important;
+  box-shadow: 0px 6rpx 10rpx 0rpx rgba(97, 160, 242, 0.3) !important;
+  border-radius: 8rpx;
+  color: #fff !important;
+  font-size: 32rpx;
+  margin-top: 40rpx;
+}
+.person .error-wrap {
+  margin-top: 24rpx;
+}
+.person .error-wrap .error .iconfont {
+  color: #ea1717;
+}
+.person .error-wrap .error .txt {
+  font-size: 24rpx;
+  color: #ea1717;
+  margin-left: 15rpx;
+}
+.person .error-wrap .forget {
+  font-size: 28rpx;
+  color: #61a0f2;
+}
+.person .agreement {
+  margin-top: 40rpx;
+  text-align: center;
+}
+.person .agreement .t1 {
+  font-size: 24rpx;
+  color: #8A9299;
+}
+.person .agreement .t2 {
+  font-size: 24rpx;
+  color: #61A0F2;
+}
+.person .placeholderClass {
+  color: #adb6bf;
+  font-size: 32rpx;
+}
+.person .inp-error {
+  border-bottom: 1px solid #ea1717;
+}
+.person .inp-error .icon {
+  color: #ea1717;
+}
+.person .inp-error input {
+  color: #ea1717;
+}

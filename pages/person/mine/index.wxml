@@ -1,0 +1,36 @@
+<view class="mine" hover-class="none" hover-stop-propagation="false">
+    <view class="head row verCenter">
+        <view class="pic">
+            <cover-image class="im" src="/res/images/imgs/test.jpg"></cover-image>
+        </view>
+        <view class="text">
+            <text class="t1">深圳市猎芯科技有限公司</text>
+            <view class="row verCenter">
+                <text class="t2" selectable="false" space="false" decode="false">普通会员</text>
+                <view>
+                    <text class="t3">金币：</text>
+                    <text class="t4">13,123</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="tab-bar row verCenter rowCenter">
+        <view class="wrap">
+            <text class="t1">513</text>
+            <text class="t2">商品</text>
+        </view>
+        <view class="wrap">
+            <text class="t1">53</text>
+            <text class="t2">询价</text>
+        </view>
+        <view class="wrap">
+            <text class="t1">513</text>
+            <text class="t2">报价</text>
+        </view>
+    </view>
+    <view class="ad boxsiz row verCenter">
+         <text class="icon iconfont iconiconxiantiaoshouji16"></text>
+        <text class='t1'>福利中心</text>
+        <text class='t2'>金币提现兑换、领红包</text>
+    </view>
+</view>

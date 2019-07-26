@@ -1,55 +1,67 @@
 <!--pages/list/bj/index.wxml-->
+<wxs module="dateUtil" src="../../../utils/timeUtil.wxs"></wxs>
 <view class="bj-view">
-  <view class="bj-title row bothSide verCenter">
-    <view class="company row verCenter">
-      <text class="xun">询价</text>
-      <text class="name bold">中麒（北京）科技有限公司</text>
+  <view class="bj-title ">
+    <view class="row bothSide verCenter" wx:if="{{topInfo}}">
+      <view class="company row verCenter">
+        <text class="xun">询价</text>
+        <text class="name bold">{{topInfo.company_name||'--'}}</text>
+      </view>
+      <text class="icon iconfont iconiconxiantiaoshouji6"></text>
     </view>
-    <text class="icon iconfont iconiconxiantiaoshouji6"></text>
   </view>
   <view class="xb-com-content">
-    <view>
-      <view class="title row bothSide verCenter nowrap px-hr-bottom">
-        <text class="name bold ellipsis">STM32F407ZGT6STM32F407ZGT6STM32F407ZGT6</text>
-        <text class="time ">05-10 10:15</text>
-      </view>
-      <view class="desc row">
-        <view class="left">
-          <view class="brand row">
-            <text class="t-com">品牌：</text>
-            <text class="c-com">Texas Instruments</text>
-          </view>
-          <view class="fz row">
-            <text class="t-com">封装：</text>
-            <text class="c-com">LQFP-64</text>
-          </view>
-          <view class="hq row">
-            <text class="t-com">货期：</text>
-            <text class="c-com">现货</text>
-          </view>
-          <view class="num row">
-            <text class="t-com">数量：</text>
-            <text class="c-com bold">100,000 PCS</text>
-          </view>
-          <view class="price row">
-            <text class="t-com">接受价：</text>
-            <text class="c-com">无</text>
-          </view>
-          <view class="bz row">
-            <text class="t-com">备注：</text>
-            <text class="c-com">有货的请尽快回复，比较急着要货</text>
-          </view>
+    <view class="x-info">
+      <view wx:if="{{topInfo}}">
+        <view class="title row bothSide verCenter nowrap px-hr-bottom">
+          <text class="name bold ellipsis">{{topInfo.goods_name||'--'}}</text>
+          <text class="time ">{{dateUtil.dateFormat(topInfo.add_time*1000)}}</text>
         </view>
-        <cover-image class="right" src="/res/images/imgs/iclogo.png"></cover-image>
+        <view class="desc row">
+          <view class="left">
+            <view class="brand row">
+              <text class="t-com">品牌：</text>
+              <text class="c-com">{{topInfo.brand_name}}</text>
+            </view>
+            <view class="fz row">
+              <text class="t-com">封装：</text>
+              <text class="c-com">{{topInfo.encap}}</text>
+            </view>
+            <view class="hq row">
+              <text class="t-com">货期：</text>
+              <text class="c-com">{{topInfo.delivery_time}}</text>
+            </view>
+            <view class="num row">
+              <text class="t-com">数量：</text>
+              <text class="c-com bold">{{topInfo.number}} PCS</text>
+            </view>
+            <view class="price row">
+              <text class="t-com">接受价：</text>
+              <text class="c-com {{(!topInfo.price||topInfo.price=='0.00'||topInfo.price=='0')?'':'bold red'}}">
+              <block wx:if="{{!topInfo.price||topInfo.price=='0.00'||topInfo.price=='0'}}">未回复</block>
+              <block wx:else>
+              <block wx:if="{{topInfo.currency == 1}}">￥{{topInfo.price}}</block><block wx:else>${{topInfo.price}}
+              </block>
+          </block>
+              </text>
+            </view>
+            <view class="bz row">
+              <text class="t-com">备注：</text>
+              <text class="c-com">{{topInfo.remark||'--'}}</text>
+            </view>
+          </view>
+          <cover-image class="right" src="{{topInfo.goods_images?topInfo.goods_images:'/res/images/imgs/iclogo.png'}}"></cover-image>
+        </view>
       </view>
+
     </view>
     <view class="bj-data">
       <view class="xb-com-t row bothSide verCenter  px-hr-bottom ">
         <text class="mybj bold beforeLine">我的报价</text>
-        <view class="sdbj">
+        <!-- <view class="sdbj">
           已收到
           <text class="num">5</text> 条报价
-        </view>
+        </view> -->
       </view>
       <view class="bj-list">
         <view wx:if="{{priceList&&priceList.length==0}}" class="nodata">

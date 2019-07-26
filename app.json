@@ -1,6 +1,14 @@
 {
   "pages": [
+    "pages/person/auth/index",
+    "pages/person/mine/index",
+    "pages/person/forget/index",
+    "pages/person/register/index",
     "pages/person/verifycode/index",
+    "pages/person/login/index",
+    "pages/person/getphone/index",
+    "pages/person/agreement/index",
+    "pages/person/successfully/index",
     "pages/tab/home/home",
     "pages/form/good/index",
     "pages/tab/good/good",
@@ -15,9 +23,7 @@
     "pages/form/xj/index",
     "pages/detail/good/index",
     "pages/detail/xj/index",
-    "pages/list/qd/index",
-    "pages/person/auth/index",
-    "pages/person/login/index"
+    "pages/list/qd/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -30,8 +36,7 @@
     "selectedColor": "#0D84D1",
     "borderStyle": "white",
     "backgroundColor": "#fff",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/tab/home/home",
         "text": "首页",
         "iconPath": "/res/images/icons/home-icon.png",

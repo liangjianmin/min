@@ -1,17 +1,18 @@
 <!--pages/tab/good/good.wxml-->
+<wxs module="dateUtil" src="../../../utils/timeUtil.wxs"></wxs>
 <view class="good-view">
   <view class="search-com">
     <text class="icon iconfont iconiconxiantiaoshouji8"></text>
-    <input placeholder='请输入芯片型号' placeholder-class="placeholderClass" bindtap="toSearch"></input>
+    <input placeholder='请输入芯片型号' placeholder-class="placeholderClass"  bindinput="bindKeyInput" bindconfirm="bindKeyConfirm"></input>
   </view>
   <view class="good-total row bothSide verCenter px-hr-bottom">
     <view class="good-num">
       <text>已发布商品: </text>
-      <text class="num bold">4</text>
+      <text class="num bold">{{total}}</text>
     </view>
     <text class="time">
     <text>最近更新:</text>
-    <text>2019-05-14 10:40</text>
+    <text>{{dateUtil.dateFormat(time*1000)}}</text>
     </text>
   </view>
   <view class="good-content">
@@ -19,7 +20,7 @@
       <cover-image src="/res/images/imgs/nodata.png" class="img"></cover-image>
       <view class="h3 bold">未搜索到相关信息</view>
       <view class="p">您还可以发布询价。</view>
-      <view class="btn-com btn-com-b add-good-btn">
+      <view class="btn-com btn-com-b add-good-btn" bindtap="fbGood">
         <text class="icon iconfont iconiconxiantiaoshouji15"></text>
       <text>新增商品</text>
       </view>

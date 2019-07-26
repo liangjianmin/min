@@ -20,6 +20,11 @@ image {
   flex-direction: row;
 }
 
+.boxsiz {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /* 两侧对齐 */
 
 .bothSide {
@@ -46,11 +51,12 @@ image {
 
 /*复用样式*/
 /* 公共导航切换样式 */
-.switch-tab-com{
-   height: 88rpx;
+.switch-tab-com {
+  height: 88rpx;
   line-height: 88rpx;
   text-align: center;
 }
+
 .switch-tab-com view {
   font-size: 32rpx;
   flex: 1;
@@ -58,9 +64,11 @@ image {
   position: relative;
   color: #515559;
 }
+
 .switch-tab-com view.active {
   color: #0d84d1;
 }
+
 .switch-tab-com view.active .active-bg {
   position: absolute;
   display: inline-block;
@@ -72,9 +80,10 @@ image {
   margin-left: -34rpx;
   border-radius: 30rpx;
 }
+
 /* 公共导航切换样式 */
 /* /头部搜索公共样式 */
-.search-com{
+.search-com {
   padding: 15rpx 24rpx;
   position: relative;
 }
@@ -100,6 +109,7 @@ image {
 .search-com .placeholderClass {
   color: #adb6bf;
 }
+
 /* /头部搜索公共样式 */
 /* 暂无数据公共样式 */
 .nodata {
@@ -119,9 +129,10 @@ image {
 
 
 .nodata .p {
- font-size: 26rpx;
+  font-size: 26rpx;
   color: #8a9299;
 }
+
 /* 暂无数据公共样式 */
 .px-hr-top {
   border-top: 1px solid #f5f9fc;
@@ -186,6 +197,7 @@ image {
   font-size: 22rpx;
   color: #adb6bf;
 }
+
 .xb-com-content .title .price {
   font-size: 32rpx;
   color: #EA1717;
@@ -197,9 +209,11 @@ image {
   font-size: 26rpx;
   color: #515559;
 }
-.xb-com-content .desc .left{
-  flex:1;
+
+.xb-com-content .desc .left {
+  flex: 1;
 }
+
 .xb-com-content .desc .left view {
   padding-top: 16rpx;
 }
@@ -213,8 +227,8 @@ image {
 }
 
 .xb-com-content .desc .right {
-  flex:0 0 220rpx;
-  height:220rpx;
+  flex: 0 0 220rpx;
+  height: 220rpx;
   margin-top: 16px;
 }
 
@@ -243,6 +257,10 @@ image {
   border-radius: 8rpx;
 }
 
+.red {
+  color: #EA1717;
+}
+
 .btn-com-y {
   background-color: #eaad37;
   box-shadow: 0px 6px 10px 0px rgba(242, 191, 97, 0.5);
@@ -252,6 +270,7 @@ image {
   background-color: #0d84d1;
   box-shadow: 0px 6px 10px 0px rgba(97, 160, 242, 0.3);
 }
+
 /**询报价列表**/
 /**字体**/
 @import 'res/fonts/iconfont.wxss'

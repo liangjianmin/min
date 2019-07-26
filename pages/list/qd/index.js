@@ -1,60 +1,61 @@
 // pages/list/qd/index.js
-let arr = [
-  {
-    name: "STM32F407ZGT6",
-    price: "100.012",
-    brand: "Texas InstrumentsTexas",
-    num: "100,000",
-    desc: "深圳地区原装现货深圳地区原装现货",
-    time: "05-10 10:15",
-    company: "朗新科技股份有限公司",
-  },
-  {
-    name: "STM32F407ZGT6",
-    price: "100.012",
-    brand: "Texas InstrumentsTexas",
-    num: "100,000",
-    desc: "深圳地区原装现货深圳地区原装现货",
-    time: "05-10 10:15",
-    company: "朗新科技股份有限公司",
-  },
-
-  {
-    name: "STM32F407ZGT6",
-    price: "100.012",
-    brand: "Texas InstrumentsTexas",
-    num: "100,000",
-    desc: "深圳地区原装现货深圳地区原装现货",
-    time: "05-10 10:15",
-    company: "朗新科技股份有限公司",
-  }
-]
+import { getData } from '../../../utils/util.js';
+import { apis } from '../../../utils/api.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tabIndex: 1,
-    priceList: undefined,
+    tabIndex: 1,//导航初始化
+    priceList: null,//商品数据
+    limit: 10,//每页的条数
+    p: 1,//当前页面
+    total: 1
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let seft = this;
+    this.getData();
+  },
+  getData: function () {
+    let me = this;
+    let token = wx.getStorageSync('access_token')||'';
+    let params = { offset: me.data.limit, p: me.data.p };
+    if(token){
+      params = Object.assign({}, params, { "token": token })
+    }
+    if(me.data.tabIndex == 1){
+      params = Object.assign({},params,{"add_time/order":"desc"})
+    }else if(me.data.tabIndex == 2){
+      params = Object.assign({}, params, { "today": "1" })
+    }else{
+      params = Object.assign({}, params, { "offer_num/eq": "0" })
+    }
+    getData(apis.inquirySearch, 'get', params, function (res) {
+      if (res.errcode === 0) {
+        let newArr = [];
+        if (me.data.p > 1) {
+          newArr = me.data.priceList;
+        }
+        for (let key in res.inquiry_list) {
+          newArr.push(res.inquiry_list[key])
+        }
+        me.setData({
+          priceList: newArr,
+          total: res.total,
+        });
+      } else {
+        if ((me.data.p == 1) && (res.errcode == (105001 || 105015))) {
+          me.setData({
+            priceList: []
+          })
+        }
 
-    wx.showLoading({
-      title: '加载中',
-    })
-
-
-
-    setTimeout(() => {
-      wx.hideLoading()
-      seft.setData({ priceList: arr })
-    }, 2000)
+      }
+    }, true)
   },
 
   /**
@@ -96,7 +97,22 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    let allPage = Math.ceil(this.data.total / this.data.limit);
+    let p = this.data.p;
+    if (p == allPage) {
+      wx.showToast({
+        title: '数据到底啦',
+        icon: 'none',
+        duration: 2000
+      });
+      return
+    } else {
+      this.setData({
+        p: p + 1
+      });
+      console.log(this.data.p)
+      this.getData();
+    }
   },
 
   /**
@@ -110,20 +126,13 @@ Page({
     if (i == this.data.tabIndex) {
       return
     } else {
-      if (i == 1) {
-        this.setData({
-          tabIndex: i,
-          priceList: arr,
-
-        });
-      } else {
-        this.setData({
-          tabIndex: i,
-          priceList: [],
-        });
-      }
-
-
+      this.setData({
+        priceList: null,
+        p: 1,
+        total: 1,
+        tabIndex: i,
+      });
+      this.getData();
     }
 
 
@@ -133,9 +142,10 @@ Page({
       url: "/pages/form/xj/index"
     })
   },
-  emitevent: function () {
+  emitevent: function (e) {
+    let inquiryItemsId = e.detail.inquiryItemsId
     wx.navigateTo({
-      url: "/pages/list/bj/index",
+      url: "/pages/list/bj/index?inquiryItemsId="+inquiryItemsId,
     })
 
   }

@@ -1,8 +1,22 @@
 /* pages/list/qd/index.wxss */
+.qd-view {
+  box-sizing: border-box;
+  padding-top: 88rpx;
+}
+
+.qd-view .switch-tab-com {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 2;
+}
+
 .nodata .p {
- 
   margin-top: 14rpx;
 }
+
 .nodata .fb_btn {
- margin-top:40rpx
+  margin-top: 40rpx;
 }

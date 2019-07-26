@@ -1,99 +1,101 @@
-.verify-code {
+.person {
   margin: 0 55rpx;
   padding-top: 32rpx;
 }
-
-.verify-code  .tit {
+.person .tit {
   margin-bottom: 50rpx;
 }
-
-.verify-code .t1 {
+.person .tit .t1 {
   font-size: 48rpx;
   color: #2e3033;
   font-weight: 600;
   line-height: 67rpx;
 }
-
-.verify-code .inp-wrap {
+.person .inp-wrap {
   height: 98rpx;
   border-bottom: 1px solid #d8dfe6;
   padding-left: 10rpx;
 }
-
-.verify-code .inp-wrap  .icon {
-  color: #adb6bf;
-}
-
-.verify-code .inp-wrap  .inp {
-  padding-left: 35rpx;
-}
-
-.verify-code .form-item-right input {
+.person .inp-wrap input {
   padding-left: 35rpx;
   width: 340rpx;
 }
-
-.tel-type {
-  border-left: 1px solid #d8dfe6;
-}
-
-.tel-type .tel-value {
-  font-size: 32rpx;
-  color: #515559;
-  padding: 7rpx 11rpx 7rpx 16rpx;
-}
-
-.tel-type.icon {
-  color: #d8dfe6;
-  font-size: 26rpx;
-}
-
-.placeholder-class {
+.person .inp-wrap .icon {
   color: #adb6bf;
 }
-
-.verify-code .inp-wrap .btn {
+.person .inp-wrap .vcode {
+  width: 219rpx;
+  text-align: right;
   font-size: 32rpx;
   color: #61a0f2;
   background: none;
   font-weight: 400;
   border: 0 !important;
 }
-
-.verify-code .inp-wrap .btn::after {
+.person .inp-wrap .vcode::after {
   border: 0 !important;
 }
-
-.btn_login {
+.person .inp-wrap .vcode-color {
+  color: #adb6bf;
+}
+.person .inp-wrap .areacode {
+  border-left: 1px solid #d8dfe6;
+}
+.person .inp-wrap .areacode .tel-value {
+  font-size: 32rpx;
+  color: #515559;
+  padding: 7rpx 11rpx 7rpx 16rpx;
+}
+.person .inp-wrap .areacode .icon {
+  color: #d8dfe6;
+  font-size: 26rpx;
+}
+.person .login-button {
   height: 98rpx;
   line-height: 98rpx;
-  background: rgba(13, 132, 209, 1);
-  box-shadow: 0px 6rpx 10rpx 0rpx rgba(97, 160, 242, 0.3);
+  background: #0d84d1 !important;
+  box-shadow: 0px 6rpx 10rpx 0rpx rgba(97, 160, 242, 0.3) !important;
   border-radius: 8rpx;
-  color: #fff;
+  color: #fff !important;
   font-size: 32rpx;
   margin-top: 40rpx;
 }
-
-.footer-btn {
+.person .bottom {
   padding-top: 40rpx;
 }
-
-.footer-btn text {
+.person .bottom .txt {
   font-size: 28rpx;
   color: #8a9299;
 }
-
-.error{
-  margin-top: 24rpx; 
+.person .error {
+  margin-top: 24rpx;
 }
-
-.error .iconfont {
-  color: #EA1717;
+.person .error .iconfont {
+  color: #ea1717;
 }
-
-.error .txt {
+.person .error .txt {
   font-size: 24rpx;
-  color: #EA1717;
+  color: #ea1717;
   margin-left: 15rpx;
+}
+.person .placeholderClass {
+  color: #adb6bf;
+  font-size: 32rpx;
+}
+.person .code-img {
+  width: 210rpx;
+  height: 70rpx;
+}
+.person .code-img .img {
+  width: 210rpx;
+  height: 70rpx;
+}
+.person .inp-error {
+  border-bottom: 1px solid #ea1717;
+}
+.person .inp-error .icon {
+  color: #ea1717;
+}
+.person .inp-error input {
+  color: #ea1717;
 }

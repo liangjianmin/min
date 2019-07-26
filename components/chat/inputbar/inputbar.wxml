@@ -1,0 +1,15 @@
+<view class="room_bar">
+  <chat-suit-emoji id="chat-suit-emoji" bind:newEmojiStr="emojiAction"></chat-suit-emoji>
+  <chat-suit-main id="chat-suit-main" username="{{ username }}" chatType="{{ chatType }}" bind:inputFocused="cancelEmoji">
+    <view class="open_emoji" bind:tap="openEmoji">
+      <image src="../../../images/Emoji.png" />
+    </view>
+    <view class="send_image" bind:tap="sendImage">
+      <image src="../../../images/pic.png"/>
+    </view>
+  </chat-suit-main>
+  <chat-suit-image id="chat-suit-image" username="{{ username }}" chatType="{{ chatType }}"></chat-suit-image>
+
+  <view class="other_func {{isIPX? 'other_func_X': ''}}">
+  </view>
+</view>

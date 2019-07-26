@@ -12,8 +12,12 @@
   color: #fff;
   font-size: 26rpx;
   padding: 24rpx 24rpx 60rpx;
+  min-height:130rpx;
+  box-sizing: border-box;
 }
-
+.x-info{
+  min-height: 496rpx;
+}
 .bj-title .icon {
   font-size: 40rpx;
 }

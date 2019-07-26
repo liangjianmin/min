@@ -1,0 +1,32 @@
+.room_bar {
+	width: 100%;
+	height: auto;
+	border-top: 1px solid #f5f9fc;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+	background-color: #FFFFFF;
+	transform: translateZ(1000px);
+}
+
+.other_func {
+	width: 100%;
+  height:10rpx;
+}
+.other_func_X{
+	height:50rpx;
+}
+.open_emoji image,.send_image image{
+  width: 100%;
+	height: 100%;
+}
+.open_emoji,
+.send_image{
+	height: 40rpx;
+  flex:0 0 40rpx;
+	margin-left: 24rpx;
+}
+
+
+

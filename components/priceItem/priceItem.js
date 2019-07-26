@@ -29,8 +29,15 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    emitevent:function(){
-      this.triggerEvent('emitevent')
+    emitevent:function(e){
+      let inquiryItemsId = e.currentTarget.dataset.inquiryitemsid;
+      this.triggerEvent('emitevent', {inquiryItemsId: inquiryItemsId})
+    },
+    previewImage:function(e){
+      let img = e.currentTarget.dataset.image;
+      wx.previewImage({
+        urls: [img]
+      })
     }
   }
 })

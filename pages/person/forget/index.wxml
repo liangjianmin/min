@@ -1,0 +1,80 @@
+<!-- 注册 -->
+<view class="person">
+
+	<view class="column tit" wx:if="{{type === 1 || type === 2}}">
+		<text class="t1">验证手机号</text>
+		<text class="t2">知道吗！ 还可以用验证登录呢</text>
+	</view>
+
+	<form bindsubmit="formSubmit">
+
+		<block wx:if="{{type === 1}}">
+			<view class="inp-wrap row verCenter {{mobileFlag ? 'inp-error':''}}">
+				<text class="icon iconfont iconiconxiantiaoshouji21"></text>
+				<view class="form-item-right row verCenter bothSide">
+					<input placeholder="请输入手机号" placeholder-class="placeholderClass" name="mobile" type="number" data-type="1"
+					 bindinput='bindinputFn'></input>
+					<view class="areacode" bindtap="switchPrice">
+						<text class="tel-value">中国 + 86</text>
+						<text class="icon iconfont iconbianzu1"></text>
+					</view>
+				</view>
+			</view>
+
+			<view class="inp-wrap row verCenter {{vcodeFlag ? 'inp-error':''}}" wx:if="{{vcode}}">
+				<text class="icon iconfont iconiconxiantiaoshouji"></text>
+				<view class="form-item-right row verCenter bothSide">
+					<input placeholder="请输入图形验证码" placeholder-class="placeholderClass" name='captcha' data-type="3" bindinput='bindinputFn'></input>
+					<view class='code-img'>
+						<cover-image src="{{captchaUrl}}" class="img" bindtap='refreshVerification'></cover-image>
+					</view>
+				</view>
+			</view>
+
+			<view class="inp-wrap row verCenter {{codeFlag ? 'inp-error':''}}">
+				<text class="icon iconfont iconiconxiantiaoshouji"></text>
+				<view class="form-item-right row verCenter bothSide">
+					<input placeholder="请输入验证码" placeholder-class="placeholderClass" name='code' data-type="2" bindinput='bindinputFn'></input>
+					<button class="vcode {{disabled ? 'vcode-color':''}}" disabled="{{disabled}}" bindtap="getVerificationCode">{{timeText}}</button>
+				</view>
+			</view>
+		</block>
+
+		<block wx:elif="{{type === 2}}">
+			<view class="inp-wrap row verCenter {{passwordFlag ? 'inp-error':''}}">
+				<text class="icon iconfont iconiconxiantiaoshouji2"></text>
+				<view class="form-item-right row verCenter bothSide">
+					<input placeholder="请输入新密码" placeholder-class="placeholderClass" class="pwd" name="password" data-type="4"
+					 password='{{passwordType}}' bindinput='bindinputFn'></input>
+					<block wx:if="{{visiblePwd}}">
+						<text class="icon iconfont iconiconxiantiaoshouji3 pwd-ico" bindtap="toggleFn"></text>
+					</block>
+					<block wx:else>
+						<text class="icon iconfont iconiconxiantiaoshouji4 pwd-ico" bindtap="toggleFn"></text>
+					</block>
+				</view>
+			</view>
+		</block>
+
+		<block wx:elif="{{type === 3}}">
+			<view class="success column rowCenter verCenter">
+				<cover-image src="/res/images/imgs/scu.png" class="img"></cover-image>
+				<text class="t1">恭喜您，密码找回成功</text>
+				<text class="t2">请保管好您的账户信息。</text>
+			</view>
+			<navigator  url="/pages/tab/home/home" class="register-button" open-type="switchTab">返回首页</navigator>
+		</block>
+
+		<view class="error-wrap row bothSide verCenter" wx:if="{{type === 1 || type === 2}}">
+			<view class="error">
+				<block wx:if="{{error}}">
+					<text class="icon iconfont iconiconxiantiaoshouji1"></text>
+					<text class="txt">{{errorText}}</text>
+				</block>
+			</view>
+		</view>
+
+		<button wx:if="{{type === 1 || type === 2}}" class="register-button" form-type="submit" disabled="{{disabledBtn}}" loading="{{loading}}">{{btnText}}</button>
+	</form>
+
+</view>

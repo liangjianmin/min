@@ -9,14 +9,15 @@
     </view>
 
     <!-- 授权 -->
-    <view class="auth"> 
+    <view class="auth">
       <view>
-        <button class="btn-com btn-com-b">一键授权(微信用户资料)</button>
-        <view class="btn-com btn-com-c">暂不注册，先看看</view>
+        <button wx:if="{{canIUse}}" class="btn-com btn-com-b" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">一键授权</button>
+        <view wx:else>请升级微信版本</view>
+        <view class="btn-com btn-com-c" bindtap="toUrl">暂不注册，先看看</view>
       </view>
       <view class="text-wrap row">
-      <view class="btn-text mr">验证码登录</view>
-      <view class="btn-text">密码登录</view>
+        <navigator url="/pages/person/verifycode/index" class="btn-text mr">验证码登录</navigator>
+        <navigator url="/pages/person/login/index" class="btn-text">密码登录</navigator>
       </view>
     </view>
 

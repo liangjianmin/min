@@ -1,0 +1,8 @@
+<!--pages/detail/chat/index.wxml-->
+
+<chat
+	id="chat"
+	username="{{ username }}"
+	chatType="singleChat"></chat>
+
+

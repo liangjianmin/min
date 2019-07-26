@@ -1,37 +1,76 @@
 // pages/tab/good/good.js
-let arr = [
-  {
-    name: "STM32F407ZGT6",
-    price: "100.012",
-    brand: "Texas InstrumentsTexas",
-    num: "100,000",
-  }
-]
+import { getData } from '../../../utils/util.js';
+import { apis } from '../../../utils/api.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    priceList:undefined
+    priceList: null,//商品数据
+    limit: 10,//每页的条数
+    p: 1,//当前页面
+    total: 0,
+    time: "",
+    key: "",
+    confirmKey: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let seft = this;
-
-    wx.showLoading({
-      title: '加载中',
+    this.getData()
+  },
+  bindKeyInput: function (e) {
+    this.setData({
+      key: e.detail.value
     })
+  },
+  bindKeyConfirm: function () {
+    let key = this.data.key;
+    this.setData({
+      confirmKey: key,
+      priceList: null,
+      p: 1,
+      total: 0,
+      time: "",
+    });
+    this.getData();
 
+  },
+  getData: function () {
+    let me = this;
+    let token = wx.getStorageSync('access_token')
+    getData(apis.goodsInfo,'get', {
+      offset: me.data.limit, p: me.data.p, token: token, 'goods_name/like': me.data.confirmKey
+    }, function (res) {
+      if (res.errcode === 0) {
+        let newArr = [];
+        if (me.data.p > 1) {
+          newArr = me.data.priceList;
+        }
+        for (let key in res.goods_list) {
+          newArr.push(res.goods_list[key])
+        }
+        if (me.data.p == 1) {
+          me.setData({
+            time: newArr[0].update_time
+          })
+        }
+        me.setData({
+          priceList: newArr,
+          total: res.total,
+        });
+      } else if (res.errcode === 110001 || res.errcode === 103001) {
+        if (me.data.p == 1) {
+          me.setData({
+            priceList: []
+          })
+        }
 
-
-    setTimeout(() => {
-      wx.hideLoading()
-      seft.setData({ priceList: arr })
-    }, 2000)
+      }
+    }, true)
   },
 
   /**
@@ -73,7 +112,21 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log(1111)
+    let allPage = Math.ceil(this.data.total / this.data.limit);
+    let p = this.data.p;
+    if (p == allPage) {
+      wx.showToast({
+        title: '数据到底啦',
+        icon: 'none',
+        duration: 2000
+      });
+      return
+    } else {
+      this.setData({
+        p: p + 1
+      });
+      this.getData();
+    }
   },
 
   /**
@@ -87,7 +140,7 @@ Page({
       url: "/pages/form/good/index",
     })
   },
-  emitevent:function(){
+  emitevent: function () {
     wx.navigateTo({
       url: "/pages/detail/good/index",
     })

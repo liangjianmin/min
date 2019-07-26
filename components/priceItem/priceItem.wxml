@@ -1,5 +1,6 @@
 <!--components/priceItem/priceItem.wxml-->
 <block>
+  <wxs module="dateUtil" src="../../utils/timeUtil.wxs"></wxs>
   <!-- 询报价展示 -->
   <block wx:if="{{priceType==1}}">
     <view class="price-item" wx:for="{{priceList}}" wx:key="*this" bindtap="emitevent">
@@ -7,21 +8,33 @@
         <view class="row verCenter">
           <text class="mark xun" wx:if="{{xb==1}}">询</text>
           <text class="mark bao" wx:else>报</text>
-          <text class="name ellipsis">{{item.name}}</text>
+          <text class="name ellipsis">{{item.goods_name||'--'}}</text>
         </view>
         <block wx:if="{{xb==1}}">
-          <text class="num-bj" wx:if="{{item.count}}">{{item.count}}个报价</text>
+          <text class="num-bj" wx:if="{{item.offer_num}}">{{item.offer_num}}个报价</text>
           <text class="no-bj" wx:else>等待报价</text>
         </block>
-        <text class="price" wx:else>￥{{item.price}}</text>
+        <text class="price" wx:else>
+          <block wx:if="{{!item.price||item.price=='0.00'||item.price=='0'}}">
+           未回复
+          </block>
+          <block wx:else>
+            <block wx:if="{{item.currency == 1}}">
+            ￥{{item.price}}
+            </block>
+            <block wx:else>
+            ${{item.price}}
+            </block>
+          </block>
+        </text>
       </view>
       <view class="item-middle row verCenter nowrap">
-        <text class="brand ellipsis"><text>品牌：</text>{{item.brand}}</text>
-        <text class="num bold"><text class="nobold">数量：</text>{{item.num}}PCS</text>
+        <text class="brand ellipsis"><text>品牌：</text>{{item.brand_name}}</text>
+        <text class="num"><text>数量：</text>{{item.number}} PCS</text>
       </view>
       <view class="item-footer row bothSide verCenter nowrap">
-        <text class="address ellipsis">备注：{{item.desc}}</text>
-        <text class="time">{{item.time}}</text>
+        <text class="address ellipsis">备注：{{item.remark||'--'}}</text>
+        <text class="time">{{dateUtil.dateFormat(item.add_time*1000)}}</text>
       </view>
     </view>
   </block>
@@ -49,29 +62,29 @@
   </block>
   <!-- 搜索页面询报价展示 -->
   <block wx:if="{{priceType==3}}">
-    <view class="price-item" wx:for="{{priceList}}" wx:key="*this" bindtap="emitevent">
+    <view class="price-item" wx:for="{{priceList}}" wx:key="*this" bindtap="emitevent" data-inquiryitemsid="{{item['inquiry_items_id']}}">
       <view class="item-header px-hr-bottom row verCenter bothSide  nowrap">
         <view class="row verCenter">
           <text class="mark xun" wx:if="{{xb==1}}">询价</text>
           <text class="mark bao" wx:else>报价</text>
-          <text class="company ellipsis">{{item.company}}</text>
+          <text class="company ellipsis">{{item.company_name||'--'}}</text>
         </view>
-        <text class="time">{{item.time}}</text>
+        <text class="time">{{dateUtil.dateFormat(item.add_time*1000)}}</text>
       </view>
       <view class="item-middle row verCenter bothSide item-middle2 nowrap">
-        <text class="name ellipsis">{{item.name}}</text>
+        <text class="name ellipsis">{{item.goods_name||'--'}}</text>
         <block wx:if="{{xb==1}}">
-          <text class="num-bj" wx:if="{{item.count}}">{{item.count}}个报价</text>
+          <text class="num-bj" wx:if="{{item.offer_num}}">{{item.offer_num}}个报价</text>
           <text class="no-bj" wx:else>等待报价</text>
         </block>
         <text class="price" wx:else>￥{{item.price}}</text>
       </view>
       <view class="item-middle row verCenter nowrap">
-        <text class="brand ellipsis"><text>品牌：</text>{{item.brand}}</text>
-        <text class="num bold"><text class="nobold">数量：</text>{{item.num}}PCS</text>
+        <text class="brand ellipsis"><text>品牌：</text>{{item.brand_name}}</text>
+        <text class="num"><text>数量：</text>{{item.number}} PCS</text>
       </view>
       <view class="item-footer row nowrap">
-        <text class="address ellipsis">备注：{{item.desc}}</text>
+        <text class="address ellipsis">备注：{{item.remark||'--'}}</text>
       </view>
     </view>
   </block>
@@ -107,14 +120,22 @@
     <view class="price-item" wx:for="{{priceList}}" wx:key="*this" bindtap="emitevent">
       <view class="item-header  row verCenter bothSide  nowrap">
         <view class="row verCenter">
-          <text class="name ellipsis good-name">{{item.name}}</text>
-          <text class="icon iconfont iconiconxiantiaoshouji14 good-icon"></text>
+          <text class="name ellipsis good-name">{{item.goods_name}}</text>
+          <block wx:if="{{item.goods_images}}">
+            <text class="icon iconfont iconiconxiantiaoshouji14 good-icon" catchtap="previewImage" data-image="{{item.goods_images}}"></text>
+          </block>
         </view>
-        <text class="price">￥{{item.price}}</text>
+        <text class="price"> 
+          <block wx:if="{{item.currency == 1}}">
+            ￥{{item.price}}
+          </block>
+          <block wx:else>
+            ${{item.price}}
+          </block></text>
       </view>
       <view class="item-middle row verCenter nowrap">
-        <text class="brand ellipsis"><text>品牌：</text>{{item.brand}}</text>
-        <text class="num bold"><text class="nobold">库存：  </text>{{item.num}}PCS</text>
+        <text class="brand ellipsis"><text>品牌：</text>{{item.brand_name}}</text>
+        <text class="num"><text>库存：</text>{{item.stock}} PCS</text>
       </view>
     </view>
   </block>

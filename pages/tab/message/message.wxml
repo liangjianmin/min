@@ -1,2 +1,31 @@
 <!--pages/tab/message/message.wxml-->
-<text>pages/tab/message/message.wxml</text>
+<view class="message-view">
+  <view class="nodata" wx:if="{{arr.length == 0}}">
+    <cover-image src="/res/images/imgs/nomessage.png" class="img"></cover-image>
+    <view class="h3 bold">暂无询价消息</view>
+  </view>
+  <view class="message-content" wx:else>
+    <view class="tip row bothSide verCenter">
+      <view class="tip-left">
+        <text class="icon iconfont iconiconxiantiaoshouji12 tip-icon"></text>
+        <text class="tip-c">风险提示文字风险提示文字风险提示文字风险</text>
+      </view>
+      <text class="icon iconfont iconiconxiantiaoshouji13 close-icon"></text>
+    </view>
+    <view class="message-list">
+      <view class="message-item px-hr-bottom row verCenter bothSide nowrap" wx:for="{{ arr }}" wx:key="index" catchtap="into_chatRoom" data-item="{{ item }}">
+        <view class="message-l row verCenter ellipsis">
+          <cover-image src="/res/images/imgs/iclogo.png" class="message-avar"></cover-image>
+          <view class="message-l-view ellipsis">
+            <view class="message-c bold ellipsis">{{ item.username }}</view>
+            <view class="message-t ellipsis">{{ item.msg.data[0].data }}</view>
+          </view>
+        </view>
+        <view class="message-r">
+          <view class="message-r-t">{{item.time}}</view>
+          <view class="message-r-n" wx:if="{{ item.unReadCount > 0 || item.unReadCount == '99+' }}">{{ item.unReadCount }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

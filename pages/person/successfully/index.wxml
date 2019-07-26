@@ -1,0 +1,11 @@
+<view class="success column rowCenter verCenter">
+	<cover-image src="/res/images/imgs/success.png" class="img"></cover-image>
+	<text class="tit">恭喜您，注册成功</text>
+	<navigator url="/pages/person/login/index" class="btn">资质认证</navigator>
+	<view class="txt">
+		<text class="t1">为了保证询报价的真实性，请完成“</text>
+		<text class="t2">资质认证</text>
+		<text class="t1">” 否则将影响您的询价和报价业务</text>
+	</view>
+	<text class="skip-text" bindtap="toUrl">暂不认证，跳过</text>
+</view>

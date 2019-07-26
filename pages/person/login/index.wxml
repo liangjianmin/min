@@ -1,2 +1,56 @@
-<!--pages/person/login/index.wxml-->
-<text>pages/person/login/index.wxml</text>
+<!-- 密码登录 -->
+<view class="person">
+
+  <view class="column tit">
+    <text class="t1">Hi，上午好</text>
+    <text class="t1">欢迎使用IC业务助手！</text>
+  </view>
+
+  <form bindsubmit="formSubmit">
+
+    <view class="inp-wrap row verCenter {{mobileFlag ? 'inp-error':''}}">
+      <text class="icon iconfont iconiconxiantiaoshouji21"></text>
+      <view class="form-item-right row verCenter bothSide">
+        <input placeholder="请输入手机号" placeholder-class="placeholderClass" name="mobile" type="number" data-type="1" bindinput='bindinputFn'></input>
+        <view class="areacode" bindtap="switchPrice">
+          <text class="tel-value">中国 + 86</text>
+          <text class="icon iconfont iconbianzu1"></text>
+        </view>
+      </view>
+    </view>
+
+    <view class="inp-wrap row verCenter {{passwordFlag ? 'inp-error':''}}">
+      <text class="icon iconfont iconiconxiantiaoshouji2"></text>
+      <view class="form-item-right row verCenter bothSide">
+        <input placeholder="请输入密码" placeholder-class="placeholderClass" class="pwd" name="password" data-type="2" password='{{passwordType}}' bindinput='bindinputFn'></input>
+        <block wx:if="{{visiblePwd}}">
+          <text class="icon iconfont iconiconxiantiaoshouji3 pwd-ico" bindtap="toggleFn"></text>
+        </block>
+        <block wx:else>
+          <text class="icon iconfont iconiconxiantiaoshouji4 pwd-ico" bindtap="toggleFn"></text>
+        </block>
+      </view>
+    </view>
+
+    <view class="error-wrap row bothSide verCenter">
+
+      <view class="error">
+        <block wx:if="{{error}}">
+          <text class="icon iconfont iconiconxiantiaoshouji1"></text>
+          <text class="txt">{{errorText}}</text>
+        </block>
+      </view>
+
+      <navigator class="forget" url="/pages/person/forget/index">忘记密码？</navigator>
+
+    </view>
+
+    <button class="login-button" form-type="submit" disabled="{{disabled}}" loading="{{loading}}">登录</button>
+  </form>
+
+  <view class="bottom row bothSide">
+    <navigator class="txt" url="/pages/person/verifycode/index">验证码登录</navigator>
+    <navigator class="txt" url="/pages/person/register/index">注册账户</navigator>
+  </view>
+
+</view>

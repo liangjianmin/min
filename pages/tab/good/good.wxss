@@ -2,14 +2,35 @@
 
 .good-view {
   min-height: 100%;
-  padding-bottom: 118rpx;
+  padding:180rpx 0 118rpx;
   box-sizing: border-box;
 }
+
+.good-view .search-com {
+  height: 86rpx;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 2;
+}
+
 .good-total {
   padding: 37rpx 24rpx 24rpx 0;
   margin-left: 24rpx;
   font-size: 22rpx;
   color: #adb6bf;
+  height: 94rpx;
+  box-sizing: border-box;
+  position: fixed;
+  top: 86rpx;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 2;
+
 }
 
 .good-total .good-num {
@@ -19,25 +40,29 @@
 .good-total .good-num .num {
   color: #515559;
 }
-.good-btn-div{
+
+.good-btn-div {
   position: fixed;
-  left:0;
-  bottom:0;
-  right:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   background-color: #fff;
-  height:118rpx;
+  height: 118rpx;
 }
+
 .add-good-btn {
-  margin-top:10rpx;
+  margin-top: 10rpx;
 }
 
 .add-good-btn .icon {
   margin-right: 8rpx;
   font-size: 32rpx;
 }
-.nodata .p{
-  margin-top:14rpx;
+
+.nodata .p {
+  margin-top: 14rpx;
 }
-.nodata .add-good-btn{
-  margin-top:40rpx;
+
+.nodata .add-good-btn {
+  margin-top: 40rpx;
 }

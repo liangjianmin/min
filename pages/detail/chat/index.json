@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "chatting",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "chat": "../../../components/chat/chat"
+  }
+}

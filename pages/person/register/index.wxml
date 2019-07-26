@@ -1,0 +1,70 @@
+<!-- 注册 -->
+<view class="person">
+
+	<view class="column tit">
+		<text class="t1">Hi，上午好</text>
+		<text class="t1">欢迎注册账户！</text>
+	</view>
+
+	<form bindsubmit="formSubmit">
+
+		<view class="inp-wrap row verCenter {{mobileFlag ? 'inp-error':''}}">
+			<text class="icon iconfont iconiconxiantiaoshouji21"></text>
+			<view class="form-item-right row verCenter bothSide">
+				<input placeholder="请输入手机号" placeholder-class="placeholderClass" name="mobile" type="number" data-type="1" bindinput='bindinputFn'></input>
+				<view class="areacode" bindtap="switchPrice">
+					<text class="tel-value">中国 + 86</text>
+					<text class="icon iconfont iconbianzu1"></text>
+				</view>
+			</view>
+		</view>
+
+		<view class="inp-wrap row verCenter {{passwordFlag ? 'inp-error':''}}">
+			<text class="icon iconfont iconiconxiantiaoshouji2"></text>
+			<view class="form-item-right row verCenter bothSide">
+				<input placeholder="请输入密码" placeholder-class="placeholderClass" class="pwd" name="password" data-type="4" password='{{passwordType}}'
+				 bindinput='bindinputFn'></input>
+				<block wx:if="{{visiblePwd}}">
+					<text class="icon iconfont iconiconxiantiaoshouji3 pwd-ico" bindtap="toggleFn"></text>
+				</block>
+				<block wx:else>
+					<text class="icon iconfont iconiconxiantiaoshouji4 pwd-ico" bindtap="toggleFn"></text>
+				</block>
+			</view>
+		</view>
+
+		<view class="inp-wrap row verCenter {{vcodeFlag ? 'inp-error':''}}" wx:if="{{vcode}}">
+			<text class="icon iconfont iconiconxiantiaoshouji"></text>
+			<view class="form-item-right row verCenter bothSide">
+				<input placeholder="请输入图形验证码" placeholder-class="placeholderClass" name='captcha' data-type="3" bindinput='bindinputFn'></input>
+				<view class='code-img'>
+					<cover-image src="{{captchaUrl}}" class="img" bindtap='refreshVerification'></cover-image>
+				</view>
+			</view>
+		</view>
+		<view class="inp-wrap row verCenter {{codeFlag ? 'inp-error':''}}">
+			<text class="icon iconfont iconiconxiantiaoshouji"></text>
+			<view class="form-item-right row verCenter bothSide">
+				<input placeholder="请输入验证码" placeholder-class="placeholderClass" name='code' data-type="2" bindinput='bindinputFn'></input>
+				<button class="vcode {{disabled ? 'vcode-color':''}}" disabled="{{disabled}}" bindtap="getVerificationCode">{{timeText}}</button>
+			</view>
+		</view>
+
+		<view class="error-wrap row bothSide verCenter">
+			<view class="error">
+				<block wx:if="{{error}}">
+					<text class="icon iconfont iconiconxiantiaoshouji1"></text>
+					<text class="txt">{{errorText}}</text>
+				</block>
+			</view>
+		</view>
+
+		<button class="register-button" form-type="submit" disabled="{{disabledBtn}}" loading="{{loading}}">注册</button>
+	</form>
+
+	<view class="agreement">
+		<text class="t1">点击注册即默认同意</text>
+		<navigator url="/pages/person/agreement/index" class="t2">《IC业务助手用户协议》</navigator>
+	</view>
+
+</view>

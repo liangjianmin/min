@@ -1,0 +1,23 @@
+<view class='person'>
+  <view class='head column verCenter'>
+    <view class="head-logo column">
+      <view class='logo'>
+        <cover-image src="/res/images/imgs/iclogo.png" class="img"></cover-image>
+      </view>
+      <text class="t1">IC业务助手</text>
+      <text class='t2'>让询报价更轻松、便捷</text>
+    </view>
+
+    <!-- 授权 -->
+    <view class="auth">
+      <view>
+        <button class="btn-com btn-com-b" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">一键获取手机号</button>
+      </view>
+      <view class="text-wrap row">
+        <navigator url="/pages/person/verifycode/index" class="btn-text mr">验证码登录</navigator>
+        <navigator url="/pages/person/login/index" class="btn-text">密码登录</navigator>
+      </view>
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,23 @@
+
+<form class="text-input">
+	<view class="f-row">
+    <slot></slot>
+		<input
+			class="f news"
+			type="text"
+			value="{{ inputMessage }}"
+			cursor-spacing="65"
+			confirm-type="send"
+			bindconfirm="sendMessage"
+			bindinput="bindMessage"
+			bindtap="focus"
+			bindfocus="focus"
+			bindblur="blur"
+			placeholder="输入新消息"
+			placeholder-style="color:#CFCFCF; padding-left:5px;"
+			 />
+
+		<view class="send_btn" bind:tap="sendMessage">发送</view>
+
+	</view>
+</form>

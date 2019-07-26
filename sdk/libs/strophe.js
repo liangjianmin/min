@@ -5592,13 +5592,13 @@ var $pres = null;
 								}
 							},
 							success: function (e) {
-								console.log('连接成功', e)
+								// console.log('连接成功', e)
 							}
 						});
 						_socketTask = SocketTask;
 
 						_socketTask.onOpen(function (res) {
-							console.log("WebSocket 连接已打开！");
+							// console.log("WebSocket 连接已打开！");
 							isSocketConnnected = true
 							// wx.sendSocketMessage({
 							//     data: "Hello,World:"

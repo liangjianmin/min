@@ -27,7 +27,7 @@ let config = {
 	/*
 	 * Application AppKey
 	 */
-	appkey: "easemob-demo#chatdemoui",
+  appkey: "1113190618181018#icsales",
 	/*
 	 * Whether to use HTTPS      '1177161227178308#xcx'
 	 * @parameter {Boolean} true or false
@@ -38,7 +38,7 @@ let config = {
 	 * true: A visitor can sign in to multiple webpages and receive messages at all the webpages.
 	 * false: A visitor can sign in to only one webpage and receive messages at the webpage.
 	 */
-	isMultiLoginSessions: false,
+	isMultiLoginSessions: true,
 	/**
 	 * Whether to use window.doQuery()
 	 * @parameter {Boolean} true or false
