@@ -38,7 +38,7 @@
             <view class="price row">
               <text class="t-com">接受价：</text>
               <text class="c-com {{(!topInfo.price||topInfo.price=='0.00'||topInfo.price=='0')?'':'bold red'}}">
-              <block wx:if="{{!topInfo.price||topInfo.price=='0.00'||topInfo.price=='0'}}">未回复</block>
+              <block wx:if="{{!topInfo.price||topInfo.price=='0.00'||topInfo.price=='0'}}">无</block>
               <block wx:else>
               <block wx:if="{{topInfo.currency == 1}}">￥{{topInfo.price}}</block><block wx:else>${{topInfo.price}}
               </block>
@@ -50,14 +50,14 @@
               <text class="c-com">{{topInfo.remark||'--'}}</text>
             </view>
           </view>
-          <cover-image class="right" src="{{topInfo.goods_images?topInfo.goods_images:'/res/images/imgs/iclogo.png'}}"></cover-image>
+          <image class="right" src="{{topInfo.goods_images?topInfo.goods_images:'/res/images/imgs/defaultgood.png'}}"></image>
         </view>
       </view>
 
     </view>
     <view class="bj-data">
       <view class="xb-com-t row bothSide verCenter  px-hr-bottom ">
-        <text class="mybj bold beforeLine">我的报价</text>
+        <text class="mybj bold beforeLine">我的报价 {{total}}</text>
         <!-- <view class="sdbj">
           已收到
           <text class="num">5</text> 条报价
@@ -65,12 +65,26 @@
       </view>
       <view class="bj-list">
         <view wx:if="{{priceList&&priceList.length==0}}" class="nodata">
-          暂无数据
+          <image src="/res/images/imgs/noxb.png" class="img"></image>
+          <!-- <view class="h3 bold">暂无报价信息</view> -->
         </view>
         <priceItem price-list="{{priceList}}" wx:if="{{priceList&&priceList.length!==0}}" price-type="4"></priceItem>
       </view>
     </view>
   </view>
-
-  <view class="btn-com btn-com-b bj-btn" bindtap="goBj">继续报价，剩余1次</view>
+  <view class="bj-btn-view" wx:if="{{priceList}}">
+    <view class="btn-com  bj-btn {{total!=3?'btn-com-b':'btn-com-disable'}}" bindtap="goBj">
+      <block wx:if="{{total == 3}}">
+        剩余0次
+      </block>
+      <block wx:else>
+        <block wx:if="{{total == 0}}">
+          我要报价，剩余3次
+        </block>
+        <block wx:else>
+          继续报价，剩余{{3-total}}次
+        </block>
+      </block>
+    </view>
+  </view>
 </view>

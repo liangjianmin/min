@@ -2,31 +2,21 @@
 <view class="search-view">
   <view class="search-com">
     <text class="icon iconfont iconiconxiantiaoshouji8"></text>
-    <input placeholder='请输入芯片型号' placeholder-class="placeholderClass" auto-focus bindconfirm="confirmTap"></input>
+    <input placeholder='请输入芯片型号' placeholder-class="placeholderClass" auto-focus bindconfirm="confirmTap"  bindinput="bindKeyInput"></input>
   </view>
-  <view class="rm_search">
+  <view class="rm_search" wx:if="{{rmList.length}}">
     <text class="title beforeLine">热门搜索</text>
-    <view class="rm_ls_content row">
-      <view class="search-item">LM358</view>
-      <view class="search-item">TJA1027</view>
-      <view class="search-item">贴片电阻330k</view>
-      <view class="search-item">PFB0824GHE</view>
-      <view class="search-item">T6738-4K</view>
-      <view class="search-item">ECW-FA2J155J</view>
+    <view class="rm_ls_content row" >
+      <view class="search-item"  wx:for="{{rmList}}" wx:key="*this" bindtap="toSearch" data-title="{{item.title}}">{{item.title}}</view>
     </view>
   </view>
-  <view class="ls_search">
+  <view class="ls_search"  wx:if="{{historyList.length}}">
     <view class="title_view row bothSide verCenter">
       <text class="title beforeLine">搜索历史</text>
-      <text class="icon iconfont iconiconxiantiaoshouji7"></text>
+      <text class="icon iconfont iconiconxiantiaoshouji7" bindtap="deleteHistory"></text>
     </view>
     <view class="rm_ls_content row">
-      <view class="search-item">LM358</view>
-      <view class="search-item">TJA1027</view>
-      <view class="search-item">贴片电阻330k</view>
-      <view class="search-item">PFB0824GHE</view>
-      <view class="search-item">T6738-4K</view>
-      <view class="search-item">ECW-FA2J155J</view>
+      <view class="search-item" wx:for="{{historyList}}" wx:key="*this" bindtap="toSearch" data-title="{{item}}">{{item}}</view>
     </view>
 
   </view>

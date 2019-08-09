@@ -3,15 +3,14 @@ const so_url = 'http://soapi.icsales.cc';
 const offer_url = "http://offerapi.icsales.cc";
 const user_url = 'http://userapi.icsales.cc';
 const goods_url = 'http://goodsapi.icsales.cc';
-const inquiry_url = 'http://inquiryapi.icsales.cc';
-const index_url = 'http://www.icsales.cc';
+const home_url = 'http://home.icsales.cc';
 
-const  apis  = {
+const apis = {
   /**
    * 授权接口
    */
   getOpenId: auth_url + '/v1/getOpenId',
-   /**
+  /**
    * 刷新token
    */
   authRefresh: auth_url + '/auth/refresh',
@@ -44,9 +43,13 @@ const  apis  = {
    */
   getRegistCode: auth_url + '/v1/getRegistCode',
   /**
-  * 微信验证码
-  */
+   * 微信验证码
+   */
   getWxCode: auth_url + '/v1/getwxcode',
+  /**
+   * 小程序修改密码
+   */
+  editPwd: auth_url + '/auth/editPwd',
   /**
    * 退出
    */
@@ -179,7 +182,20 @@ const  apis  = {
   /**
    * 标记会员通知（已读）
    */
-  userMarkmsg: user_url + '/user/markmsg'
+  userMarkmsg: user_url + '/user/markmsg',
+  /**
+ * 环信通讯记录添加
+ */
+  addrecord: user_url + '/im/add/record',
+  /**
+   * 环信通讯记录列表（最多显示30条最新的聊天记录）
+   */
+  listrecord: user_url + '/im/list/record',
+  /***
+   * 获取热门搜索商品
+   */
+  hotgoods: home_url + '/hotgoods',
+
 }
 
 

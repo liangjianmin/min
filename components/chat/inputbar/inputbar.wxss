@@ -26,6 +26,8 @@
 	height: 40rpx;
   flex:0 0 40rpx;
 	margin-left: 24rpx;
+  position: relative;
+  top:-3rpx;
 }
 
 

@@ -1,0 +1,53 @@
+<view class="invitation" hover-class="none" hover-stop-propagation="false">
+    <view class="prompt boxsiz row verCenter bothSide">
+        <view>
+            <text class="icon iconfont iconiconxiantiaoshouji12"></text>
+            <text class="t1">1501****484 刚刚邀请好友获得5元红包</text>
+        </view>
+        <view>
+            <text class="icon iconfont iconiconxiantiaoshouji13"></text>
+        </view>
+    </view>
+    <view class="head">
+        <view class="wrap column rowCenter verCenter">
+            <text class="t1">邀请好友立赚</text>
+            <text class="t2">10元最高</text>
+        </view>
+        <view class="show-text row verCenter rowCenter">
+            <view class="column boxFlex tc">
+                <text class="t1">邀请人数</text>
+                <text class="t2 mt">12</text>
+                <text class="t3">邀请记录</text>
+            </view>
+            <view class="column boxFlex tc">
+                <text class="t1">获得红包</text>
+                <view class="mt">
+                    <text class="t2">0.00</text>
+                    <text class="t1">元</text>
+                </view>
+                <text class="t3">立即提现</text>
+            </view>
+        </view>
+    </view>
+    <button class="btn">立即邀请赚钱</button>
+    <view class="show-ico row verCenter avarage">
+        <view class="column">
+            <text class="icon iconfont iconjuxing6"></text>
+            <text class="t1">分享专属链接</text>
+        </view>
+        <view class="column">
+            <text class="icon iconfont iconjuxing7"></text>
+            <text class="t1">好友点击链接 并完成注册</text>
+        </view>
+        <view class="column">
+            <text class="icon iconfont iconjuxing1"></text>
+            <text class="t1">您和好友均 获得红包</text>
+        </view>
+    </view>
+    <view class="txt column">
+        <text class="tit">邀请提示:</text>
+        <text class="t1">·分享至3个以上微信群/QQ群，邀请成功的几率提升150%</text>
+        <text class="t1">·可告诉您的朋友，注册可领最高10元红包，并可立即提现。</text>
+        <text class="t1">·好友必须为IC业务助手新注册用户，才能邀请成功。</text>
+    </view>
+</view>

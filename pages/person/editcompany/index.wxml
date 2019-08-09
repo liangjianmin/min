@@ -1,0 +1,44 @@
+<view class="company">
+    <form bindsubmit="formSubmit">
+        <view class="upload-box column rowCenter verCenter">
+            <block wx:if="{{status}}">
+                <view class="add column rowCenter verCenter" bindtap="uploadImg">
+                    <text class="icon iconfont iconiconxiantiaoshouji15"></text>
+                    <text class="t1">上传企业形象</text>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="view column rowCenter verCenter">
+                    <cover-image src="{{imgSrc}}" class="img"></cover-image>
+                    <text class="icon iconfont iconiconxiantiaoshouji7" bind:tap="deleteImg"></text>
+                </view>
+            </block>
+        </view>
+        <view class="txt">
+            <textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入企业简介" class="tarea" />
+        </view>
+        <view class="hr"></view>
+        <view class="list row verCenter bothSide bor">
+            <view class="l">所有地区</view>
+            <view class="sel">
+                <text class="t1">请选择省/市/区</text>
+                <text class="icon iconfont iconChevron"></text>
+            </view>
+        </view>
+        <view class="list row verCenter bothSide bor">
+            <view class="l">详细地址</view>
+            <view class="r">
+                <input type="text" placeholder="请输入详细地址" placeholder-class="placeholderClass" />
+            </view>
+        </view>
+        <view class="list row verCenter bothSide bor">
+            <view class="l">联系电话</view>
+            <view class="r">
+                <input type="text" placeholder="请输入联系电话" placeholder-class="placeholderClass" />
+            </view>
+        </view>
+        <view class="btn-wrap">
+            <button class="btn">确认修改</button>
+        </view>
+    </form>
+</view>

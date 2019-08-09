@@ -1,0 +1,40 @@
+<!--pages/detail/company/index.wxml-->
+<view class="company-view">
+  <view class="company-head row verCenter">
+    <image src="/res/images/imgs/test.jpg" class="company-img"></image>
+    <view class="text">
+      <view class="h3 bold">深圳市猎芯科技有限公司</view>
+      <view class="rz row">
+        <view class="yes">
+          <text class="icon iconfont iconiconxiantiaoshouji11"></text>
+          <text>未认证</text>
+        </view>
+        <view class="yes">
+          <text class="icon iconfont iconiconxiantiaoshouji11"></text>
+          <text>未认证</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="switch-tab-com row">
+    <view bindtap="switchTab" class="{{tabIndex == 1&&'active'}}" data-index="1">
+      <text>商品</text>
+      <text class="active-bg"></text>
+    </view>
+    <view bindtap="switchTab" class="{{tabIndex == 2&&'active'}}" data-index="2">
+      <text>询价</text>
+      <text class="active-bg"></text>
+    </view>
+    <view bindtap="switchTab" class="{{tabIndex == 3&&'active'}}" data-index="3">
+      <text>报价</text>
+      <text class="active-bg"></text>
+    </view>
+  </view>
+  <view class="company-content">
+    <view class="nodata">
+      <image src="/res/images/imgs/noxb.png" class="img"></image>
+      <view class="h3 bold">当前信息不展示</view>
+    </view>
+
+  </view>
+</view>

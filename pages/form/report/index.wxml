@@ -1,0 +1,12 @@
+<!--pages/form/report/index.wxml-->
+<view class="report-view">
+  <view class="report-top row bothSide verCenter">
+    <text class="text-left">举报原因</text>
+    <view class="text-right row  verCenter" bindtap="openAction">
+     <text class="text">请选择举报原因</text>
+     <text class="icon iconfont iconChevron"></text>
+    </view>
+  </view>
+  <textarea class="textarea" placeholder="请填写具体问题（选填）"></textarea>
+    <view class="btn-com btn-com-b report-btn">提交举报</view>
+</view>

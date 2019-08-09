@@ -7,22 +7,49 @@
 <template name="img">
   <image class="avatar" src="{{ item.msg.data }}" style="width:90px; height:120px; margin:2px auto;" mode="aspectFit" bind:tap="previewImage" data-url="{{ item.msg.data }}" />
 </template>
+<template name="cmd">
+  <view class="tel-view">
+    <image src="{{ item.ext.goodImage?item.ext.goodImage:'/res/images/imgs/defaultgood.png' }}" class="good-img"></image>
+    <view class="right-content">
+      <view class="cmd-type">{{ item.ext.type }}</view>
+      <view class="cmd-price">{{ item.ext.price }}</view>
+      <view class="cmd-com">
+        <view class="cmd-text">品牌：</view>
+        <view class="cmd-value">{{ item.ext.brand }}</view>
+      </view>
+      <view class="cmd-com">
+        <view class="cmd-text">数量：</view>
+        <view class="cmd-value">{{ item.ext.num }}</view>
+      </view>
+      <view class="cmd-com">
+        <view class="cmd-text">货期：</view>
+        <view class="cmd-value">{{ item.ext.hq }}</view>
+      </view>
+      <view class="cmd-com">
+        <view class="cmd-text">时间：</view>
+        <view class="cmd-value">{{ item.ext.time }}</view>
+      </view>
+    </view>
+  </view>
+</template>
 
 
 <!-- view 换成 scroll-view效果更好 用view是为了要stopPullDownRefresh -->
-<view scroll-y="true" class="{{ view }} wrap {{isIPX?'scroll_view_X': ''}}" bind:tap="onTap" scroll-into-view="{{ toView }}">
+<scroll-view scroll-y="true" class="{{ view }} wrap {{isIPX?'scroll_view_X': ''}}" bind:tap="onTap" scroll-into-view="{{ toView }}">
   <view class="message" wx:for="{{ chatMsg }}" wx:key="{{ item.mid }}" id="{{ item.mid }}">
     <view class="{{ item.style }}">
-      <!-- <view class="user">
-				<text class="user-text">{{ item.yourname + ' ' + item.time}}</text>
-			</view> -->
-      <image class="avatar" src="../../../images/theme@2x.png" />
-      <view class="msg">
+      <block wx:if="{{item.yourname == customerNum}}">
+        <image class="avatar" src="/res/images/imgs/timg.jpg" />
+      </block>
+      <block wx:else>
+        <image class="avatar" src="{{item.ext.img?item.ext.img:'/res/images/imgs/s.png'}}" />
+      </block>
+      <view class="msg {{item.msg.type=='cmd'?'cmd-msg':''}}">
         <image class="err {{(item.style == 'self' && item.isFail) ? 'show' : 'hide'}}" src="../../../images/msgerr.png" />
-
-        <!-- <image wx:if="{{item.style == 'self'}}" src="../../../images/poprightarrow@2x.png" class="msg_poprightarrow" /> -->
-        <!-- <image wx:if="{{item.style == ''}}" src="../../../images/popleftarrow@2x.png" class="msg_popleftarrow" /> -->
         <view wx:if="{{ item.msg.type == 'img'}}">
+          <template is="{{ item.msg.type }}" data="{{ item }}" />
+        </view>
+        <view wx:if="{{ item.msg.type == 'cmd'}}">
           <template is="{{ item.msg.type }}" data="{{ item }}" />
         </view>
         <view wx:elif="{{ item.msg.type == 'txt' || item.msg.type == 'emoji' }}">
@@ -36,5 +63,5 @@
       </view>
     </view>
   </view>
-</view>
+</scroll-view>
 <view style="height: 1px;"></view>

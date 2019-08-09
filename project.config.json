@@ -48,20 +48,152 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 20,
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/detail/chat/index",
-					"pathName": "pages/detail/chat/index",
+					"name": "pages/form/xj/index",
+					"pathName": "pages/form/xj/index",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/list/bj/index",
-					"pathName": "pages/list/bj/index",
-					"query": "inquiryItemsId=156403573054791",
+					"name": "pages/person/setting/index",
+					"pathName": "pages/person/setting/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/person/setpassword/index",
+					"pathName": "pages/person/setpassword/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "pages/person/certification/addcertification/index",
+					"pathName": "pages/person/certification/addcertification/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/person/certification/certificationmanage/index",
+					"pathName": "pages/person/certification/certificationmanage/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/form/bj/index",
+					"pathName": "pages/form/bj/index",
+					"query": "type=2&offerId=156386287503289",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "pages/form/good/index",
+					"pathName": "pages/form/good/index",
+					"query": "goodId=156454347576866",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "pages/detail/chat/index",
+					"pathName": "pages/detail/chat/index",
+					"query": "username={\"myName\":\"7a2765fc7caa5e512a6d1270bcf98bf0\",\"your\":\"06b6a13c7ae849be08c98ceeefd6ee7f\",\"name\":\"sy\",\"name1\":\"11\",\"id\":\"53\",\"touserid\":\"54\",\"title\":\"11\",\"img\":\"http://img.icsales.com/test/images/icsales/201907/18/ee8b86dc8cac0e5df402a72d77a1b75e.png\",\"img1\":\"http://img.icsales.com/test/images/icsales/201907/18/767111a5b24e07d950506ea9452ff57c.jpg\"}",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/tab/me/me",
+					"pathName": "pages/tab/me/me",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "pages/person/exchange/index",
+					"pathName": "pages/person/exchange/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/person/withdrawal/index",
+					"pathName": "pages/person/withdrawal/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/person/withdrawalsuccess/index",
+					"pathName": "pages/person/withdrawalsuccess/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/person/welfare/index",
+					"pathName": "pages/person/welfare/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/person/integralrule/index",
+					"pathName": "pages/person/integralrule/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/person/packet/index",
+					"pathName": "pages/person/packet/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/person/invitation/index",
+					"pathName": "pages/person/invitation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/person/invitationrecord/index",
+					"pathName": "pages/person/invitationrecord/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/list/signin/index",
+					"pathName": "pages/list/signin/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/form/report/index",
+					"pathName": "pages/form/report/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/person/login/index",
+					"pathName": "pages/person/login/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/person/register/index",
+					"pathName": "pages/person/register/index",
 					"scene": null
 				}
 			]

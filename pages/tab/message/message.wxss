@@ -1,31 +1,14 @@
 /* pages/tab/message/message.wxss */
+page{
+  overflow: hidden
+}
 .message-view{
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
   overflow: hidden;
-}
-.tip {
-  padding: 12rpx 24rpx;
-  background-color: #fff6e6;
-}
-
-.tip .close-icon {
-  color: #d8dfe6;
-}
-
-.tip .icon {
-  font-size: 30rpx;
-}
-
-.tip-left {
-  color: #eaa217;
-}
-
-.tip-left .tip-icon {
-  margin-right: 7rpx;
-  vertical-align: middle;
-}
-
-.tip-c {
-  font-size: 24rpx;
 }
 
 .message-item {

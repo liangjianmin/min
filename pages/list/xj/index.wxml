@@ -1,44 +1,55 @@
 <!--pages/list/xj/index.wxml-->
+<wxs module="dateUtil" src="../../../utils/timeUtil.wxs"></wxs>
 <view class="xj-view">
   <view class="xj-title"></view>
   <view class="xb-com-content">
-    <view class="title row bothSide verCenter nowrap px-hr-bottom">
-      <text class="name bold ellipsis">STM32F407ZGT6STM32F407ZGT6STM32F407ZGT6</text>
-      <text class="time ">05-10 10:15</text>
-    </view>
-    <view class="desc row">
-      <view class="left">
-        <view class="brand row">
-          <text class="t-com">品牌：</text>
-          <text class="c-com">Texas Instruments</text>
+    <view class="b-info">
+      <view wx:if="{{topInfo}}">
+        <view class="title row bothSide verCenter nowrap px-hr-bottom">
+          <text class="name bold ellipsis">{{topInfo.goods_name||'--'}}</text>
+          <text class="time ">{{dateUtil.dateFormat(topInfo.add_time*1000)}}</text>
         </view>
-        <view class="fz row">
-          <text class="t-com">封装：</text>
-          <text class="c-com">LQFP-64</text>
-        </view>
-        <view class="hq row">
-          <text class="t-com">货期：</text>
-          <text class="c-com">现货</text>
-        </view>
-        <view class="num row">
-          <text class="t-com">数量：</text>
-          <text class="c-com bold">100,000 PCS</text>
-        </view>
-        <view class="price row">
-          <text class="t-com">接受价：</text>
-          <text class="c-com">无</text>
-        </view>
-        <view class="bz row">
-          <text class="t-com">备注：</text>
-          <text class="c-com">有货的请尽快回复，比较急着要货</text>
+        <view class="desc row">
+          <view class="left">
+            <view class="brand row">
+              <text class="t-com">品牌：</text>
+              <text class="c-com">{{topInfo.brand_name}}</text>
+            </view>
+            <view class="fz row">
+              <text class="t-com">封装：</text>
+              <text class="c-com">{{topInfo.encap}}</text>
+            </view>
+            <view class="hq row">
+              <text class="t-com">货期：</text>
+              <text class="c-com">{{topInfo.delivery_time}}</text>
+            </view>
+            <view class="num row">
+              <text class="t-com">数量：</text>
+              <text class="c-com bold">{{topInfo.number}} PCS</text>
+            </view>
+            <view class="price row">
+              <text class="t-com">接受价：</text>
+              <text class="c-com {{(!topInfo.price||topInfo.price=='0.00'||topInfo.price=='0')?'':'bold red'}}">
+              <block wx:if="{{!topInfo.price||topInfo.price=='0.00'||topInfo.price=='0'}}">无</block>
+              <block wx:else>
+              <block wx:if="{{topInfo.currency == 1}}">￥{{topInfo.price}}</block><block wx:else>${{topInfo.price}}
+              </block>
+              </block>
+              </text>
+            </view>
+            <view class="bz row">
+              <text class="t-com">备注：</text>
+              <text class="c-com">{{topInfo.remark||'--'}}</text>
+            </view>
+          </view>
+          <image class="right"  src="{{topInfo.goods_images?topInfo.goods_images:'/res/images/imgs/defaultgood.png'}}"></image>
         </view>
       </view>
-      <cover-image class="right" src="/res/images/imgs/iclogo.png"></cover-image>
     </view>
   </view>
   <view class="bj-data">
     <view class="xb-com-t row bothSide verCenter  px-hr-bottom ">
-      <text class="num bold beforeLine">收到的报价 <text>2</text></text>
+      <text class="num bold beforeLine">收到的报价 <text>{{total}}</text></text>
       <view class="jgpx">
         <text class="icon iconfont iconiconxiantiaoshouji10"></text>
         <text>价格排序</text>
@@ -46,9 +57,15 @@
     </view>
     <view class="bj-list">
       <view wx:if="{{priceList&&priceList.length==0}}" class="nodata">
-        暂无数据
+       <image src="/res/images/imgs/noxb.png" class="img"></image>
+          <view class="h3 bold">暂无报价信息</view>
       </view>
-      <priceItem price-list="{{priceList}}" wx:if="{{priceList&&priceList.length!==0}}" price-type="3" xb="2" bindemitevent="emitevent"></priceItem>
+      <priceItem price-list="{{priceList}}" wx:if="{{priceList&&priceList.length!==0}}" price-type="3" xb="2"></priceItem>
+       <view class="data-bottom row verCenter rowCenter" wx:if="{{isShowBottom}}">
+      <text class="line"></text>
+      <text class="text">我是有底线的</text>
+      <text class="line"></text>
+    </view>
     </view>
   </view>
 </view>

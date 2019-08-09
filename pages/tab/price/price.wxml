@@ -12,13 +12,18 @@
   </view>
   <view class="price-content">
     <view wx:if="{{priceList&&priceList.length==0}}" class="nodata">
-      <cover-image src="/res/images/imgs/noxb.png" class="img"></cover-image>
+      <image src="/res/images/imgs/noxb.png" class="img"></image>
       <view class="h3 bold">暂无询报价信息</view>
       <view class="p">您还可以发布询价。</view>
       <view class="fb_btn btn-com btn-com-b" bindtap="toXj">
         <text>快速发布询价</text>
       </view>
     </view>
-    <priceItem price-list="{{priceList}}" wx:if="{{priceList&&priceList.length!==0}}" price-type="1" xb="{{xb}}" bindemitevent="emitevent"></priceItem>
+    <priceItem price-list="{{priceList}}" wx:if="{{priceList&&priceList.length!==0}}" price-type="1" xb="{{xb}}" ></priceItem>
+       <view class="data-bottom row verCenter rowCenter" wx:if="{{isShowBottom}}">
+      <text class="line"></text>
+      <text class="text">我是有底线的</text>
+      <text class="line"></text>
+    </view>
   </view>
 </view>

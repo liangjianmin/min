@@ -1,8 +1,12 @@
 <!--pages/detail/chat/index.wxml-->
 
-<chat
-	id="chat"
-	username="{{ username }}"
-	chatType="singleChat"></chat>
-
-
+<view class="chat-view {{isShowTip?'':'nopadding'}}">
+  <view class="tip row bothSide verCenter {{isShowTip?'':'noheight'}}">
+    <view class="tip-left">
+      <text class="icon iconfont iconiconxiantiaoshouji12 tip-icon"></text>
+      <text class="tip-c">如实填写申诉信息，以便客服人员进行判断！</text>
+    </view>
+    <text class="icon iconfont iconiconxiantiaoshouji13 close-icon" bindtap="closeTip"></text>
+  </view>
+  <chat id="chat" username="{{ username }}" chatType="singleChat"></chat>
+</view>

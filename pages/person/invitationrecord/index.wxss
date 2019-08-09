@@ -1,0 +1,27 @@
+.invitationrecord .wrap {
+  height: 136rpx;
+  padding: 0 24rpx 0 0;
+  margin-left: 24rpx;
+}
+.invitationrecord .wrap .t1 {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #515559;
+  margin-bottom: 13rpx;
+}
+.invitationrecord .wrap .t2 {
+  font-size: 22rpx;
+  color: #ADB6BF;
+}
+.invitationrecord .wrap .t3 {
+  font-size: 38rpx;
+  color: #515559;
+  font-weight: 600;
+}
+.invitationrecord .wrap .t4 {
+  font-size: 48rpx;
+  color: #515559;
+}
+.invitationrecord .wrap.bor {
+  border-bottom: 1px solid #F5F9FC;
+}

@@ -1,5 +1,10 @@
 const http = require('../../../utils/util.js');
-import { apis } from '../../../utils/api.js';
+import {
+  apis
+} from '../../../utils/api.js';
+
+
+
 
 
 Page({
@@ -217,6 +222,17 @@ Page({
             key: "access_token",
             data: res.data.access_token
           });
+
+          //注入用户id
+          wx.setStorage({
+            key: "user_id",
+            data: res.data.user_id
+          });
+
+
+          //登录环信帐号
+          getApp().getImUser();
+
 
           wx.switchTab({
             url: '/pages/tab/home/home'

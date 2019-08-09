@@ -1,0 +1,53 @@
+<view class="setting" hover-class="none" hover-stop-propagation="false">
+    <view class="boxsiz bar row bothSide verCenter bor" bind:tap="toUrl" data-url="/pages/person/setpassword/index">
+        <view>
+            <text class="t1">登录密码</text>
+        </view>
+        <view>
+            <text class="t2">已设置</text>
+            <text class="icon iconfont iconChevron"></text>
+        </view>
+    </view>
+    <view class="boxsiz bar row bothSide verCenter">
+        <view>
+            <text class="t1">绑定微信</text>
+        </view>
+        <view>
+            <text class="t2">已绑定</text>
+            <text class="icon iconfont iconChevron"></text>
+        </view>
+    </view>
+    <view class="hr"></view>
+    <view class="boxsiz bar row bothSide verCenter" bind:tap="toUrl" data-url="/pages/person/privacy/index">
+        <view>
+            <text class="t1">隐私设置</text>
+        </view>
+        <view>
+            <text class="icon iconfont iconChevron"></text>
+        </view>
+    </view>
+    <view class="hr"></view>
+    <view class="boxsiz bar row bothSide verCenter bor">
+        <view>
+            <text class="t1">版本信息</text>
+        </view>
+        <view>
+            <text class="t2">V1.20</text>
+            <text class="icon iconfont iconChevron"></text>
+        </view>
+    </view>
+    <view class="boxsiz bar row bothSide verCenter">
+        <view>
+            <text class="t1">关于我们</text>
+        </view>
+        <view>
+            <text class="icon iconfont iconChevron"></text>
+        </view>
+    </view>
+    <view class="hr"></view>
+    <view class="boxsiz bar row bothSide verCenter bor" bind:tap="logout">
+        <view>
+            <text class="t1">退出登录</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "每日签到",
+      "usingComponents": {
+        "chat-inputbar": "/components/chat/inputbar/inputbar"
+      }
+}

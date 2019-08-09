@@ -1,7 +1,7 @@
 <view class="success column rowCenter verCenter">
-	<cover-image src="/res/images/imgs/success.png" class="img"></cover-image>
+	<image src="/res/images/imgs/success.png" class="img"></image>
 	<text class="tit">恭喜您，注册成功</text>
-	<navigator url="/pages/person/login/index" class="btn">资质认证</navigator>
+	<navigator url="/pages/person/certification/addcertification/index" class="btn">资质认证</navigator>
 	<view class="txt">
 		<text class="t1">为了保证询报价的真实性，请完成“</text>
 		<text class="t2">资质认证</text>

@@ -1,0 +1,31 @@
+<!--pages/form/rate/index.wxml-->
+<view class="rate-form">
+  <view class="tip row bothSide verCenter tip-error">
+    <view class="tip-left">
+      <!-- <text class="icon iconfont iconiconxiantiaoshouji12 tip-icon"></text> -->
+      <!-- <text class="tip-c">评论内容，一条回复报价仅评价一次</text> -->
+      <text class="icon iconfont iconiconxiantiaoshouji1 tip-icon error-icon"></text>
+      <text class="tip-c error-text">提示：您的内容存在敏感词汇，请编辑后再发布</text>
+    </view>
+    <text class="icon iconfont iconiconxiantiaoshouji13 close-icon"></text>
+  </view>
+  <view class="form">
+    <view class="textarea-view">
+      <textarea class="textarea" placeholder="请输入评价内容" maxlength="100" bindinput="textareaChange"></textarea>
+      <view class="statistics">
+        <text>{{total}}</text>/100
+      </view>
+    </view>
+    <view class="rate-type row">
+      <view class="type yes-rate {{defaulType ==0?'active':'' }}" data-index="0" bindtap="changeType">
+        <text class="icon iconfont iconiconxiantiaoshouji23"></text>
+        <text>好评</text>
+      </view>
+      <view class="type no-rate  {{defaulType ==1?'active':'' }}" data-index="1" bindtap="changeType">
+        <text class="icon iconfont iconiconxiantiaoshouji29"></text>
+        <text>差评</text>
+      </view>
+    </view>
+  </view>
+  <view class="btn-com btn-com-b rate-btn ">发布评价</view>
+</view>

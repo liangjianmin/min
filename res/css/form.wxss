@@ -1,34 +1,7 @@
 .form-view {
 }
 
-.tip {
-  padding: 12rpx 24rpx;
-  background-color: #fff6e6;
-}
 
-.tip .close-icon {
-  color: #d8dfe6;
-}
-
-.tip .icon {
-  font-size: 30rpx;
-}
-
-.tip-left {
-  color: #eaa217;
-}
-
-.tip-left .tip-icon {
-  margin-right: 7rpx;
-  vertical-align: middle;
-}
-
-.tip-c {
-  font-size: 24rpx;
-}
-.tip-c .pc-url{
-  color:#61A0F2;
-}
 .form-item {
   margin-left: 24rpx;
   padding: 27rpx 0;
@@ -95,7 +68,7 @@ textarea {
   right: 24rpx;
   background-color: #fff;
   box-shadow: 2px 2px 5px #ddd;
-  z-index: 2;
+  z-index: 3;
   border-radius: 2rpx;
   display: none;
 }
@@ -113,26 +86,63 @@ textarea {
 .price-ul .price-li.active {
   color: #0d84d1;
 }
+
 .hf-btn .icon {
   margin-right: 8rpx;
   font-size: 32rpx;
 }
-.upload-view{
-  margin:20rpx 0;
+
+.upload-view {
+  margin: 20rpx 0;
 }
-.upload-view .upload{
-  height:220rpx;
-  width:220rpx;
-  background-color: #F0F6FA;
-  color:#8A9299;
+
+.upload-view .upload {
+  height: 220rpx;
+  width: 220rpx;
+  background-color: #f0f6fa;
+  color: #8a9299;
   font-size: 24rpx;
 }
-.upload-view .upload .icon{
-    font-size: 80rpx;
-    margin-bottom:20rpx;
+
+.upload-view .upload .icon {
+  font-size: 80rpx;
+  margin-bottom: 20rpx;
 }
-.upload-view .text{
-  color:#ADB6BF;
+
+.upload-view .text {
+  color: #adb6bf;
   font-size: 22rpx;
-  margin-top:25rpx;
+  margin-top: 25rpx;
+}
+
+.hasImg {
+  height: 220rpx;
+  width: 220rpx;
+  position: relative;
+}
+.hasImg img{
+  height:100%;
+  width:100%;
+}
+.deleteImg{
+    font-size:30rpx !important;
+    color:#fff;
+    position: absolute;
+    top:0;
+    right:0;
+    transform: translate(30%,-30%);
+    background-color: #EA1717;
+    height:44rpx;
+    width:44rpx;
+    text-align: center;
+    line-height: 44rpx;
+    border-radius: 50%;
+}
+.delete-btn{
+  margin-bottom:60rpx;
+  border:2rpx solid #D8DFE6;
+  background-color: #fff;
+  color:#686E73;
+  box-sizing: border-box;
+
 }

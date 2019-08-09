@@ -1,0 +1,15 @@
+<!--pages/form/appeal/index.wxml-->
+<view class="appeal-view">
+  <view class="tip row bothSide verCenter {{isShowTip?'':'noheight'}}">
+    <view class="tip-left">
+      <text class="icon iconfont iconiconxiantiaoshouji12 tip-icon"></text>
+      <text class="tip-c">如实填写申诉信息，以便客服人员进行判断！</text>
+    </view>
+    <text class="icon iconfont iconiconxiantiaoshouji13 close-icon" bindtap="closeTip"></text>
+  </view>
+  <view class="form-view">
+    <view class="h3 bold">申诉内容：</view>
+    <textarea placeholder="请输入申请理由，后台人员会与您取得联系。" class="textarea"></textarea>
+  </view>
+  <view class="btn-com btn-com-b appeal-btn">提交申诉</view>
+</view>

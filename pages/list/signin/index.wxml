@@ -1,0 +1,107 @@
+<!--pages/list/signin/index.wxml-->
+<view class="signin-view">
+  <view class="today-topic">
+    <view class="top-line"></view>
+    <view class="topic-content">
+      <view class="content-top row bothSide verCenter">
+        <text class="content-title bold">“硬件重要还是软件重要”</text>
+        <text class="content-mask">#今日话题</text>
+      </view>
+      <view class="content-text">传说，软件工程师的工资要非常高？但是硬件工程师又如何呢？</view>
+    </view>
+  </view>
+  <view class="switch-tab-com row">
+    <view bindtap="switchTab" class="{{tabIndex == 1&&'active'}}" data-index="1">
+      <text>最新</text>
+      <text class="active-bg"></text>
+    </view>
+    <view bindtap="switchTab" class="{{tabIndex == 2&&'active'}}" data-index="2">
+      <text>热门</text>
+      <text class="active-bg"></text>
+    </view>
+  </view>
+  <view class="topic-list">
+    <view class="topic-item">
+      <view class="item-top row bothSide px-hr-bottom verCenter">
+        <view class="top-left row verCenter">
+          <image src="/res/images/imgs/test.jpg" class="img"></image>
+          <text class="name bold">深圳邦马特科技有限公司</text>
+        </view>
+        <view class="time">05-10 10:15</view>
+      </view>
+      <view class="item-center">
+        我是评价内容我是评价内容我是评价内容我是评价内容我是评价内容，我是评价内容我是评价内容。
+      </view>
+      <view class="item-bottom row bothSide  verCenter">
+        <view class="up-down row verCenter">
+          <view class="up row verCenter">
+            <text class="icon iconfont iconiconxiantiaoshouji33"></text>
+            <text class="num">123</text>
+          </view>
+          <view class="down row verCenter">
+            <text class="icon iconfont iconiconxiantiaoshouji30"></text>
+            <text class="num">233</text>
+          </view>
+        </view>
+        <view class="more">
+          <text class="icon iconfont iconiconxiantiaoshouji6"></text>
+        </view>
+      </view>
+    </view>
+      <view class="topic-item">
+      <view class="item-top row bothSide px-hr-bottom verCenter">
+        <view class="top-left row verCenter">
+          <image src="/res/images/imgs/test.jpg" class="img"></image>
+          <text class="name bold">深圳邦马特科技有限公司</text>
+        </view>
+        <view class="time">05-10 10:15</view>
+      </view>
+      <view class="item-center">
+        我是评价内容我是评价内容我是评价内容我是评价内容我是评价内容，我是评价内容我是评价内容。
+      </view>
+      <view class="item-bottom row bothSide  verCenter">
+        <view class="up-down row verCenter">
+          <view class="up row verCenter">
+            <text class="icon iconfont iconiconxiantiaoshouji31 hasup"></text>
+            <text class="num">123</text>
+          </view>
+          <view class="down row verCenter">
+            <text class="icon iconfont iconiconxiantiaoshouji32 hasdown"></text>
+            <text class="num">233</text>
+          </view>
+        </view>
+        <view class="more">
+          <text class="icon iconfont iconiconxiantiaoshouji6"></text>
+        </view>
+      </view>
+    </view>
+      <view class="topic-item">
+      <view class="item-top row bothSide px-hr-bottom verCenter">
+        <view class="top-left row verCenter">
+          <image src="/res/images/imgs/test.jpg" class="img"></image>
+          <text class="name bold">深圳邦马特科技有限公司</text>
+        </view>
+        <view class="time">05-10 10:15</view>
+      </view>
+      <view class="item-center">
+        我是评价内容我是评价内容我是评价内容我是评价内容我是评价内容，我是评价内容我是评价内容。
+      </view>
+      <view class="item-bottom row bothSide  verCenter">
+        <view class="up-down row verCenter">
+          <view class="up row verCenter">
+            <text class="icon iconfont iconiconxiantiaoshouji31 hasup"></text>
+            <text class="num">123</text>
+          </view>
+          <view class="down row verCenter">
+            <text class="icon iconfont iconiconxiantiaoshouji30"></text>
+            <text class="num">233</text>
+          </view>
+        </view>
+        <view class="more" bindtap="openAction">
+          <text class="icon iconfont iconiconxiantiaoshouji6"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  	<chat-inputbar id="topic-inputbar" is-topic="1" 	bind:newTextMsg="sendSignin"></chat-inputbar>
+</view>

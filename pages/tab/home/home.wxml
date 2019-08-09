@@ -7,43 +7,35 @@
   <view class="home-content">
     <view class="home-function bothSide row">
       <view class="function-item column verCenter" bindtap="toXj">
-        <cover-image src="/res/images/icons/home-s-1.png" class="img"></cover-image>
+        <image src="/res/images/icons/home-s-1.png" class="img"></image>
         <text class="text">发布询价</text>
       </view>
       <view class="function-item column verCenter" bindtap="toQd">
-        <cover-image src="/res/images/icons/home-s-2.png" class="img"></cover-image>
+        <image src="/res/images/icons/home-s-2.png" class="img"></image>
         <text class="text">抢单专区</text>
       </view>
       <view class="function-item column verCenter" bindtap="fbGood">
-        <cover-image src="/res/images/icons/home-s-3.png" class="img"></cover-image>
+        <image src="/res/images/icons/home-s-3.png" class="img"></image>
         <text class="text">发布商品</text>
       </view>
       <view class="function-item column verCenter">
-        <cover-image src="/res/images/icons/home-s-4.png" class="img"></cover-image>
+        <image src="/res/images/icons/home-s-4.png" class="img"></image>
         <text class="text">积分兑换</text>
       </view>
     </view>
-    <view class="advs">
+    <view class="advs" wx:if="{{xjList.length}}">
       <view class="px-hr-top">
         <view class=" row bothSide verCenter advs-content-parent">
           <view class="advs-content">
-            <view class="adv row verCenter">
-              <text class="adv-mark">询价</text>
-              <text class="adv-num ellipsis">STM32F103CR22D</text>
-              <text class="adv-time">2分钟前</text>
-            </view>
-            <view class="adv row verCenter">
-              <text class="adv-mark">询价</text>
-              <text class="adv-num ellipsis">STM32F103CR22DSTM32F103CR22DSTM32F103CR22DSTM32F103CR22DSTM32F103CR22D</text>
-              <text class="adv-time">2分钟前</text>
-            </view>
-            <view class="adv row verCenter">
-              <text class="adv-mark">询价</text>
-              <text class="adv-num ellipsis">STM32F103CR22D</text>
-              <text class="adv-time">2分钟前</text>
+            <view class="advs-ul" animation="{{animation}}">
+              <view class="adv row verCenter" wx:for="{{xjList}}" wx:key="*this">
+                <text class="adv-mark">询价</text>
+                <text class="adv-num ellipsis">{{item.goods_name||'--'}}</text>
+                <text class="adv-time">{{item.usedTime}}</text>
+              </view>
             </view>
           </view>
-          <view class="more-item">
+          <view class="more-item" bindtap="toQd">
             <text class="icon iconfont iconiconxiantiaoshouji6"></text>
           </view>
         </view>
@@ -51,15 +43,29 @@
 
     </view>
     <view class="my-price">
-      <view class="price-title">
+      <!-- <view class="price-title">
         <view class="price-title-content row bothSide verCenter px-hr-bottom ">
           <text class="xb-t beforeLine">我的询报价</text>
           <text class="icon iconfont iconiconxiantiaoshouji5"></text>
         </view>
+      </view> -->
+      <view class="switch-tab-com row">
+        <view bindtap="switchTab" class="{{tabIndex == 1&&'active'}}" data-index="1">
+          <text>我的询价</text>
+          <text class="active-bg"></text>
+        </view>
+        <view bindtap="switchTab" class="{{tabIndex == 2&&'active'}}" data-index="2">
+          <text>我的报价</text>
+          <text class="active-bg"></text>
+        </view>
       </view>
       <view class="price-content">
-        <view wx:if="{{priceList&&priceList.length==0}}">暂无数据</view>
-        <priceItem price-list="{{priceList}}" wx:if="{{priceList&&priceList.length!==0}}" price-type="1" bindemitevent="emitevent"></priceItem>
+        <view hidden="{{priceList&&priceList.length!=0}}" class="nodata">
+          <image src="/res/images/imgs/noxb.png" class="img"></image>
+          <view class="h3 bold">暂无询报价信息</view>
+          <view class="p" style="color:#61A0F2;padding:20rpx 0;" bindtap="toXj">您还可以发布询价。</view>
+        </view>
+        <priceItem price-list="{{priceList}}" wx:if="{{priceList&&priceList.length!==0}}" price-type="1" xb="{{xb}}"></priceItem>
       </view>
     </view>
   </view>

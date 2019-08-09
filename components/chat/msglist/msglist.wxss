@@ -5,98 +5,101 @@
 	z-index: 0;
 	top: 50px;
 }*/
-.scroll_view,
-.scroll_view_change {
-	/*width: 100%;
+
+.scroll_view, .scroll_view_change {
+  /*width: 100%;
 	position: absolute;
 	left: 0;
 	top: 0;
 	right: 0;
 	bottom: 150rpx;*/
-	margin-bottom: 174rpx;
-	background-color: #fff;
+  margin-bottom: 174rpx;
+  background-color: #fff;
 }
 
-.scroll_view_X,
-.scroll_view_change_X{
-	margin-bottom: 244rpx;
+.scroll_view_X, .scroll_view_change_X {
+  margin-bottom: 244rpx;
 }
 
 .scroll_view_change {
-	/*bottom: 440rpx;*/
-	margin-bottom: 590rpx;
+  /*bottom: 440rpx;*/
+  margin-bottom: 590rpx;
 }
 
 .message {
-	height: auto;
-	margin: 0 24rpx 30rpx;
-	position: relative;
-
+  height: auto;
+  margin: 30rpx 24rpx 0;
+  position: relative;
 }
 
 .time {
-  margin:0rpx 0 0 92rpx 
+  margin: 0rpx 0 0 92rpx;
 }
-.self .time{
-    margin:0rpx 92rpx 0 0 ;
+
+.self .time {
+  margin: 0rpx 92rpx 0 0;
 }
 
 .time .time-text {
   font-size: 22rpx;
-  color:#ADB6BF;
+  color: #adb6bf;
 }
 
 .user .user-text {
-	margin: auto 100rpx 8rpx;
-	font-size: 20rpx;
-	color: #dcdcdc;
-	display: block;
+  margin: auto 100rpx 8rpx;
+  font-size: 20rpx;
+  color: #dcdcdc;
+  display: block;
 }
 
 .avatar {
-	width: 68rpx;
-	height: 68rpx;
-	/* margin-left:24rpx; */
-	border-radius: 8rpx;
-	float: left;
+  width: 68rpx;
+  height: 68rpx;
+  /* margin-left:24rpx; */
+  border-radius: 8rpx;
+  float: left;
   margin: 0 24rpx 0 0;
-
 }
 
 .msg {
-	display: inline-block;
-	padding: 14rpx 24rpx;
-	max-width: calc(85% - 80rpx);
-	/* min-height: 40rpx;  */
-	font-size: 24rpx;
-	text-align: left;
-	word-break: break-all;
-	background-color: #DFECFC;
-	border-radius:8rpx;
-	position: relative;
+  display: inline-block;
+  padding: 14rpx 24rpx;
+  max-width: calc(85% - 80rpx);
+  /* min-height: 40rpx;  */
+  font-size: 24rpx;
+  text-align: left;
+  word-break: break-all;
+  background-color: #dfecfc;
+  border-radius: 8rpx;
+  position: relative;
   color: #515559;
 }
 
-.msg .msg_poprightarrow {
-	position: absolute;
-	right: -10rpx;
-	height: 18rpx;
-	width: 18rpx;
-	margin-top: -10rpx;
+.cmd-msg {
+  padding: 0;
+  background-color: #f5f9fc !important;
 }
 
-.msg .msg_popleftarrow{
-	position:absolute;
-	left: -14rpx;
-	height: 18rpx;
-	width: 18rpx;
-	margin-top: -10rpx;
+.msg .msg_poprightarrow {
+  position: absolute;
+  right: -10rpx;
+  height: 18rpx;
+  width: 18rpx;
+  margin-top: -10rpx;
+}
+
+.msg .msg_popleftarrow {
+  position: absolute;
+  left: -14rpx;
+  height: 18rpx;
+  width: 18rpx;
+  margin-top: -10rpx;
 }
 
 .msg .msg-text {
-	line-height: 40rpx;
-	font-size: 26rpx;
-	margin: 0;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  margin: 0;
 }
 
 /*.msg:before {
@@ -109,42 +112,95 @@
 }*/
 
 .self {
-	text-align: right;
+  text-align: right;
 }
 
 .self .avatar {
-	float: right;
-	margin: 0 0 0 24rpx;
+  float: right;
+  margin: 0 0 0 24rpx;
 }
 
 .user {
-	position: relative;
-	bottom: -30rpx;
+  position: relative;
+  bottom: -30rpx;
 }
 
 .self .msg {
-	background-color: #FCF2DF;
+  background-color: #fcf2df;
 }
 
 .self .msg:before {
-	right: inherit;
-	left: 100%;
-	border-right-color: transparent;
-	border-left-color: #b2e281;
+  right: inherit;
+  left: 100%;
+  border-right-color: transparent;
+  border-left-color: #b2e281;
 }
 
 .template {
-	display: inline;
+  display: inline;
 }
-.err{
-	width: 32rpx;
-	height: 32rpx;
-	position: absolute;
-	left: -40rpx;
+
+.err {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  left: -40rpx;
 }
-.hide{
-	display: none;
+
+.hide {
+  display: none;
 }
-.show{
-	display: block;
+
+.show {
+  display: block;
+}
+
+.good-img {
+  height: 100rpx;
+  width: 100rpx;
+  position: absolute;
+  left:24rpx;
+  top:24rpx;
+  border-radius: 8rpx;
+}
+
+.tel-view {
+  font-size: 26rpx;
+  border: 1px solid #e6ecf2;
+  position: relative;
+  padding:24rpx 24rpx 24rpx 145rpx;
+}
+
+.cmd-type {
+  color: #515559;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.cmd-price {
+  font-size: 28rpx;
+  color: #ea1717;
+  font-weight: 600;
+  margin-top: 6rpx;
+}
+
+.cmd-text {
+  color: #8a9299;
+  position: absolute;
+  width: 78rpx;
+  left:0;
+  
+}
+.cmd-value {
+  color: #515559;
+}
+.cmd-com::after{
+  display: block;
+  content:"";
+  clear: both;
+}
+.cmd-com{
+  margin-top:10rpx;
+  position: relative;
+  padding-left:78rpx;
 }

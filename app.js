@@ -1,154 +1,80 @@
 const WebIM = require("utils/WebIM")["default"];
-let msgStorage = require("components/chat/msgstorage");
-let msgType = require("components/chat/msgtype");
-let disp = require("utils/broadcast");
-function calcUnReadSpot(message) {
-  let myName = wx.getStorageSync("myUsername");
-  let allMembers = wx.getStorageSync("member") || []; //好友
-  let count = allMembers.reduce(function (result, curMember, idx) {
-    let chatMsgs = wx.getStorageSync(curMember.toLowerCase() + myName.toLowerCase()) || [];
+const chat = require('utils/chat.js');
+import {
+  getData,
+  judgeToken
+} from './utils/util.js';
+import {
+  apis
+} from './utils/api.js';
 
-    return result + chatMsgs.length;
-  }, 0);
-  getApp().globalData.unReadMessageNum = count;
-  disp.fire("em.xmpp.unreadspot", message);
-}
-function onMessageError(err) {
-  if (err.type === "error") {
-    wx.showToast({
-      title: err.errorText
-    });
-    return false;
-  }
-  return true;
-}
-function addMember(id) {
-  let member = wx.getStorageSync("member") || [];
-  let index = member.indexOf(id);
-  if (index == -1) {
-    member.push(id)
-  }
-  wx.setStorage({
-    key: "member",
-    data: member
-  });
-}
 
 App({
   globalData: {
     unReadMessageNum: 0,
-    isIPX: false //是否为iphone X
+    auth: wx.getStorageSync('auth'),
+    token: wx.getStorageSync('access_token'),
+    isIPX: false, //是否为iphone X
+    customerNum: "001",
+    customerName: "IC助手客服"
   },
-  conn: {
-    closed: false,
-    curOpenOpt: {},
-    open(opt) {
-     /* wx.showLoading({
-        title: '正在初始化客户端...',
-        mask: true
-      }) */
-      this.curOpenOpt = opt;
-      WebIM.conn.open(opt);
-      this.closed = false;
-    },
-    reopen() {
-      if (this.closed) {
-        WebIM.conn.open(this.curOpenOpt);
-        this.closed = false;
+  getImUser: chat.getImUser,
+  addChatMember: function (id) {
+
+    let token = wx.getStorageSync('access_token') || '';
+    this.addChatMemberStorage(id);
+
+    getData(apis.addrecord, 'GET', {
+      "token": token,
+      "user_id": id
+    }, function (res) {
+      if (res.errcode === 0) {
+
+      } else {
+        console.log('添加聊天成员失败')
       }
+    }, false);
+  },
+  addChatMemberStorage: function (id) {
+
+    let member = wx.getStorageSync("member") || [];
+    let index = member.indexOf(id);
+
+    if (index == -1) {
+      member.push(id)
     }
-  },
-  onLaunch() {
-    let me = this;
-
-    //验证用户是否登录状态
-    wx.getStorage({
-      key: 'access_token',
-      success(res) {
-        if(res.data){
-
-          // wx.switchTab({
-          //   url: '/pages/tab/home/home'
-          // });
-
-        }
-      }
-    })
-
-
-    // 查看是否授权
-    wx.getSetting({
-      success(res) {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权
-          // wx.switchTab({
-          //   url: '/pages/tab/home/home'
-          // })
-        }
-      }
-    })
-
 
     wx.setStorage({
-      key: "myUsername",
-      data: '18271408717'
+      key: "member",
+      data: member
     });
+  },
+  onLaunch() {
 
-    this.conn.open({
-      apiUrl: WebIM.config.apiURL,
-      user: '18271408717',
-      pwd: '123456',
-      appKey: WebIM.config.appkey
-    });
-
-
-    WebIM.conn.listen({
-      onOpened(message) {
-
-      },
-      onReconnect() {
-        wx.showToast({
-          title: "重连中...",
-          duration: 2000
+    //验证是否授权
+    if (this.globalData.auth) {
+      //是否登录
+      if (this.globalData.token) {
+        // wx.switchTab({
+        //   url: '/pages/tab/home/home'
+        // });
+      } else {
+        wx.redirectTo({
+          url: '/pages/person/login/index'
         });
-      },
-      onSocketConnected() {
-       /* wx.showToast({
-          title: "socket连接成功",
-          duration: 2000
-        }); */
-      },
-      onClosed() {
-        wx.showToast({
-          title: "网络已断开",
-          icon: 'none',
-          duration: 2000
-        });
-        me.conn.closed = true;
-        WebIM.conn.close();
-      },
-      onCmdMessage(message) {
-
-      },
-      onTextMessage(message) {
-        addMember(message.from)
-        if (message) {
-          if (onMessageError(message)) {
-            msgStorage.saveReceiveMsg(message, msgType.TEXT);
-          }
-          calcUnReadSpot(message);
-        }
+      }
+    } else {
+      wx.redirectTo({
+        url: '/pages/person/auth/index'
+      });
+    }
 
 
-      },
-      onPictureMessage(message) {
+    if (judgeToken()) {
+      this.getImUser();
+    }
 
-      },
-      // 各种异常
-      onError(error) {
-        console.log(error)
-      },
-    });
+    chat.webimListen();
     this.checkIsIPhoneX();
   },
   checkIsIPhoneX: function () {
@@ -161,7 +87,6 @@ App({
         }
       }
     })
-  },
+  }
 
 });
-

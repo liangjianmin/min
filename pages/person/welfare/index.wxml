@@ -1,0 +1,103 @@
+<view class="welfare" hover-class="none" hover-stop-propagation="false">
+    <view class="head row verCenter bothSide boxsiz">
+        <view class="column">
+            <view class="red-text">
+                <text class="icon iconfont iconiconxiantiaoshouji27"></text>
+                <text class="t1">我的红包</text>
+            </view>
+            <view class="num">
+                <text class="t1">10.93</text>
+                <text class="t2">元</text>
+            </view>
+            <view class="code-text">
+                <text class="t1">红包码：</text>
+                <text class="t2">RDD23423</text>
+            </view>
+        </view>
+        <view class="column">
+            <text class="rule">查看规则</text>
+            <view class="exchange row verCenter ">
+                <text class="t1">兑换记录</text>
+                <view class="t2 row verCenter rowCenter">
+                    <text class="icon iconfont iconiconxiantiaoshouji28"></text>
+                    <text>提现兑换</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="list">
+        <view class="list-wrap row verCenter bothSide bor">
+            <view>
+                <view>
+                    <text class="t1">邀请好友</text>
+                    <text class="icon iconfont iconiconxiantiaoshouji27"></text>
+                    <text class="t2">立得三元</text>
+                </view>
+                <view>
+                    <text class="t3">限时活动，邀请好友注册立得三元红包</text>
+                </view>
+            </view>
+            <view class="btn blue">去邀请</view>
+        </view>
+        <view class="list-wrap row verCenter bothSide bor">
+            <view>
+                <view>
+                    <text class="t1">每日上传商品</text>
+                    <text class="icon iconfont iconiconxiantiaoshouji27"></text>
+                    <text class="t2">最高88元红包</text>
+                </view>
+                <view>
+                    <text class="t3">每日首次上传商品，得随机红包奖励</text>
+                </view>
+            </view>
+            <view class="btn blue">去上传</view>
+        </view>
+        <view class="list-wrap row verCenter bothSide">
+            <view>
+                <view>
+                    <text class="t1">输入红包码</text>
+                    <text class="icon iconfont iconiconxiantiaoshouji27"></text>
+                    <text class="t2">随机红包</text>
+                </view>
+                <view>
+                    <text class="t3">领取好友红包，每个用户限领一次</text>
+                </view>
+            </view>
+            <view class="btn blue">去兑换</view>
+        </view>
+        <view class="hr"></view>
+        <view class="list-wrap row verCenter bothSide bor">
+            <view>
+                <view>
+                    <text class="t1">天天签到领金币</text>
+                </view>
+                <view>
+                    <text class="t3">领取好友红包，每个用户限领一次。</text>
+                </view>
+            </view>
+            <view class="btn yellow">签到</view>
+        </view>
+        <view class="list-wrap row verCenter bothSide bor">
+            <view>
+                <view>
+                    <text class="t1">每日分享</text>
+                </view>
+                <view>
+                    <text class="t3">每日首次分享，被好友点击后可获得奖励</text>
+                </view>
+            </view>
+            <view class="btn yellow">去分享</view>
+        </view>
+        <view class="list-wrap row verCenter bothSide">
+            <view>
+                <view>
+                    <text class="t1">每日报价</text>
+                </view>
+                <view>
+                    <text class="t3">每日首次回复报价，可获得奖励</text>
+                </view>
+            </view>
+            <view class="btn yellow">去报价</view>
+        </view>
+    </view>
+</view>

@@ -110,12 +110,14 @@ WebIM.parseEmoji = function (msg) {
   return objList;
 };
 
-WebIM.time = function () {
+WebIM.time = function (str) {
   var date = new Date();
   var Hours = date.getHours();
   var Minutes = date.getMinutes();
   var Seconds = date.getSeconds();
-  var time = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " "
+  var Month = date.getMonth() + 1;
+  var Day = date.getDate() ;
+  var time = date.getFullYear() + "-" + (Month < 10 ? "0" + Month : Month) + "-" + (Day < 10 ? "0" + Day : Day) + " "
     + (Hours < 10 ? "0" + Hours : Hours) + ":" + (Minutes < 10 ? "0" + Minutes : Minutes) + ":" + (Seconds < 10 ? "0" + Seconds : Seconds);
   return time;
 };
@@ -123,41 +125,41 @@ WebIM.time = function () {
 WebIM.Emoji = {
   path: "../../../../../images/faces/",
   map: {
-    "[):]": "ee_1.png",
-    "[:D]": "ee_2.png",
-    "[;)]": "ee_3.png",
-    "[:-o]": "ee_4.png",
-    "[:p]": "ee_5.png",
-    "[(H)]": "ee_6.png",
-    "[:@]": "ee_7.png",
-    "[:s]": "ee_8.png",
-    "[:$]": "ee_9.png",
-    "[:(]": "ee_10.png",
-    "[:'(]": "ee_11.png",
-    "[<o)]": "ee_12.png",
-    "[(a)]": "ee_13.png",
-    "[8o|]": "ee_14.png",
-    "[8-|]": "ee_15.png",
-    "[+o(]": "ee_16.png",
-    "[|-)]": "ee_17.png",
-    "[:|]": "ee_18.png",
-    "[*-)]": "ee_19.png",
-    "[:-#]": "ee_20.png",
-    "[^o)]": "ee_21.png",
-    "[:-*]": "ee_22.png",
-    "[8-)]": "ee_23.png",
-    "[(|)]": "ee_24.png",
-    "[(u)]": "ee_25.png",
-    "[(S)]": "ee_26.png",
-    "[(*)]": "ee_27.png",
-    "[(#)]": "ee_28.png",
-    "[(R)]": "ee_29.png",
-    "[({)]": "ee_30.png",
-    "[(})]": "ee_31.png",
-    "[(k)]": "ee_32.png",
-    "[(F)]": "ee_33.png",
-    "[(W)]": "ee_34.png",
-    "[(D)]": "ee_35.png"
+    '[):]': 'ee_1.png',
+    '[:D]': 'ee_2.png',
+    '[;)]': 'ee_3.png',
+    '[:-o]': 'ee_4.png',
+    '[:p]': 'ee_5.png',
+    '[(H)]': 'ee_6.png',
+    '[:@]': 'ee_7.png',
+    '[:s]': 'ee_8.png',
+    '[:$]': 'ee_9.png',
+    '[:(]': 'ee_10.png',
+    '[:"(]': 'ee_11.png',
+    '[:|]': 'ee_12.png',
+    '[(a)]': 'ee_13.png',
+    '[8o|]': 'ee_14.png',
+    '[8-|]': 'ee_15.png',
+    '[+o(]': 'ee_16.png',
+    '[o)]': 'ee_17.png',
+    '[|-)]': 'ee_18.png',
+    '[*-)]': 'ee_19.png',
+    '[:-#]': 'ee_20.png',
+    '[:-*]': 'ee_21.png',
+    '[^o)]': 'ee_22.png',
+    '[8-)]': 'ee_23.png',
+    '[(|)]': 'ee_24.png',
+    '[(u)]': 'ee_25.png',
+    '[(S)]': 'ee_26.png',
+    '[(*)]': 'ee_27.png',
+    '[(#)]': 'ee_28.png',
+    '[(R)]': 'ee_29.png',
+    '[({)]': 'ee_30.png',
+    '[(})]': 'ee_31.png',
+    '[(k)]': 'ee_32.png',
+    '[(F)]': 'ee_33.png',
+    '[(W)]': 'ee_34.png',
+    '[(D)]': 'ee_35.png'
   }
 };
 
@@ -165,49 +167,49 @@ WebIM.EmojiObj = {
   // 相对 emoji.js 路径
   path: "../../../../../images/faces/",
   map1: {
-    "[):]": "ee_1.png",
-    "[:D]": "ee_2.png",
-    "[;)]": "ee_3.png",
-    "[:-o]": "ee_4.png",
-    "[:p]": "ee_5.png",
-    "[(H)]": "ee_6.png",
-    "[:@]": "ee_7.png"
+    '[):]': 'ee_1.png',
+    '[:D]': 'ee_2.png',
+    '[;)]': 'ee_3.png',
+    '[:-o]': 'ee_4.png',
+    '[:p]': 'ee_5.png',
+    '[(H)]': 'ee_6.png',
+    '[:@]': 'ee_7.png'
   },
   map2: {
-    "[:s]": "ee_8.png",
-    "[:$]": "ee_9.png",
-    "[:(]": "ee_10.png",
-    "[:'(]": "ee_11.png",
-    "[<o)]": "ee_12.png",
-    "[(a)]": "ee_13.png",
-    "[8o|]": "ee_14.png"
+    '[:s]': 'ee_8.png',
+    '[:$]': 'ee_9.png',
+    '[:(]': 'ee_10.png',
+    '[:"(]': 'ee_11.png',
+    '[:|]': 'ee_12.png',
+    '[(a)]': 'ee_13.png',
+    '[8o|]': 'ee_14.png'
   },
   map3: {
-    "[8-|]": "ee_15.png",
-    "[+o(]": "ee_16.png",
-    "[|-)]": "ee_17.png",
-    "[:|]": "ee_18.png",
-    "[*-)]": "ee_19.png",
-    "[:-#]": "ee_20.png",
-    "[^o)]": "ee_21.png",
+    '[8-|]': 'ee_15.png',
+    '[+o(]': 'ee_16.png',
+    '[o)]': 'ee_17.png',
+    '[|-)]': 'ee_18.png',
+    '[*-)]': 'ee_19.png',
+    '[:-#]': 'ee_20.png',
+    '[:-*]': 'ee_21.png'
   },
   map4: {
-    "[:-*]": "ee_22.png",
-    "[8-)]": "ee_23.png",
-    "[(|)]": "ee_24.png",
-    "[(u)]": "ee_25.png",
-    "[(S)]": "ee_26.png",
-    "[(*)]": "ee_27.png",
-    "[(#)]": "ee_28.png"
+    '[^o)]': 'ee_22.png',
+    '[8-)]': 'ee_23.png',
+    '[(|)]': 'ee_24.png',
+    '[(u)]': 'ee_25.png',
+    '[(S)]': 'ee_26.png',
+    '[(*)]': 'ee_27.png',
+    '[(#)]': 'ee_28.png'
   },
   map5: {
-    "[(R)]": "ee_29.png",
-    "[({)]": "ee_30.png",
-    "[(})]": "ee_31.png",
-    "[(k)]": "ee_32.png",
-    "[(F)]": "ee_33.png",
-    "[(W)]": "ee_34.png",
-    "[(D)]": "ee_35.png"
+    '[(R)]': 'ee_29.png',
+    '[({)]': 'ee_30.png',
+    '[(})]': 'ee_31.png',
+    '[(k)]': 'ee_32.png',
+    '[(F)]': 'ee_33.png',
+    '[(W)]': 'ee_34.png',
+    '[(D)]': 'ee_35.png'
   }
 };
 

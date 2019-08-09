@@ -1,0 +1,60 @@
+<view class="certification" hover-class="none" hover-stop-propagation="false">
+    <view class="prompt boxsiz row verCenter bothSide">
+        <view>
+            <text class="icon iconfont iconiconxiantiaoshouji12"></text>
+            <text class="t1">请如实填写认证信息，不符合的认证将被拒绝</text>
+        </view>
+        <view>
+            <text class="icon iconfont iconiconxiantiaoshouji13"></text>
+        </view>
+    </view>
+    <view class="content">
+        <text class="time">更新时间：{{authInfo.update_time}}</text>
+        <view class="status row verCenter rowCenter">
+            <cover-image src="{{authInfo.auth_img}}" class="img"></cover-image>
+            <block wx:if="{{authInfo.status === 1}}">
+                <text class="a"></text>
+            </block>
+            <block wx:elif="{{authInfo.status === 3}}">
+                <text class="b"></text>
+            </block>
+            <block wx:elif="{{authInfo.status === 2}}">
+                <text class="c"></text>
+            </block>
+        </view>
+        <block wx:if="{{authInfo.status === 2}}">
+            <view class="error">
+                <text class="icon iconfont iconiconxiantiaoshouji1 va-m"></text>
+                <text class="t1 va-m">驳回理由：{{authInfo.reject_reason}}。</text>
+            </view>
+        </block>
+        <view class="txt">
+            <text class="t1 boxsiz">{{authInfo.company_name}}</text>
+            <view class="row verCenter rowCenter mb">
+                <view>
+                    <text class="t2">资质：</text>
+                    <text class="t3 t3-mr">{{authInfo.auth_type_val}}</text>
+                </view>
+                <view>
+                    <text class="t2">性质：</text>
+                    <text class="t3">{{authInfo.company_type_val}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{authInfo.status === 1}}">
+        <button class="btn" data-type="1" data-id="{{authInfo.id}}" data-url='/pages/person/certification/addcertification/index' bind:tap="toUrl">
+            更新认证信息
+        </button>
+    </block>
+    <block wx:elif="{{authInfo.status === 3}}">
+        <button class="btn" data-type="3" data-id="{{authInfo.id}}" data-url='/pages/tab/home/home' bind:tap="toUrl">
+            返回会员中心
+        </button>
+    </block>
+    <block wx:elif="{{authInfo.status === 2}}">
+        <button class="btn" data-type="2" data-id="{{authInfo.id}}" data-url='/pages/person/certification/addcertification/index' bind:tap="toUrl">
+            重新提交信息
+        </button>
+    </block>
+</view>

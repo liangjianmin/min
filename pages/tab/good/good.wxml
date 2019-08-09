@@ -3,7 +3,7 @@
 <view class="good-view">
   <view class="search-com">
     <text class="icon iconfont iconiconxiantiaoshouji8"></text>
-    <input placeholder='请输入芯片型号' placeholder-class="placeholderClass"  bindinput="bindKeyInput" bindconfirm="bindKeyConfirm"></input>
+    <input placeholder='请输入芯片型号' placeholder-class="placeholderClass" bindinput="bindKeyInput" bindconfirm="bindKeyConfirm"></input>
   </view>
   <view class="good-total row bothSide verCenter px-hr-bottom">
     <view class="good-num">
@@ -17,15 +17,20 @@
   </view>
   <view class="good-content">
     <view wx:if="{{priceList&&priceList.length==0}}" class="nodata">
-      <cover-image src="/res/images/imgs/nodata.png" class="img"></cover-image>
+      <image src="/res/images/imgs/nodata.png" class="img"></image>
       <view class="h3 bold">未搜索到相关信息</view>
       <view class="p">您还可以发布询价。</view>
       <view class="btn-com btn-com-b add-good-btn" bindtap="fbGood">
         <text class="icon iconfont iconiconxiantiaoshouji15"></text>
-      <text>新增商品</text>
+        <text>新增商品</text>
       </view>
     </view>
-    <priceItem price-list="{{priceList}}" wx:if="{{priceList&&priceList.length!==0}}" price-type="5" bindemitevent="emitevent"></priceItem>
+    <priceItem price-list="{{priceList}}" wx:if="{{priceList&&priceList.length!==0}}" price-type="5"></priceItem>
+    <view class="data-bottom row verCenter rowCenter" wx:if="{{isShowBottom}}">
+      <text class="line"></text>
+      <text class="text">我是有底线的</text>
+      <text class="line"></text>
+    </view>
   </view>
 
   <view class="good-btn-div" wx:if="{{priceList&&priceList.length!==0}}">
@@ -34,5 +39,8 @@
       <text>新增商品</text>
     </view>
   </view>
-
+  <view class="cl-good">
+    <view>擦亮</view>
+    <view>商品</view>
+  </view>
 </view>

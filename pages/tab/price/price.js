@@ -1,5 +1,5 @@
 // pages/tab/price/price.js
-import { getData} from '../../../utils/util.js';
+import { getData, judgeToken} from '../../../utils/util.js';
 import { apis } from '../../../utils/api.js';
 Page({
 
@@ -12,14 +12,17 @@ Page({
     priceList: null,//商品数据
     limit:10,//每页的条数
     p:1,//当前页面
-    total:1
+    total:1,
+    isShowBottom:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getData();
+    if (judgeToken(true)) {
+      this.getData();
+    }
   },
   getData:function(){
     let me = this;
@@ -67,7 +70,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
@@ -98,10 +101,8 @@ Page({
       let allPage = Math.ceil(this.data.total/this.data.limit);
       let p = this.data.p;
       if(p == allPage){
-        wx.showToast({
-          title: '数据到底啦',
-          icon: 'none',
-          duration: 2000
+        this.setData({
+          isShowBottom: true
         });
         return 
       }else{
@@ -129,6 +130,7 @@ Page({
         p: 1,
         total: 1,
         tabIndex: i,
+        isShowBottom: false
       })
       if (i == 1) {
         this.setData({
@@ -149,16 +151,5 @@ Page({
     wx.navigateTo({
       url: "/pages/form/xj/index"
     })
-  },
-  emitevent:function(){
-    if(this.data.xb == 1){
-      wx.navigateTo({
-        url: "/pages/list/xj/index",
-      })
-    }else{
-      wx.navigateTo({
-        url: "/pages/list/bj/index",
-      })
-    }
   }
 })

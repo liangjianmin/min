@@ -66,3 +66,19 @@
 .nodata .add-good-btn {
   margin-top: 40rpx;
 }
+.cl-good{
+  position: fixed;
+  height:88rpx;
+  width:88rpx;
+  border-radius: 50%;
+  opacity: .8;
+  background-color: #EAAD37;
+  z-index: 99;
+  font-size: 24rpx;
+  color:#fff;
+  right:24rpx;
+  bottom:150rpx;
+  text-align: center;
+  padding-top:12rpx;
+  box-sizing:border-box;
+}

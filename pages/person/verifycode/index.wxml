@@ -22,7 +22,7 @@
       <view class="form-item-right row verCenter bothSide">
         <input placeholder="请输入图形验证码" placeholder-class="placeholderClass" name='captcha' data-type="3" bindinput='bindinputFn'></input>
         <view class='code-img'>
-          <cover-image src="{{captchaUrl}}" class="img" bindtap='refreshVerification'></cover-image>
+          <image src="{{captchaUrl}}" class="img" bindtap='refreshVerification'></image>
         </view>
       </view>
     </view>

@@ -11,6 +11,10 @@ Component({
 			type: String,
 			value: msgType.chatType.SINGLE_CHAT,
 		},
+    isTopic:{
+      type:String,
+      value:""
+    }
 	},
 	data: {
 		__comps__: {

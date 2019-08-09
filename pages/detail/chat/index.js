@@ -3,6 +3,7 @@ let disp = require("../../../utils/broadcast");
 
 Page({
   data: {
+    isShowTip: true,
     username: {
       your: "",
     },
@@ -12,13 +13,26 @@ Page({
   onLoad(options) {
     let username = JSON.parse(options.username);
     this.setData({ username: username });
-    wx.setNavigationBarTitle({
-      title: username.your
-    });
+    console.log(username)
+    if (getApp().globalData.customerNum == username.your){
+      wx.setNavigationBarTitle({
+        title: 'IC助手客服'
+      });
+    }else{
+      wx.setNavigationBarTitle({
+        title: username.title
+      });
+    }
+  
   },
 
   onUnload() {
     disp.fire("em.chatroom.leave");
+  },
+  closeTip: function () {
+    this.setData({
+      isShowTip: false
+    })
   }
 
 });

@@ -1,2 +1,126 @@
-<!--pages/tab/me/me.wxml-->
-<text>pages/tab/me/me.wxml</text>
+<view class="mine">
+    <view class="head row verCenter">
+        <view class="pic">
+            <cover-image class="im" src="{{userInfo.avatar ? userInfo.avatar:'/res/images/imgs/heads.png'}}"></cover-image>
+        </view>
+        <view class="text">
+            <text class="t1">{{userInfo.company_name}}</text>
+            <view class="row verCenter">
+                <text class="t2" selectable="false" space="false" decode="false">普通会员</text>
+                <view>
+                    <text class="t3">红包:</text>
+                    <text class="t4">13,123</text>
+                </view>
+            </view>
+        </view>
+        <view class="signin row verCenter rowCenter">
+            <text class="icon iconfont iconiconxiantiaoshouji17"></text>
+            <text class="t1">签到成功</text>
+        </view>
+    </view>
+    <view class="tab-bar row verCenter rowCenter">
+        <view class="wrap">
+            <text class="t1">{{business.goods}}</text>
+            <text class="t2">商品</text>
+        </view>
+        <view class="wrap">
+            <text class="t1">{{business.inquiry}}</text>
+            <text class="t2">询价</text>
+        </view>
+        <view class="wrap">
+            <text class="t1">{{business.offer}}</text>
+            <text class="t2">报价</text>
+        </view>
+    </view>
+    <view class="ad boxsiz row verCenter" data-url="/pages/person/welfare/index" bind:tap="toUrl">
+        <text class="icon iconfont iconiconxiantiaoshouji16"></text>
+        <text class='t1'>福利中心</text>
+        <text class='t2'>金币提现兑换、领红包</text>
+    </view>
+    <view class="bar-list boxsiz">
+        <view class="boxsiz bar row bothSide verCenter">
+            <view>
+                <text class="icon iconfont iconiconcaiseshouye1"></text>
+                <text class="t1">个人主页</text>
+            </view>
+            <view>
+                <text class="icon iconfont iconChevron"></text>
+            </view>
+        </view>
+        <view class="hr"></view>
+        <view class="boxsiz bar row bothSide verCenter bor">
+            <view>
+                <text class="icon iconfont iconiconxiantiaoshouji18"></text>
+                <text class="t1">注册手机号</text>
+            </view>
+            <view>
+                <text class="t2">{{userInfo.mobile}}</text>
+            </view>
+        </view>
+        <view class="boxsiz bar row bothSide verCenter" data-type="certification" data-status="{{userInfo.auth_status}}" bind:tap="toUrl">
+            <view>
+                <text class="icon iconfont iconiconxiantiaoshouji19"></text>
+                <text class="t1">认证管理</text>
+            </view>
+            <view>
+                <block wx:if="{{userInfo.auth_status_val == null}}">
+                    <text class="t2">{{userInfo.auth_status_val}}</text>
+                </block>
+                <block wx:else>
+                    <text class="t2">{{userInfo.auth_status_val}}</text>
+                </block>
+                <text class="icon iconfont iconChevron"></text>
+            </view>
+        </view>
+        <view class="hr"></view>
+        <view class="boxsiz bar row bothSide verCenter bor">
+            <view>
+                <text class="icon iconfont iconiconxiantiaoshouji26"></text>
+                <text class="t1">在线客服</text>
+            </view>
+            <view>
+                <text class="icon iconfont iconChevron"></text>
+            </view>
+        </view>
+        <view class="boxsiz bar row bothSide verCenter" data-url="/pages/list/ratemanage/index" bind:tap="toUrl">
+            <view>
+                <text class="icon iconfont iconiconxiantiaoshouji23"></text>
+                <text class="t1">评价管理</text>
+            </view>
+            <view>
+                <text class="icon iconfont iconChevron"></text>
+            </view>
+        </view>
+        <view class="hr"></view>
+        <view class="boxsiz bar row bothSide verCenter bor" data-url="/pages/person/setting/index" bind:tap="toUrl">
+            <view>
+                <text class="icon iconfont iconiconcaiseshouye"></text>
+                <text class="t1">设置</text>
+            </view>
+            <view>
+                <text class="icon iconfont iconChevron"></text>
+            </view>
+        </view>
+        <view class="boxsiz bar row bothSide verCenter bor" data-url="/pages/person/invitation/index" bind:tap="toUrl">
+            <view>
+                <text class="icon iconfont iconjuxing6"></text>
+                <text class="t1">邀请好友注册</text>
+            </view>
+            <view>
+                <text class="icon iconfont iconChevron"></text>
+            </view>
+        </view>
+    </view>
+</view>
+<!-- 签到弹出层 -->
+<view wx:if="{{isShow}}" class="layer-mask column verCenter rowCenter" hover-class="none" hover-stop-propagation="false">
+    <view class="layer column verCenter rowCenter">
+        <cover-image class="im" src="/res/images/imgs/star.png"></cover-image>
+        <text class="t1">恭喜您获得</text>
+        <view class="txt">
+            <text class="t2">666</text>
+            <text class="t3">金币</text>
+        </view>
+        <view class="btn">关闭</view>
+    </view>
+</view>

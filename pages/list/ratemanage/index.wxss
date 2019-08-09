@@ -1,0 +1,2 @@
+/* pages/list/ratemanage/index.wxss */
+@import '/res/css/rate.wxss'

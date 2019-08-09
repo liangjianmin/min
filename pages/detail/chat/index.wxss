@@ -1,4 +1,19 @@
 /* pages/detail/chat/index.wxss */
 page{
 	background-color: #fff;
+  height:auto;
+}
+.chat-view{
+  padding-top:60rpx;
+  transition: all linear .25s;
+}
+.chat-view.nopadding{
+ padding-top:0;
+}
+.chat-view .tip{
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:999;
 }

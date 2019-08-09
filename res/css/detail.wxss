@@ -3,6 +3,8 @@
   color: #fff;
   font-size: 26rpx;
   padding: 24rpx 24rpx 62rpx;
+  min-height: 132rpx;
+  box-sizing: border-box;
 }
 
 .company {
@@ -43,6 +45,7 @@
 
 .xb-com-content {
   top: -22rpx;
+  min-height: 400rpx;
 }
 
 .xb-com-content .desc {
@@ -52,12 +55,15 @@
 .xb-com-content .desc .left .bjsj .t-com {
   flex: 0 0 130rpx;
 }
+
 .bjsj .c-com, .bz .c-com {
   color: #8a9299;
 }
-.desc-xj-detail view{
-  padding-top:16rpx;
+
+.desc-xj-detail view {
+  padding-top: 16rpx;
 }
+
 .zxgt {
   position: absolute;
   bottom: 94rpx;

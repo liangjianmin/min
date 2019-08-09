@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "swipe-delete": "../../../components/swipedelete/swipedelete"
+  },
     "navigationBarTitleText": "消息"
+    
 }

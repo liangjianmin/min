@@ -36,67 +36,67 @@ Page({
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function(options) {
+	onLoad: function (options) {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
-	onReady: function() {
+	onReady: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面显示
 	 */
-	onShow: function() {
+	onShow: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面隐藏
 	 */
-	onHide: function() {
+	onHide: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面卸载
 	 */
-	onUnload: function() {
+	onUnload: function () {
 
 	},
 
 	/**
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
-	onPullDownRefresh: function() {
+	onPullDownRefresh: function () {
 
 	},
 
 	/**
 	 * 页面上拉触底事件的处理函数
 	 */
-	onReachBottom: function() {
+	onReachBottom: function () {
 
 	},
 
 	/**
 	 * 用户点击右上角分享
 	 */
-	onShareAppMessage: function() {
+	onShareAppMessage: function () {
 
 	},
 	/**
 	 * 获取验证码
 	 */
-	getCode: function() {
+	getCode: function () {
 
 		let self = this;
 		let currentTime = this.data.currentTime;
 
-		let interval = setInterval(function() {
+		let interval = setInterval(function () {
 
 			currentTime--;
 
@@ -120,7 +120,7 @@ Page({
 	/**
 	 * 发送验证码
 	 */
-	getVerificationCode: function(e) {
+	getVerificationCode: function (e) {
 
 		//验证必填手机号
 		if (this.data.formData.mobile) {
@@ -130,7 +130,7 @@ Page({
 
 				//是否填写了验证码
 				if (this.data.captcha) {
-					http.getData(apis.getRegistCode,'GET',{
+					http.getData(apis.getRegistCode, 'GET', {
 						captchaUuid: this.data.captchaUuid,
 						captcha: this.data.captcha,
 						mobile: this.data.formData.mobile,
@@ -180,13 +180,13 @@ Page({
 	/**
 	 * 刷新图形验证码
 	 */
-	refreshVerification: function() {
+	refreshVerification: function () {
 
 		this.setData({
 			vcode: true
 		});
 
-		http.getData(apis.captchaInfo,'GET',null, (res) => {
+		http.getData(apis.captchaInfo, 'GET', null, (res) => {
 			this.setData({
 				captchaUrl: res.captchaUrl,
 				captchaUuid: res.captchaUuid
@@ -196,7 +196,7 @@ Page({
 	/**
 	 * 校验字段
 	 */
-	bindinputFn: function(e) {
+	bindinputFn: function (e) {
 		let value = e.detail.value
 		let reg_mobile = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
 		let reg_pwd = /^[0-9A-Za-z]{6,}$/;
@@ -274,7 +274,7 @@ Page({
 	/**
 	 * 校验字段
 	 */
-	calcForm: function(val, type) {
+	calcForm: function (val, type) {
 		let mobile = val.mobile;
 		let code = val.code;
 		let password = val.password;
@@ -346,7 +346,7 @@ Page({
 	/**
 	 *注册
 	 */
-	formSubmit: function(e) {
+	formSubmit: function (e) {
 
 		if (this.calcForm(e.detail.value)) {
 
@@ -355,7 +355,7 @@ Page({
 				loading: true
 			});
 
-			http.getData(apis.authRegister,'POST', e.detail.value, (res) => {
+			http.getData(apis.authRegister, 'POST', e.detail.value, (res) => {
 				if (res.err_code === 0) {
 
 					//注入token
@@ -364,11 +364,16 @@ Page({
 						data: res.data.access_token
 					});
 
+
+					//登录环信帐号
+					getApp().getImUser();
+
+					
 					wx.navigateTo({
 						url: '/pages/person/successfully/index'
 					});
 
-				}else if(res.err_code === 500){
+				} else if (res.err_code === 500) {
 					//图形验证码不正确的时候
 					this.refreshVerification();
 					wx.showToast({
@@ -383,7 +388,7 @@ Page({
 						duration: 2000
 					});
 				}
-				
+
 				this.setData({
 					disabledBtn: false,
 					loading: false
@@ -394,7 +399,7 @@ Page({
 	/**
 	 * 密码是否可见
 	 */
-	toggleFn: function(e) {
+	toggleFn: function (e) {
 
 		if (this.data['visiblePwd']) {
 

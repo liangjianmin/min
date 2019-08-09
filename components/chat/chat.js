@@ -29,8 +29,10 @@ Component({
 		},
 
 		saveSendMsg(evt){
-			msgStorage.saveMsg(evt.detail.msg, evt.detail.type);
-			this.data.__comps__.inputbar.cancelEmoji();
+      msgStorage.saveMsg(evt.detail.msg, evt.detail.type);
+      if ((evt.detail.type !== 'cmd') && (!evt.detail.customer)){
+        this.data.__comps__.inputbar.cancelEmoji();
+      }
 		}
   	},
 
@@ -40,6 +42,7 @@ Component({
 	ready(){
 		this.data.__comps__.inputbar = this.selectComponent("#chat-inputbar");
 		this.data.__comps__.msglist = this.selectComponent("#chat-msglist");
+    
 	},
 	moved(){},
 	detached(){

@@ -1,5 +1,5 @@
 // pages/tab/good/good.js
-import { getData } from '../../../utils/util.js';
+import { getData, judgeToken } from '../../../utils/util.js';
 import { apis } from '../../../utils/api.js';
 Page({
 
@@ -13,14 +13,17 @@ Page({
     total: 0,
     time: "",
     key: "",
-    confirmKey: ""
+    confirmKey: "",
+    isShowBottom:false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getData()
+    if (judgeToken(true)) {
+      this.getData();
+    }
   },
   bindKeyInput: function (e) {
     this.setData({
@@ -35,6 +38,7 @@ Page({
       p: 1,
       total: 0,
       time: "",
+      isShowBottom:false
     });
     this.getData();
 
@@ -105,7 +109,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    console.log(111)
   },
 
   /**
@@ -115,10 +119,8 @@ Page({
     let allPage = Math.ceil(this.data.total / this.data.limit);
     let p = this.data.p;
     if (p == allPage) {
-      wx.showToast({
-        title: '数据到底啦',
-        icon: 'none',
-        duration: 2000
+      this.setData({
+        isShowBottom:true
       });
       return
     } else {
@@ -138,11 +140,6 @@ Page({
   fbGood: function () {
     wx.navigateTo({
       url: "/pages/form/good/index",
-    })
-  },
-  emitevent: function () {
-    wx.navigateTo({
-      url: "/pages/detail/good/index",
     })
   }
 })

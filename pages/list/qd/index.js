@@ -11,7 +11,8 @@ Page({
     priceList: null,//商品数据
     limit: 10,//每页的条数
     p: 1,//当前页面
-    total: 1
+    total: 1,
+    isShowBottom: false,
   },
 
   /**
@@ -100,10 +101,8 @@ Page({
     let allPage = Math.ceil(this.data.total / this.data.limit);
     let p = this.data.p;
     if (p == allPage) {
-      wx.showToast({
-        title: '数据到底啦',
-        icon: 'none',
-        duration: 2000
+      this.setData({
+        isShowBottom: true
       });
       return
     } else {
@@ -131,6 +130,7 @@ Page({
         p: 1,
         total: 1,
         tabIndex: i,
+        isShowBottom: false,
       });
       this.getData();
     }
@@ -141,12 +141,5 @@ Page({
     wx.navigateTo({
       url: "/pages/form/xj/index"
     })
-  },
-  emitevent: function (e) {
-    let inquiryItemsId = e.detail.inquiryItemsId
-    wx.navigateTo({
-      url: "/pages/list/bj/index?inquiryItemsId="+inquiryItemsId,
-    })
-
   }
 })

@@ -1,0 +1,2 @@
+/* pages/list/rate/index.wxss */
+@import '/res/css/rate.wxss'

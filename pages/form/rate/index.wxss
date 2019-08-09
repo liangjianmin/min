@@ -1,0 +1,83 @@
+.rate-form {
+  padding-top: 60rpx;
+}
+
+.rate-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+}
+
+.rate-form .error-text, .rate-form .error-icon {
+  color: #f03737;
+}
+
+.rate-form .tip-error {
+  background-color: #ffd2d2;
+}
+
+.form {
+  margin-left: 39rpx;
+}
+
+.textarea-view {
+  border-bottom: 1px solid #d8dfe6;
+  position: relative;
+}
+
+.textarea {
+  padding: 27rpx 39rpx 27rpx 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #515559;
+  height: 400rpx;
+}
+
+.statistics {
+  position: absolute;
+  bottom: 28rpx;
+  right: 24rpx;
+  font-size: 22rpx;
+  color: #adb6bf;
+}
+
+.rate-type {
+  margin-top: 24rpx;
+}
+
+.type {
+  flex: 1;
+  height: 100rpx;
+  border: 1px solid#d8dfe6;
+  line-height: 100rpx;
+  text-align: center;
+  margin-right: 24rpx;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: #515559;
+  box-sizing: border-box;
+  padding: 1px;
+}
+
+.type.active {
+  padding: 0;
+  border: 2px solid#0D84D1;
+}
+
+.type .icon {
+  font-size: 40rpx;
+  margin-right: 24rpx;
+  color: #adb6bf;
+  vertical-align: middle;
+}
+
+.yes-rate .icon {
+  color: #ea1717;
+}
+
+.rate-btn {
+  margin-top: 60rpx;
+}

@@ -4,7 +4,7 @@
   min-height: 100%;
   position: relative;
   box-sizing: border-box;
-  padding-bottom: 234rpx;
+  padding-bottom: 128rpx;
 }
 
 .bj-title {
@@ -15,8 +15,11 @@
   min-height:130rpx;
   box-sizing: border-box;
 }
+.bj-list .nodata .h3{
+  padding-top:100rpx;
+}
 .x-info{
-  min-height: 496rpx;
+  min-height: 400rpx;
 }
 .bj-title .icon {
   font-size: 40rpx;
@@ -57,10 +60,11 @@
 .sdbj .num {
   color: #61a0f2;
 }
-
-.bj-btn {
-  position: absolute;
-  bottom: 68rpx;
+.bj-btn-view{
+  position: fixed;
+  bottom:0;
   left: 0;
   right: 0;
+  padding-bottom:30rpx;
+  background-color: #fff;
 }

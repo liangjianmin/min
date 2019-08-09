@@ -1,57 +1,78 @@
 <!--pages/detail/xj/index.wxml-->
+<wxs module="dateUtil" src="../../../utils/timeUtil.wxs"></wxs>
 <view class="detail-view">
   <view class="t-desc">
-    <view class="top row bothSide verCenter">
-      <view class="company  row verCenter">
-        <text class="bao">报价</text>
-        <text class="name bold">深圳市德卡科技股份有限公司深圳</text>
+    <view class="t-desc-content" wx:if="{{info}}">
+      <view class="top row bothSide verCenter">
+        <view class="company  row verCenter">
+          <text class="bao">报价</text>
+          <text class="name bold">{{info.company_name||'--'}}</text>
+        </view>
+        <text class="icon iconfont iconiconxiantiaoshouji6"></text>
       </view>
-      <text class="icon iconfont iconiconxiantiaoshouji6"></text>
+
+      <view class="bottom row">
+        <view class="yes" wx:if="{{info.auth_type!=''}}">
+          <text class="icon iconfont iconiconxiantiaoshouji11"></text>
+          <text>
+           <block wx:if="{{info.auth_type==0}}">未认证</block>
+           <block wx:elif="{{info.auth_type==1}}">个人认证</block>
+           <block wx:elif="{{info.auth_type==2}}">企业认证</block>
+          </text>
+        </view>
+        <view class="yes" wx:if="{{info.company_type!=''}}">
+          <text class="icon iconfont iconiconxiantiaoshouji11"></text>
+          <text>
+            <block wx:if="{{info.company_type==1}}">贸易商</block>
+            <block wx:elif="{{info.company_type==2}}">代理商</block>
+            <block wx:elif="{{info.company_type==3}}">原厂</block>
+            <block wx:elif="{{info.company_type==4}}">制造商</block>
+            <block wx:elif="{{info.company_type==5}}">个人用户</block>
+          </text>
+        </view>
+      </view>
     </view>
-    <view class="bottom row">
-      <view class="yes">
-        <text class="icon iconfont iconiconxiantiaoshouji11"></text>
-        <text>公司认证</text>
-      </view>
-      <view class="yes">
-        <text class="icon iconfont iconiconxiantiaoshouji11"></text>
-        <text>贸易商</text>
-      </view>
-    </view>
+
   </view>
   <view class="xb-com-content">
-    <view class="title row bothSide verCenter nowrap px-hr-bottom">
-      <text class="name bold ellipsis">STM32F407ZGT6STM32</text>
-      <text class="price bold">￥100.0120</text>
+    <view wx:if="{{info}}">
+      <view class="title row bothSide verCenter nowrap px-hr-bottom">
+        <text class="name bold ellipsis">{{info.goods_name}}</text>
+        <text class="price bold">
+          <block wx:if="{{info.currency == 1}}">￥{{info.price}}</block>
+          <block wx:else>${{info.price}}</block>
+        </text>
+      </view>
+      <view class="desc desc-xj-detail">
+        <view class="brand row">
+          <text class="t-com">品牌：</text>
+          <text class="c-com">{{info.brand_name}}</text>
+        </view>
+        <view class="fz row">
+          <text class="t-com">封装：</text>
+          <text class="c-com">{{info.encap}}</text>
+        </view>
+        <view class="num row">
+          <text class="t-com">数量：</text>
+          <text class="c-com bold">{{info.number}} PCS</text>
+        </view>
+        <view class="hq row">
+          <text class="t-com">货期：</text>
+          <text class="c-com">{{info.delivery_time}}</text>
+        </view>
+        <view class="bz row">
+          <text class="t-com">备注：</text>
+          <text class="c-com">{{info.remark||'--'}}</text>
+        </view>
+        <view class="bjsj row">
+          <text class="t-com">报价时间：</text>
+          <text class="c-com">{{dateUtil.dateFormat(info.add_time*1000)}}</text>
+        </view>
+      </view>
     </view>
-    <view class="desc desc-xj-detail">
-      <view class="brand row">
-        <text class="t-com">品牌：</text>
-        <text class="c-com">Texas Instruments</text>
-      </view>
-      <view class="fz row">
-        <text class="t-com">封装：</text>
-        <text class="c-com">LQFP-64</text>
-      </view>
-      <view class="num row">
-        <text class="t-com">数量：</text>
-        <text class="c-com bold">100,000 PCS</text>
-      </view>
-      <view class="hq row">
-        <text class="t-com">货期：</text>
-        <text class="c-com">现货</text>
-      </view>
-      <view class="bz row">
-        <text class="t-com">备注：</text>
-        <text class="c-com">有货的请尽快回复，比较急着要货</text>
-      </view>
-      <view class="bjsj row">
-        <text class="t-com">报价时间：</text>
-        <text class="c-com">2019-05-10 10:15</text>
-      </view>
-    </view>
+
   </view>
-  <view class="zxgt btn-com btn-com-y">
+  <view class="zxgt btn-com btn-com-y" wx:if="{{info}}" bindtap="sendTemplate">
     <text class="icon iconfont iconiconxiantiaoshouji11"></text>
     <text class="gt-t">在线沟通</text>
   </view>

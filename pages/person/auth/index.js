@@ -1,5 +1,7 @@
 const http = require('../../../utils/util.js');
-import { apis } from '../../../utils/api.js';
+import {
+  apis
+} from '../../../utils/api.js';
 
 Page({
 
@@ -14,7 +16,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
 
 
   },
@@ -22,49 +24,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
- 
+  onHide: function () {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   },
   /**
@@ -73,7 +75,7 @@ Page({
   bindGetUserInfo(e) {
     let self = this;
 
-    if (e.detail.errMsg == 'getUserInfo:ok'){
+    if (e.detail.errMsg == 'getUserInfo:ok') {
       wx.login({
         success(res) {
           if (res.code) {
@@ -84,7 +86,7 @@ Page({
             });
 
             //获取openId
-            http.getData(apis.getOpenId, 'GET',{
+            http.getData(apis.getOpenId, 'GET', {
               code: res.code,
               'userinfo[avatarUrl]': self.data.userinfo.avatarUrl,
               'userinfo[nickName]': self.data.userinfo.nickName
@@ -102,6 +104,13 @@ Page({
                   data: res.data.session_key
                 });
 
+                //存储用户已经授权
+                wx.setStorage({
+                  key: "auth",
+                  data: true
+                });
+
+
                 //授权成功跳转一键获取手机号
                 wx.navigateTo({
                   url: '/pages/person/getphone/index'
@@ -114,10 +123,10 @@ Page({
           }
         },
         fail(res) {
-         
+
         }
       })
-    }else{
+    } else {
 
       //用户拒绝获取资料
       wx.navigateTo({
@@ -129,7 +138,7 @@ Page({
   /**
    * 暂不注册
    */
-  toUrl: function() {
+  toUrl: function () {
     wx.switchTab({
       url: '/pages/tab/home/home'
     })

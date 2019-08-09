@@ -3,14 +3,26 @@
 .searchresult-view {
   min-height: 100%;
   position: relative;
-  padding-bottom: 234rpx;
   box-sizing: border-box;
+  padding:174rpx 0 158rpx;
 }
+
+.searchresult-view .search-com, .searchresult-view .switch-tab-com {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.searchresult-view .switch-tab-com {
+  top: 86rpx;
+  /* border-bottom:1px solid #f5f9fc; */
+}
+
 .fast_fb {
-  position: absolute;
-  bottom: 68rpx;
-  left:0;
-  right:0;
+  margin-top:20rpx;
 }
 
 .nodata .p {
@@ -18,7 +30,16 @@
 }
 
 .nodata_fb {
-  margin-top:40rpx;
+  margin-top: 40rpx;
+}
+
+.fast_fb_view {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  height: 158rpx;
 }
 
 .concat_custom {
@@ -27,12 +48,17 @@
   left: 0;
   right: 0;
   text-align: center;
-  color:#61A0F2;
+  color: #61a0f2;
   font-size: 28rpx;
 }
-.concat_custom .icon{
-  font-size: 40rpx;
-  margin-right:16rpx;
-  vertical-align: sub;
 
+.concat_custom .icon {
+  font-size: 40rpx;
+  margin-right: 16rpx;
+  vertical-align: sub;
+}
+
+.nodata_fb .icon,.fast_fb .icon {
+  margin-right: 8rpx;
+  font-size: 32rpx;
 }

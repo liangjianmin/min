@@ -1,0 +1,43 @@
+/* pages/detail/company/index.wxss */
+
+.company-view {
+}
+
+.company-head {
+  padding: 40rpx 24rpx;
+  border-bottom: 10rpx solid #f5f9fc;
+}
+
+.company-img {
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 50%;
+}
+
+.company-head .text {
+  margin-left: 24rpx;
+  flex: 1;
+}
+
+.company-head .text .h3 {
+  font-size: 36rpx;
+}
+
+.rz {
+  flex-wrap: wrap;
+}
+
+.rz .yes {
+  margin: 24rpx 24rpx 0 0;
+  color: #8a9299;
+  font-size: 26rpx;
+}
+
+.rz .yes .icon {
+  color: #61a0f2;
+  font-size: 30rpx;
+  margin-right: 12rpx;
+}
+
+.company-content {
+}

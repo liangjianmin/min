@@ -32,67 +32,67 @@ Page({
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function(options) {
+	onLoad: function (options) {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
-	onReady: function() {
+	onReady: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面显示
 	 */
-	onShow: function() {
+	onShow: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面隐藏
 	 */
-	onHide: function() {
+	onHide: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面卸载
 	 */
-	onUnload: function() {
+	onUnload: function () {
 
 	},
 
 	/**
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
-	onPullDownRefresh: function() {
+	onPullDownRefresh: function () {
 
 	},
 
 	/**
 	 * 页面上拉触底事件的处理函数
 	 */
-	onReachBottom: function() {
+	onReachBottom: function () {
 
 	},
 
 	/**
 	 * 用户点击右上角分享
 	 */
-	onShareAppMessage: function() {
+	onShareAppMessage: function () {
 
 	},
 	/**
 	 * 获取验证码
 	 */
-	getCode: function() {
+	getCode: function () {
 
 		let self = this;
 		let currentTime = this.data.currentTime;
 
-		let interval = setInterval(function() {
+		let interval = setInterval(function () {
 
 			currentTime--;
 
@@ -116,7 +116,7 @@ Page({
 	/**
 	 * 发送验证码
 	 */
-	getVerificationCode: function(e) {
+	getVerificationCode: function (e) {
 
 		//验证必填手机号
 		if (this.data.formData.mobile) {
@@ -176,7 +176,7 @@ Page({
 	/**
 	 * 刷新图形验证码
 	 */
-	refreshVerification: function() {
+	refreshVerification: function () {
 
 		this.setData({
 			vcode: true
@@ -192,24 +192,24 @@ Page({
 	/**
 	 * 校验字段
 	 */
-	bindinputFn: function(e) {
+	bindinputFn: function (e) {
 		let value = e.detail.value
 		let reg_mobile = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
 
 		if (e.currentTarget.dataset.type == 1) {
-	
+
 			if (value) {
-				
+
 				this.setData({
 					error: true,
 					errorText: '请填写正确的手机号',
 					mobileFlag: true
 				});
-					
+
 				if (reg_mobile.test(value)) {
 					wx.hideKeyboard();
 					this.setData({
-					   'formData.mobile': value,
+						'formData.mobile': value,
 						error: false,
 						errorText: '',
 						mobileFlag: false
@@ -245,7 +245,7 @@ Page({
 	/**
 	 * 校验字段
 	 */
-	calcForm: function(val, type) {
+	calcForm: function (val, type) {
 		let mobile = val.mobile;
 		let code = val.code;
 		let reg_mobile = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
@@ -293,7 +293,7 @@ Page({
 	/**
 	 * 登录
 	 */
-	formSubmit: function(e) {
+	formSubmit: function (e) {
 
 		if (this.calcForm(e.detail.value)) {
 
@@ -310,6 +310,9 @@ Page({
 						key: "access_token",
 						data: res.data.access_token
 					});
+
+					//登录环信帐号
+					getApp().getImUser();
 
 					wx.switchTab({
 						url: '/pages/tab/home/home'

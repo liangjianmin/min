@@ -1,0 +1,8 @@
+<view class="success column rowCenter verCenter">
+    <image src="/res/images/imgs/success.png" class="img"></image>
+    <text class="tit">话费兑换成功</text>
+    <text class="t1">话费预计将在24小时内充值到账！</text>
+    <navigator url="/pages/person/welfare/index" class="btn">
+        返回福利中心
+    </navigator>
+</view>

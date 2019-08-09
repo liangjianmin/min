@@ -1,0 +1,26 @@
+<view class="privacy" hover-class="none" hover-stop-propagation="false">
+    <view class="boxsiz bar row bothSide verCenter bor">
+        <view>
+            <text class="t1">商品展示</text>
+        </view>
+        <view>
+            <switch checked />
+        </view>
+    </view>
+    <view class="boxsiz bar row bothSide verCenter bor">
+        <view>
+            <text class="t1">询价展示</text>
+        </view>
+        <view>
+            <switch />
+        </view>
+    </view>
+    <view class="boxsiz bar row bothSide verCenter bor">
+        <view>
+            <text class="t1">报价展示</text>
+        </view>
+        <view>
+            <switch />
+        </view>
+    </view>
+</view>

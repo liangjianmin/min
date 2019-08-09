@@ -1,77 +1,89 @@
 <!--pages/form/xj/index.wxml-->
 <view class="form-view">
-  <view class="tip row bothSide verCenter">
+  <view class="tip row bothSide verCenter {{isShowTip?'':'noheight'}}">
     <view class="tip-left">
       <text class="icon iconfont iconiconxiantiaoshouji12 tip-icon"></text>
       <text class="tip-c">填写完整信息，有利于提高回复报价效率</text>
     </view>
-    <text class="icon iconfont iconiconxiantiaoshouji13 close-icon"></text>
+    <text class="icon iconfont iconiconxiantiaoshouji13 close-icon" bindtap="closeTip"></text>
   </view>
   <view class="upload-view column verCenter">
-    <view class="upload column verCenter rowCenter">
+    <view class="upload column verCenter rowCenter" bindtap="uploadImg" wx:if="{{!imgUrl}}">
       <text class="icon iconfont iconiconxiantiaoshouji15"></text>
       <text class="upload-text">上传图片</text>
     </view>
+    <view class="hasImg" wx:else>
+      <cover-image src="{{imgUrl}}"></cover-image>
+      <text class="icon iconfont iconiconxiantiaoshouji7 deleteImg" bindtap="deleteImg"></text>
+    </view>
     <view class="text">据说上传图片更容易让人报价</view>
   </view>
-  <view class="form-item row verCenter">
-    <text class="form-item-title">*型号</text>
-    <view class="form-item-right">
-      <input placeholder="请输入产品型号（必填）" placeholder-class="placeholderClass"></input>
-    </view>
-  </view>
-  <view class="form-item row verCenter px-hr-top">
-    <text class="form-item-title">*品牌</text>
-    <view class="form-item-right">
-      <input placeholder="请输入品牌（必填）" placeholder-class="placeholderClass"></input>
-    </view>
-  </view>
-  <view class="form-item row verCenter  px-hr-top">
-    <text class="form-item-title"> 封装</text>
-    <view class="form-item-right">
-      <input placeholder="请输入封装" placeholder-class="placeholderClass"></input>
-    </view>
-  </view>
-  <view class="form-item row verCenter  px-hr-top">
-    <text class="form-item-title">*数量</text>
-    <view class="form-item-right">
-      <input placeholder="请输入数量（必填）" placeholder-class="placeholderClass"></input>
-    </view>
-  </view>
-  <view class="form-item row verCenter  px-hr-top bj-item">
-    <text class="form-item-title">*价格</text>
-    <view class="form-item-right row verCenter bothSide">
-      <input placeholder="请输入单价" placeholder-class="placeholderClass"></input>
-      <view class="price-type" bindtap="switchPrice">
-        <text class="price-value">RMB</text>
-        <text class="icon iconfont iconbianzu1"></text>
+  <form bindsubmit="formSubmit">
+    <view class="form-item row verCenter">
+      <text class="form-item-title">*型号</text>
+      <view class="form-item-right">
+        <input placeholder="请输入产品型号（必填）" placeholder-class="placeholderClass" type="text" name="goods_name"></input>
       </view>
+    </view>
+    <view class="form-item row verCenter px-hr-top">
+      <text class="form-item-title">*品牌</text>
+      <view class="form-item-right">
+        <input placeholder="请输入品牌（必填）" placeholder-class="placeholderClass" type="text" name="brand_name"></input>
+      </view>
+    </view>
+    <view class="form-item row verCenter  px-hr-top">
+      <text class="form-item-title"> 封装</text>
+      <view class="form-item-right">
+        <input placeholder="请输入封装" placeholder-class="placeholderClass" type="text" name="encap"></input>
+      </view>
+    </view>
+    <view class="form-item row verCenter  px-hr-top">
+      <text class="form-item-title">*数量</text>
+      <view class="form-item-right">
+        <input placeholder="请输入数量（必填）" placeholder-class="placeholderClass" type="number" name="number"></input>
+      </view>
+    </view>
+    <view class="form-item row verCenter  px-hr-top bj-item">
+      <text class="form-item-title">*价格</text>
+      <view class="form-item-right row verCenter bothSide">
+        <input placeholder="请输入单价" placeholder-class="placeholderClass" type="number" name="price"></input>
+        <view class="price-type" bindtap="switchPrice">
+          <text class="price-value">{{currency == 1?'RMB':'USD'}}</text>
+          <text class="icon iconfont iconbianzu1"></text>
+        </view>
 
+      </view>
+      <view class="price-ul {{isShowSwitch?'show':''}}">
+        <view class="price-li {{currency == 1?'active':''}}" data-pricetype="1" bindtap="changePrice">RMB</view>
+        <view class="price-li px-hr-top {{currency == 2?'active':''}}" data-pricetype="2"  bindtap="changePrice">USD</view>
+      </view>
     </view>
-    <view class="price-ul {{isShowSwitch?'show':''}}">
-      <view class="price-li active">RMB</view>
-      <view class="price-li px-hr-top">USD</view>
+    <view class="form-item row verCenter  px-hr-top qx-item">
+      <text class="form-item-title">*货期</text>
+      <view class="form-item-right">
+        <radio-group name="hq" bindchange="radioChange">
+          <label>
+            <radio value="1" checked/>现货
+          </label>
+          <label>
+            <radio value="2" />期货
+          </label>
+        </radio-group>
+      </view>
     </view>
-  </view>
-  <view class="form-item row verCenter  px-hr-top qx-item">
-    <text class="form-item-title">*货期</text>
-    <view class="form-item-right">
-      <radio-group>
-        <label>
-          <radio value="1" checked/>现货
-        </label>
-        <label>
-          <radio value="2" checked/>期货
-        </label>
-      </radio-group>
+    <view class="form-item row verCenter  px-hr-top" hidden="{{!isShowTime}}">
+      <text class="form-item-title">*时间</text>
+      <view class="form-item-right">
+        <input placeholder="请输入货期时间（天）" placeholder-class="placeholderClass" type="text" name="day"></input>
+      </view>
     </view>
-  </view>
-  <view class="form-hr"></view>
-  <view class="form-item row px-hr-bottom">
-    <text class="form-item-title">备注</text>
-    <view class="form-item-right">
-      <textarea placeholder="请输入备注" placeholder-class="placeholderClass" maxlength="-1" />
+    <view class="form-hr"></view>
+    <view class="form-item row px-hr-bottom">
+      <text class="form-item-title">备注</text>
+      <view class="form-item-right">
+        <textarea placeholder="请输入备注" placeholder-class="placeholderClass" maxlength="-1" name="remark" />
+      </view>
     </view>
-  </view>
-  <view class="btn-com btn-com-b hf-btn">发布询价</view>
+    <button class="btn-com btn-com-b hf-btn" form-type="submit">发布询价</button>
+  </form>
 </view>

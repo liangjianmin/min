@@ -1,0 +1,67 @@
+<view class="certification" hover-class="none" hover-stop-propagation="false">
+    <view class="prompt boxsiz row verCenter bothSide">
+        <view>
+            <text class="icon iconfont iconiconxiantiaoshouji12"></text>
+            <text class="t1">请如实填写认证信息，不符合的认证将被拒绝</text>
+        </view>
+        <view>
+            <text class="icon iconfont iconiconxiantiaoshouji13"></text>
+        </view>
+    </view>
+    <form bindsubmit="formSubmit">
+        <view class="item boxsiz row verCenter bothSide">
+            <view>
+                <text class="t1">认证类型</text>
+            </view>
+            <view>
+                <radio-group class="radio-group" bindchange="radioChange" name="auth_type">
+                    <label class="radio-wrap">
+                        <radio value="2" checked="{{checked == 2}}" class="radio-text" />
+                        <text class="va-m">企业</text>
+                    </label>
+                     <label class="radio-wrap">
+                        <radio value="1" checked="{{checked == 1}}" class="radio-text" />
+                        <text class="va-m">个人</text>
+                    </label>
+                </radio-group>
+            </view>
+        </view>
+        <view class="hr"></view>
+        <view class="item boxsiz row verCenter bothSide">
+            <view class="flex-a">
+                <text class="t1">{{nameText}}</text>
+            </view>
+            <view class="flex-b">
+                <input value="{{authInfo.company_name}}" placeholder="{{placeholderText}}" placeholder-class="placeholderClass" name="company_name" data-type="1" bindinput='bindinputFn' class="inp"></input>
+            </view>
+        </view>
+        <view class="hr"></view>
+        <view class="item boxsiz row verCenter bothSide bor">
+            <view>
+                <text class="t1">经营性质</text>
+            </view>
+            <view>
+                <picker bindchange="bindPickerChange" value="{{index}}" range="{{companyType}}" name="company_type" range-key="{{'name'}}">
+                    <text class="t2">{{companyTypeText}}</text>
+                    <text class="icon iconfont iconChevron"></text>
+                </picker>
+            </view>
+        </view>
+        <view class="upload-box column rowCenter verCenter">
+            <block wx:if="{{status}}">
+                <view class="add column rowCenter verCenter" bindtap="uploadImg">
+                    <text class="icon iconfont iconiconxiantiaoshouji15"></text>
+                    <text class="t1">上传资料</text>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="view column rowCenter verCenter">
+                    <cover-image src="{{imgSrc}}" class="img"></cover-image>
+                    <text class="icon iconfont iconiconxiantiaoshouji7" bind:tap="deleteImg"></text>
+                </view>
+            </block>
+            <text class="txt">请上传名片/工作，任意材料，证明您的身份信息</text>
+        </view>
+        <button class="btn" form-type="submit" disabled="{{disabled}}" loading="{{loading}}">提交认证</button>
+    </form>
+</view>

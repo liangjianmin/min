@@ -1,0 +1,20 @@
+/* pages/form/appeal/index.wxss */
+.form-view {
+  margin-left:24rpx;
+}
+.form-view .h3{
+  color:#515559;
+  font-size: 28rpx;
+  padding:27rpx 0 0 15rpx;
+}
+.textarea{
+  width:100%;
+  padding:0 15rpx;
+  margin-top:14rpx;
+  box-sizing: border-box;
+  border-bottom:5rpx solid #D8DFE6;
+  font-size: 28rpx;
+}
+.appeal-btn{
+  margin-top:60rpx;
+}

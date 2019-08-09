@@ -1,10 +1,10 @@
 <view class="room_bar">
   <chat-suit-emoji id="chat-suit-emoji" bind:newEmojiStr="emojiAction"></chat-suit-emoji>
-  <chat-suit-main id="chat-suit-main" username="{{ username }}" chatType="{{ chatType }}" bind:inputFocused="cancelEmoji">
+  <chat-suit-main id="chat-suit-main" username="{{ username }}" chatType="{{ chatType }}" bind:inputFocused="cancelEmoji" is-topic="{{isTopic}}">
     <view class="open_emoji" bind:tap="openEmoji">
       <image src="../../../images/Emoji.png" />
     </view>
-    <view class="send_image" bind:tap="sendImage">
+    <view class="send_image" bind:tap="sendImage" wx:if="{{!isTopic}}">
       <image src="../../../images/pic.png"/>
     </view>
   </chat-suit-main>

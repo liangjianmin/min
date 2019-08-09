@@ -1,31 +1,54 @@
 <!--pages/tab/message/message.wxml-->
-<view class="message-view">
-  <view class="nodata" wx:if="{{arr.length == 0}}">
-    <cover-image src="/res/images/imgs/nomessage.png" class="img"></cover-image>
+<scroll-view scroll-y="true" class="message-view">
+  <view class="nodata" wx:if="{{arr.length==0&&isCustomer}}">
+    <image src="/res/images/imgs/nomessage.png" class="img"></image>
     <view class="h3 bold">暂无询价消息</view>
   </view>
-  <view class="message-content" wx:else>
-    <view class="tip row bothSide verCenter">
+  <view class="message-content" wx:if="{{!isCustomer||arr.length}}">
+    <view class="tip row bothSide verCenter {{isShowTip?'':'noheight'}}">
       <view class="tip-left">
         <text class="icon iconfont iconiconxiantiaoshouji12 tip-icon"></text>
         <text class="tip-c">风险提示文字风险提示文字风险提示文字风险</text>
       </view>
-      <text class="icon iconfont iconiconxiantiaoshouji13 close-icon"></text>
+      <text class="icon iconfont iconiconxiantiaoshouji13 close-icon" bindtap="closeTip"></text>
     </view>
     <view class="message-list">
-      <view class="message-item px-hr-bottom row verCenter bothSide nowrap" wx:for="{{ arr }}" wx:key="index" catchtap="into_chatRoom" data-item="{{ item }}">
-        <view class="message-l row verCenter ellipsis">
-          <cover-image src="/res/images/imgs/iclogo.png" class="message-avar"></cover-image>
-          <view class="message-l-view ellipsis">
-            <view class="message-c bold ellipsis">{{ item.username }}</view>
-            <view class="message-t ellipsis">{{ item.msg.data[0].data }}</view>
+      <view catchtap="into_chatRoom" data-item="{{customer}}" wx:if="{{!isCustomer}}">
+        <view class="message-item px-hr-bottom row  bothSide nowrap">
+          <view class="message-l row  ellipsis">
+            <image src="/res/images/imgs/timg.jpg" class="message-avar"></image>
+            <view class="message-l-view ellipsis">
+              <view class="message-c bold ellipsis">IC助手客服</view>
+              <view class="message-t ellipsis" wx:if="{{ customer.msg.data[0].data }}">{{ customer.msg.data[0].data }}</view>
+              <view class="message-t ellipsis" wx:if="{{customer.msg.type == 'img' }}">[图片]</view>
+              <view class="message-t ellipsis" wx:if="{{customer.msg.type == 'cmd' }}">{{customer.ext.type}} {{customer.ext.price}}</view>
+            </view>
+          </view>
+          <view class="message-r">
+            <view class="message-r-t">{{customer.time}}</view>
+            <view class="message-r-n" wx:if="{{ customer.unReadCount > 0 || customer.unReadCount == '99+' }}">{{ customer.unReadCount }}</view>
           </view>
         </view>
-        <view class="message-r">
-          <view class="message-r-t">{{item.time}}</view>
-          <view class="message-r-n" wx:if="{{ item.unReadCount > 0 || item.unReadCount == '99+' }}">{{ item.unReadCount }}</view>
-        </view>
+      </view>
+      <view wx:for="{{ arr }}" wx:key="index" wx:if="{{arr}}">
+        <swipe-delete binddeleteChatItem="deleteChatItem" data-item="{{ item }}" binddeleteChat="deleteChat">
+          <view class="message-item px-hr-bottom row  bothSide nowrap" catchtap="into_chatRoom" data-item="{{ item }}">
+            <view class="message-l row  ellipsis">
+              <image src="{{item.img?item.img:'/res/images/imgs/s.png'}}" class="message-avar"></image>
+              <view class="message-l-view ellipsis">
+                <view class="message-c bold ellipsis">{{ item.name||'--' }}</view>
+                <view class="message-t ellipsis" wx:if="{{ item.msg.data[0].data }}">{{ item.msg.data[0].data }}</view>
+                <view class="message-t ellipsis" wx:if="{{item.msg.type == 'img' }}">[图片]</view>
+                <view class="message-t ellipsis" wx:if="{{item.msg.type == 'cmd' }}">{{item.ext.type}} {{item.ext.price}}</view>
+              </view>
+            </view>
+            <view class="message-r">
+              <view class="message-r-t">{{item.time}}</view>
+              <view class="message-r-n" wx:if="{{ item.unReadCount > 0 || item.unReadCount == '99+' }}">{{ item.unReadCount }}</view>
+            </view>
+          </view>
+        </swipe-delete>
       </view>
     </view>
   </view>
-</view>
+</scroll-view>

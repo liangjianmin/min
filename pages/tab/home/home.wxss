@@ -64,17 +64,20 @@
 
 .advs-content-parent {
   margin-right: 24rpx;
-  padding: 29rpx 0 30rpx;
+  padding: 15rpx 0;
 }
 
 .advs-content {
   flex: 1;
+  max-height:60px;
+  box-sizing: border-box;
   overflow: hidden;
   white-space: nowrap;
+  position: relative;
 }
-
 .adv {
-  margin-bottom: 25rpx;
+  /* margin-bottom: 25rpx; */
+  height:30px;
   margin-right: 29rpx;
 }
 
@@ -83,23 +86,23 @@
 }
 
 .adv-mark {
-  font-size: 24rpx;
+  font-size: 12px;
   color: #61a0f2;
   background: #f0f6fa;
   border-radius: 2rpx;
-  height: 36rpx;
-  line-height: 36rpx;
+  height: 18px;
+  line-height: 18px;
   padding: 0 19rpx;
 }
 
 .adv-num {
-  font-size: 28rpx;
+  font-size: 14px;
   color: #515559;
   margin-left: 24rpx;
 }
 
 .adv-time {
-  font-size: 24rpx;
+  font-size: 12px;
   color: #8a9299;
   margin-left: 27rpx;
 }

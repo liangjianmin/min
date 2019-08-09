@@ -1,0 +1,29 @@
+<view class="person">
+    <view class="column tit">
+        <text class="t1">设置登录密码</text>
+        <text class="t2">请保管好您的登录密码。</text>
+    </view>
+    <form bindsubmit="formSubmit">
+        <view class="inp-wrap row verCenter {{passwordFlag ? 'inp-error':''}}">
+            <text class="icon iconfont iconiconxiantiaoshouji2"></text>
+            <view class="form-item-right row verCenter bothSide">
+                <input placeholder="请输入登录密码" placeholder-class="placeholderClass" class="pwd" name="password" data-type="4" password='{{passwordType}}' bindinput='bindinputFn'></input>
+                <block wx:if="{{visiblePwd}}">
+                    <text class="icon iconfont iconiconxiantiaoshouji3 pwd-ico" bindtap="toggleFn"></text>
+                </block>
+                <block wx:else>
+                    <text class="icon iconfont iconiconxiantiaoshouji4 pwd-ico" bindtap="toggleFn"></text>
+                </block>
+            </view>
+        </view>
+        <view class="error-wrap row bothSide verCenter">
+            <view class="error">
+                <block wx:if="{{error}}">
+                    <text class="icon iconfont iconiconxiantiaoshouji1"></text>
+                    <text class="txt">{{errorText}}</text>
+                </block>
+            </view>
+        </view>
+        <button  class="register-button" form-type="submit" disabled="{{disabled}}" loading="{{loading}}">设置密码</button>        
+    </form>
+</view>

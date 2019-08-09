@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/person/auth/index",
-    "pages/person/mine/index",
     "pages/person/forget/index",
     "pages/person/register/index",
     "pages/person/verifycode/index",
@@ -23,7 +22,29 @@
     "pages/form/xj/index",
     "pages/detail/good/index",
     "pages/detail/xj/index",
-    "pages/list/qd/index"
+    "pages/list/qd/index",
+    "pages/person/setting/index",
+    "pages/person/privacy/index",
+    "pages/person/setpassword/index",
+    "pages/person/certification/addcertification/index",
+    "pages/person/certification/certificationmanage/index",
+    "pages/person/company/index",
+    "pages/person/editcompany/index",
+    "pages/person/welfare/index",
+    "pages/form/rate/index",
+    "pages/detail/company/index",
+    "pages/person/exchange/index",
+    "pages/list/rate/index",
+    "pages/list/ratemanage/index",
+    "pages/form/appeal/index",
+    "pages/list/signin/index",
+    "pages/person/withdrawal/index",
+    "pages/person/withdrawalsuccess/index",
+    "pages/person/integralrule/index",
+    "pages/person/packet/index",
+    "pages/person/invitation/index",
+    "pages/person/invitationrecord/index",
+    "pages/form/report/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -36,7 +57,8 @@
     "selectedColor": "#0D84D1",
     "borderStyle": "white",
     "backgroundColor": "#fff",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/tab/home/home",
         "text": "首页",
         "iconPath": "/res/images/icons/home-icon.png",

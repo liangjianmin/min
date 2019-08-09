@@ -2,7 +2,7 @@
 <view class="searchresult-view">
   <view class="search-com">
     <text class="icon iconfont iconiconxiantiaoshouji8"></text>
-    <input placeholder='请输入芯片型号' placeholder-class="placeholderClass" bindtap="toSearch"></input>
+    <input placeholder='请输入芯片型号' placeholder-class="placeholderClass" value="{{key}}" bindinput="bindKeyInput" bindconfirm="bindKeyConfirm"></input>
   </view>
   <view class="switch-tab-com row">
     <view bindtap="switchTab" class="{{tabIndex == 1&&'active'}}" data-index="1">
@@ -16,20 +16,40 @@
   </view>
   <view class="searchresult-content">
     <view wx:if="{{priceList&&priceList.length==0}}" class="nodata">
-      <cover-image src="/res/images/imgs/nodata.png" class="img"></cover-image>
+      <image src="/res/images/imgs/nodata.png" class="img"></image>
       <view class="h3 bold">未搜索到相关信息</view>
-      <view class="p">您还可以发布询价。</view>
-      <view class="nodata_fb btn-com btn-com-b" bindtap="toXj">
+      <view class="p">
+        <text wx:if="{{tabIndex == 2}}">您还可以发布询价。</text>
+        <text wx:if="{{tabIndex == 1}}">您还可以新增商品。</text>
+      </view>
+      <view class="nodata_fb btn-com btn-com-b" bindtap="toXj" wx:if="{{tabIndex == 2}}">
         <text>快速发布询价</text>
+      </view>
+      <view class="nodata_fb btn-com btn-com-b" bindtap="toSp" wx:if="{{tabIndex == 1}}">
+        <text class="icon iconfont iconiconxiantiaoshouji15"></text>
+        <text>新增商品</text>
       </view>
     </view>
     <priceItem price-list="{{priceList}}" wx:if="{{priceList&&priceList.length!==0}}" price-type="{{type}}" xb="1"></priceItem>
+      <view class="data-bottom row verCenter rowCenter" wx:if="{{isShowBottom}}">
+      <text class="line"></text>
+      <text class="text">我是有底线的</text>
+      <text class="line"></text>
+    </view>
   </view>
-  <view class="fast_fb btn-com btn-com-b" wx:if="{{priceList&&priceList.length!==0}}" bindtap="toXj">
-    <text>快速发布询价</text>
+  <view class="fast_fb_view" wx:if="{{priceList&&priceList.length!==0&&tabIndex == 2}}">
+    <view class="fast_fb btn-com btn-com-b" bindtap="toXj">
+      <text>快速发布询价</text>
+    </view>
   </view>
-  <view class="concat_custom" wx:if="{{priceList&&priceList.length==0}}">
-    <text class="icon iconfont iconiconxiantiaoshouji11"></text>
-    <text>联系客服帮您找</text>
+  <view class="fast_fb_view" wx:if="{{priceList&&priceList.length!==0&&tabIndex == 1}}">
+    <view class="fast_fb btn-com btn-com-b" bindtap="toSp">
+      <text class="icon iconfont iconiconxiantiaoshouji15"></text>
+      <text>新增商品</text>
+    </view>
+  </view>
+  <view class="concat_custom" wx:if="{{priceList&&priceList.length==0&&tabIndex == 2}}">
+    <text class="icon iconfont iconiconxiantiaoshouji11" bindtap="sendCustomer"></text>
+    <text  bindtap="sendCustomer">联系客服帮您找</text>
   </view>
 </view>

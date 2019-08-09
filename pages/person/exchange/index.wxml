@@ -1,0 +1,80 @@
+<view class="exchange" hover-class="none" hover-stop-propagation="false">
+    <view class="switch-tab-com row">
+        <view bindtap="switchTab" class="{{tabIndex == 1&&'active'}}" data-index="1">
+            <text>收入明细</text>
+            <text class="active-bg"></text>
+        </view>
+        <view bindtap="switchTab" class="{{tabIndex == 2&&'active'}}" data-index="2">
+            <text>兑换记录</text>
+            <text class="active-bg"></text>
+        </view>
+    </view>
+    <block wx:if="{{tabIndex == 1}}">
+        <view class="content">
+            <view class="list row verCenter bothSide boxsiz">
+                <view class="column">
+                    <text class="t1">首次上传库存奖励</text>
+                    <text class="t2">2019-05-10 10:15</text>
+                </view>
+                <view>
+                    <text class="t3">+</text>
+                    <text class="t4">￥0.05</text>
+                </view>
+            </view>
+            <view class="list row verCenter bothSide boxsiz">
+                <view class="column">
+                    <text class="t1">首次上传库存奖励</text>
+                    <text class="t2">2019-05-10 10:15</text>
+                </view>
+                <view>
+                    <text class="t3">+</text>
+                    <text class="t4">￥0.05</text>
+                </view>
+            </view>
+            <view class="list row verCenter bothSide boxsiz">
+                <view class="column">
+                    <text class="t1">首次上传库存奖励</text>
+                    <text class="t2">2019-05-10 10:15</text>
+                </view>
+                <view>
+                    <text class="t3">+</text>
+                    <text class="t4">￥0.05</text>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="content">
+            <view class="list row verCenter bothSide boxsiz">
+                <view class="column">
+                    <text class="t1">话费充值</text>
+                    <text class="t2">2019-05-10 10:15</text>
+                </view>
+                <view  class="t6">
+                    15012479484
+                </view>
+                <view class="column">
+                    <text class="t5">￥50</text>
+                    <text class="t2">充值成功</text>
+                </view>
+            </view>
+            <view class="list row verCenter bothSide boxsiz">
+                <view class="column">
+                    <text class="t1">话费充值</text>
+                    <text class="t2">2019-05-10 10:15</text>
+                </view>
+                <view  class="t6">
+                    15012479484
+                </view>
+                <view class="column">
+                    <text class="t5">￥50</text>
+                    <text class="t2s">充值失败</text>
+                </view>
+            </view>
+        </view>
+    </block>
+    <view class="btn">
+        <text class="icon iconfont iconiconxiantiaoshouji28"></text>
+        <text class="t1">提现兑换</text>
+    </view>
+</view>

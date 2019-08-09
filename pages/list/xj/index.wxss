@@ -10,6 +10,9 @@
   right: 0;
   top: 0;
 }
+.b-info{
+  min-height: 400rpx;
+}
 .bj-data .num {
   color: #515559;
   font-size: 28rpx;

@@ -1,0 +1,93 @@
+<!--pages/list/ratemanage/index.wxml-->
+<view class="rate-list-view">
+   <view class="switch-tab-com row">
+        <view bindtap="switchTab" class="{{tabIndex == 1&&'active'}}" data-index="1">
+          <text>发布的评价</text>
+          <text class="active-bg"></text>
+        </view>
+        <view bindtap="switchTab" class="{{tabIndex == 2&&'active'}}" data-index="2">
+          <text>收到的评价</text>
+          <text class="active-bg"></text>
+        </view>
+      </view>
+  <view class="rate-list">
+    <view class="rate-item">
+      <view class="item-top row bothSide px-hr-bottom verCenter">
+        <view class="top-left row verCenter">
+          <image src="/res/images/imgs/test.jpg" class="img"></image>
+          <text class="name">深圳邦马特科技有限公司</text>
+        </view>
+        <view class="top-right row verCenter">
+          <text class="icon iconfont iconiconxiantiaoshouji23 good-type"></text>
+          <text class="type good-text">好评</text>
+        </view>
+      </view>
+      <view class="item-center row bothSide verCenter">
+        <text class="num bold ellipsis">STM32F407ZGT6</text>
+        <text class="price bold">￥1.0120</text>
+      </view>
+      <view class="item-bottom">
+        我是评价内容我是评价内容我是评价内容我是评价内容我是评价内容，我是评价内容我是评价内容。
+      </view>
+     <view class="item-last  row bothSide verCenter">
+        <view class="time">2019-05-10 10:15</view>
+        <view class="operation  row  verCenter">
+          <text class="icon iconfont iconiconxiantiaoshouji7"></text>
+          <text class="text">删除</text>
+        </view>
+      </view>
+    </view>
+    <view class="rate-item">
+      <view class="item-top row bothSide px-hr-bottom verCenter">
+        <view class="top-left row verCenter">
+          <image src="/res/images/imgs/test.jpg" class="img"></image>
+          <text class="name">深圳邦马特科技有限公司</text>
+        </view>
+        <view class="top-right row verCenter">
+          <text class="icon iconfont iconiconxiantiaoshouji29 bad-type"></text>
+          <text class="type bad-text">差评</text>
+        </view>
+      </view>
+      <view class="item-center row bothSide verCenter">
+        <text class="num bold ellipsis">STM32F407ZGT6</text>
+        <text class="price bold">￥1.0120</text>
+      </view>
+      <view class="item-bottom">
+        我是评价内容我是评价内容我是评价内容我是评价内容我是评价内容，我是评价内容我是评价内容。
+      </view>
+      <view class="item-last  row bothSide verCenter">
+        <view class="time">2019-05-10 10:15</view>
+        <view class="operation  row  verCenter">
+          <text class="icon iconfont iconiconxiantiaoshouji7"></text>
+          <text class="text">删除</text>
+        </view>
+      </view>
+    </view>
+    <view class="rate-item">
+      <view class="item-center row bothSide verCenter px-hr-bottom special-center">
+        <text class="num bold ellipsis">STM32F407ZGT6</text>
+        <text class="price bold">￥1.0120</text>
+      </view>
+      <view class="item-top row bothSide  verCenter special-top">
+        <view class="top-left row verCenter">
+          <image src="/res/images/imgs/test.jpg" class="img"></image>
+          <text class="name">深圳邦马特科技有限公司</text>
+        </view>
+        <view class="top-right row verCenter">
+          <text class="icon iconfont iconiconxiantiaoshouji23 good-type"></text>
+          <text class="type good-text">好评</text>
+        </view>
+      </view>
+      <view class="item-bottom">
+        我是评价内容我是评价内容我是评价内容我是评价内容我是评价内容，我是评价内容我是评价内容。
+      </view>
+      <view class="item-last  row bothSide verCenter">
+        <view class="time">2019-05-10 10:15</view>
+        <view class="operation  row  verCenter">
+          <text class="icon iconfont iconiconxiantiaoshouji7"></text>
+          <text class="text">删除</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

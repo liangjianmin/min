@@ -1,0 +1,26 @@
+/* pages/form/report/index.wxss */
+.report-top{
+  font-size: 28rpx;
+  margin-left:24rpx;
+  padding:27rpx 32rpx 27rpx 15rpx;
+  border-bottom:1px solid #D8DFE6;
+}
+.text-left{
+  color:#515559;
+}
+.text-right{
+  color:#8A9299;
+}
+.icon{
+  margin-left:12rpx;
+}
+.textarea{
+  width:100%;
+  margin-left:24rpx;
+  padding:27rpx 32rpx 27rpx 15rpx;
+  box-sizing: border-box;
+  border-bottom:1px solid #D8DFE6;
+}
+.report-btn{
+  margin-top:60rpx;
+}

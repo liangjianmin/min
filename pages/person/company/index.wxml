@@ -1,0 +1,63 @@
+<view class="company" hover-class="none" hover-stop-propagation="false">
+    <view class="head boxsiz row verCenter bothSide">
+        <view class="row">
+            <view class="pic">
+                <cover-image class="im" src="/res/images/imgs/test.jpg"></cover-image>
+            </view>
+            <view class="txt">
+                <text class="t1">深圳市猎芯科技有限公司</text>
+                <view class="row">
+                    <view class="company-txt">
+                        <text class="icon iconfont iconiconxiantiaoshouji24"></text>
+                        <text class="company-txt-t1">公司认证</text>
+                    </view>
+                    <view class="company-txt">
+                        <text class="icon iconfont iconiconxiantiaoshouji24"></text>
+                        <text class="company-txt-t1">贸易商</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="column">
+            <text class="icon iconfont iconiconxiantiaoshouji22"></text>
+            <text class="edit">编辑</text>
+        </view>
+    </view>
+    <view class="tab row rowCenter verCenter">
+        <view class="v">
+            <text class="t1">513</text>
+            <text class="t2">商品</text>
+        </view>
+        <view class="v">
+            <text class="t1">53</text>
+            <text class="t2">询价</text>
+        </view>
+        <view class="v">
+            <text class="t1">2</text>
+            <text class="t2">报价</text>
+        </view>
+    </view>
+    <view class="evaluation boxsiz row verCenter bothSide">
+        <view>
+            <text class="icon iconfont iconiconxiantiaoshouji23"></text>
+            <text class="t1">收到的评价</text>
+        </view>
+        <view>
+            <text class="icon iconfont iconChevron"></text>
+        </view>
+    </view>
+    <view class="txt-wrap boxsiz ">
+        <view class="pic">
+            <cover-image class="im" src="/res/images/imgs/test.jpg"></cover-image>
+        </view>
+        <view class="text-introduced column">
+            <text class="tit">企业简介</text>
+            <text class="t1">猎芯网是由深圳市猎芯科技有限公司开发运营的电子元器件交易服务平台，可为用户提供涵盖购买、报关、仓储、金融等整个交易环节的全闭环服务。 猎芯网于2015年7月上线，总部位于深圳，在北京、香港设有分公司，迄今已获得经纬中国、微光创投、华诺创投、京东、海通证券及文华海汇等多轮融资，及E络盟与Mouser贸泽电子等多家知名分销商授权； 猎芯网提供自营、联营、寄售、供应链金融等服务，并在深圳光明新区设有一万多平米的自营仓库，实现当天下单，当天发货，订单动态全透明，极大的提升了效率 ，降低了交易成本；同时与5500多家优质供应商合作，提供超过2000万的联营商品选择，极大地满足了广大用户的采购需求！</text>
+        </view>
+        <view class="text-introduced column">
+            <text class="tit">公司地址</text>
+            <text class="t1">广东省深圳市龙岗区坂田街道五和大道南路2号万科星火Online天枢仓6栋3楼</text>
+        </view>
+        <view class="btn">联系电话：15012479484</view>
+    </view>
+</view>
